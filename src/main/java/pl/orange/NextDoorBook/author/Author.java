@@ -1,8 +1,8 @@
-package pl.orange.NextDoorBook.author.entity;
+package pl.orange.NextDoorBook.author;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import pl.orange.NextDoorBook.book.entity.Book;
+import pl.orange.NextDoorBook.book.Book;
 
 import java.util.HashSet;
 import java.util.Set;
