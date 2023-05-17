@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import pl.orange.NextDoorBook.author.entity.Author;
 import pl.orange.NextDoorBook.comment.entity.Comment;
+import pl.orange.NextDoorBook.user.User;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -26,5 +27,9 @@ public class Book {
 
     @ManyToMany(mappedBy = "books")
     private Set<Author> articles = new HashSet<>();
+
+    @ManyToOne
+    @JoinColumn(name = "OWNER_ID")
+    private User owner;
 
 }
