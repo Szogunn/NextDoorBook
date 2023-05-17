@@ -20,6 +20,11 @@ public class Book {
 
     private String tittle;
     private long isbn;
+    private int pages;
+
+    @Enumerated(EnumType.STRING)
+    BookGenre bookGenre;
+
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "books_id")
