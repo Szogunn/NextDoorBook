@@ -12,4 +12,10 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String cityName;
+    private String street;
+    private int numberHouse;
+    private int zipCode;
+    private String state;
+
+
 }
