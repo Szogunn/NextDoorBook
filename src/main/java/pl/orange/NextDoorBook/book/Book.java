@@ -1,9 +1,9 @@
-package pl.orange.NextDoorBook.book.entity;
+package pl.orange.NextDoorBook.book;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import pl.orange.NextDoorBook.author.entity.Author;
-import pl.orange.NextDoorBook.comment.entity.Comment;
+import pl.orange.NextDoorBook.author.Author;
+import pl.orange.NextDoorBook.comment.Comment;
 import pl.orange.NextDoorBook.user.User;
 
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package pl.orange.NextDoorBook.book.controller;
+package pl.orange.NextDoorBook.book;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

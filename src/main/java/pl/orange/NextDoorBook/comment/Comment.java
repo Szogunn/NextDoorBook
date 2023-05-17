@@ -1,10 +1,7 @@
-package pl.orange.NextDoorBook.comment.entity;
+package pl.orange.NextDoorBook.comment;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import pl.orange.NextDoorBook.book.entity.Book;
-
-import java.util.Set;
 
 @Data
 @Entity

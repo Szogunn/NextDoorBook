@@ -2,7 +2,7 @@ package pl.orange.NextDoorBook.exchange;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import pl.orange.NextDoorBook.book.entity.Book;
+import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.user.User;
 
 import java.time.LocalDateTime;
