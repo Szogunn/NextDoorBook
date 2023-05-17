@@ -2,6 +2,7 @@ package pl.orange.NextDoorBook.exchange;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import pl.orange.NextDoorBook.book.entity.Book;
 import pl.orange.NextDoorBook.user.User;
 
 import java.time.LocalDateTime;
@@ -22,4 +23,7 @@ public class Exchange {
     @ManyToOne
     @JoinColumn(name = "RENTER_ID")
     private User renter;
+    @ManyToOne
+    @JoinColumn(name = "BOOK_ID")
+    private Book book;
 }
