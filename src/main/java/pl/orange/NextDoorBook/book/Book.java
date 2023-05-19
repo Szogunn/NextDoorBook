@@ -31,7 +31,7 @@ public class Book {
     private Set<Comment> comments;
 
     @ManyToMany(mappedBy = "books")
-    private Set<Author> articles = new HashSet<>();
+    private Set<Author> authors = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "OWNER_ID")
