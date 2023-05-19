@@ -6,6 +6,7 @@ import pl.orange.NextDoorBook.author.Author;
 import pl.orange.NextDoorBook.comment.Comment;
 import pl.orange.NextDoorBook.user.User;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,7 +21,11 @@ public class Book {
 
     private String tittle;
     private long isbn;
-    private int pages;
+    private int numPages;
+    private String language;
+    private String publisher;
+    private LocalDate publishedYear;
+
 
     @Enumerated(EnumType.STRING)
     BookGenre bookGenre;
@@ -31,7 +36,7 @@ public class Book {
     private Set<Comment> comments;
 
     @ManyToMany(mappedBy = "books")
-    private Set<Author> articles = new HashSet<>();
+    private Set<Author> authors = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "OWNER_ID")
