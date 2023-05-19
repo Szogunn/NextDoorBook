@@ -4,6 +4,9 @@ package pl.orange.NextDoorBook.user;
 import jakarta.persistence.*;
 import lombok.Data;
 import pl.orange.NextDoorBook.address.Address;
+import pl.orange.NextDoorBook.comment.Comment;
+
+import java.util.Set;
 
 
 @Entity
@@ -20,5 +23,8 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ADDRESS_ID")
     private Address address;
+    @OneToMany
+    @JoinColumn(name="USER_COMMENTS_ID")
+    private Set<Comment> comments;
 
 }
