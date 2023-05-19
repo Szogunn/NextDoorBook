@@ -15,7 +15,7 @@ public class Address {
     private String street;
     private int numberHouse;
     private int zipCode;
-    private String state;
+    private String district;
 
 
 }
