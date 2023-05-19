@@ -18,6 +18,7 @@ public class Author {
 
     private String firstName;
     private String lastName;
+    private String nationality;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
