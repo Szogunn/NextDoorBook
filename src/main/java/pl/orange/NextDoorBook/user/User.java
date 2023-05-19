@@ -6,6 +6,7 @@ import lombok.Data;
 import pl.orange.NextDoorBook.address.Address;
 import pl.orange.NextDoorBook.comment.Comment;
 
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -24,7 +25,6 @@ public class User {
     @JoinColumn(name = "ADDRESS_ID")
     private Address address;
     @OneToMany
-    @JoinColumn(name="USER_COMMENTS_ID")
-    private Set<Comment> comments;
+    private Set<Comment> comments=new HashSet<>();
 
 }
