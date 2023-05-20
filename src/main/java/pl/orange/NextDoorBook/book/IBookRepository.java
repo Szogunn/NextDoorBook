@@ -16,7 +16,7 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
 
     @Query(value = "UPDATE Book SET tittle = :tittle" +
             ",isbn =:isbn" +
-            ",pages=:pages" +
+            ",numPages=:numPages" +
             ",bookGenre=:bookGenre" +
             ",comments=:comments" +
             ",authors=:authors" +
@@ -26,7 +26,7 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
     void updateAddress(@Param("id") Long id,
                        @Param("tittle") String tittle,
                        @Param("isbn") long isbn,
-                       @Param("pages") int pages,
+                       @Param("numPages") int numPages,
                        @Param("comments") Set<Comment> comments,
                        @Param("authors") Set<Author> authors,
                        @Param("owner") User owner);
