@@ -18,7 +18,6 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
             ",isbn =:isbn" +
             ",numPages=:numPages" +
             ",bookGenre=:bookGenre" +
-            ",comments=:comments" +
             ",authors=:authors" +
             ",owner=:owner  WHERE id =:id")
     @Modifying
@@ -27,7 +26,6 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
                        @Param("tittle") String tittle,
                        @Param("isbn") long isbn,
                        @Param("numPages") int numPages,
-                       @Param("comments") Set<Comment> comments,
                        @Param("authors") Set<Author> authors,
                        @Param("owner") User owner);
 }
