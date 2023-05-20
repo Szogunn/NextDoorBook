@@ -18,9 +18,7 @@ public class Comment {
 
     private String message;
     private boolean spoilerAlert;
-    @ManyToOne
-    @JoinColumn(name = "USER_ID")
-    private User owner;
+
 
     @Convert(converter = RateConverter.class)
     private Rate rate;
