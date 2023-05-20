@@ -30,11 +30,6 @@ public class Book {
     @Enumerated(EnumType.STRING)
     BookGenre bookGenre;
 
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "books_id")
-    private Set<Comment> comments;
-
     @ManyToMany(mappedBy = "books")
     private Set<Author> authors = new HashSet<>();
 
