@@ -22,8 +22,7 @@ public class Comment {
 
     @Convert(converter = RateConverter.class)
     private Rate rate;
-    @ManyToOne
-    private Book book;
+
 
 
 }
