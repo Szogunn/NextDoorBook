@@ -16,7 +16,7 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
 
     @Query(value = "UPDATE Book SET tittle = :tittle" +
             ",isbn =:isbn" +
-            ",pages=:pages" +
+            ",numPages=:numPages" +
             ",bookGenre=:bookGenre" +
             ",comments=:comments" +
             ",authors=:authors" +
