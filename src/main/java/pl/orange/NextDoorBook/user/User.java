@@ -24,8 +24,6 @@ public class User {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ADDRESS_ID")
     private Address address;
-    @OneToMany
-    @JoinColumn(name = "USER_ID")
-    private Set<Comment> comments;
+
 
 }
