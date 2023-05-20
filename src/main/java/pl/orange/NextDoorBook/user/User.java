@@ -21,10 +21,11 @@ public class User {
     private String login;
     private char[] password;
     private String email;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ADDRESS_ID")
     private Address address;
     @OneToMany
-    private Set<Comment> comments=new HashSet<>();
+    @JoinColumn(name = "USER_ID")
+    private Set<Comment> comments;
 
 }
