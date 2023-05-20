@@ -7,6 +7,8 @@ import pl.orange.NextDoorBook.comment.rate.Rate;
 import pl.orange.NextDoorBook.comment.rate.RateConverter;
 import pl.orange.NextDoorBook.user.User;
 
+import java.util.Set;
+
 @Data
 @Entity
 @Table(name = "COMMENTS")
@@ -19,6 +21,13 @@ public class Comment {
     private String message;
     private boolean spoilerAlert;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "books_id")
+    private Book book;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Convert(converter = RateConverter.class)
     private Rate rate;
