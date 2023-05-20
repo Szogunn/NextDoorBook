@@ -35,10 +35,10 @@ public class Book {
     @JoinColumn(name = "books_id")
     private Set<Comment> comments;
 
-    @ManyToMany(mappedBy = "books")
+    @ManyToMany(mappedBy = "books", cascade = CascadeType.ALL)
     private Set<Author> authors = new HashSet<>();
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "OWNER_ID")
     private User owner;
 
