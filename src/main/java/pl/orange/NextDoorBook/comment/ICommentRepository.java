@@ -8,6 +8,10 @@ import org.springframework.data.repository.query.Param;
 import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.user.User;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
 public interface ICommentRepository extends JpaRepository<Comment, Long> {
 
     @Query(value = "UPDATE Comment SET message = :message" +
@@ -22,4 +26,6 @@ public interface ICommentRepository extends JpaRepository<Comment, Long> {
                        @Param("spoilerAlert") boolean spoilerAlert,
                        @Param("book") Book book,
                        @Param("user") User user);
+
+    Optional<Set<Comment>> findCommentsByBookId(Long id);
 }
