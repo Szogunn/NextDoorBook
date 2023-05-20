@@ -5,7 +5,7 @@ import lombok.Data;
 import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.user.User;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -15,8 +15,8 @@ public class Exchange {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDateTime startRent;
-    private LocalDateTime endRent;
+    private LocalDate startRent;
+    private LocalDate endRent;
     @ManyToOne
     @JoinColumn(name = "OWNER_ID")
     private User owner;
