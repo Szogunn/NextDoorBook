@@ -1,13 +1,23 @@
 package pl.orange.NextDoorBook.book;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
+@RequestMapping(path = "/api/books")
 public class BookController {
 
-    @GetMapping
-    public void start(){
+    private final BookService bookService;
 
+    @PostMapping(path = "")
+    public ResponseEntity<Book> addBook(@RequestBody Book book) {
+        return bookService.addBook(book);
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<Book> deletBook(@PathVariable Long id){
+        return bookService.deleteBook(id);
     }
 }

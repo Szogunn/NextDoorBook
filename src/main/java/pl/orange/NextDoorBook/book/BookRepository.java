@@ -30,7 +30,7 @@ public class BookRepository {
     public void updateBook(Long id, String tittle, long isbn,
                            int pages, Set<Comment> comments,
                            Set<Author> authors, User owner) {
-        iBookRepository.updateAddress(id, tittle, isbn, pages, comments, authors, owner);
+        iBookRepository.updateBook(id, tittle, isbn, pages, comments, authors, owner);
     }
 
 

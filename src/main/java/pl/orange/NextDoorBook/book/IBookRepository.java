@@ -23,10 +23,10 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
             ",owner=:owner  WHERE id =:id")
     @Modifying
     @Transactional
-    void updateAddress(@Param("id") Long id,
+    void updateBook(@Param("id") Long id,
                        @Param("tittle") String tittle,
                        @Param("isbn") long isbn,
-                       @Param("pages") int pages,
+                       @Param("numPages") int numPages,
                        @Param("comments") Set<Comment> comments,
                        @Param("authors") Set<Author> authors,
                        @Param("owner") User owner);
