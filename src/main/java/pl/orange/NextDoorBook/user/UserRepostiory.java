@@ -21,7 +21,7 @@ public class UserRepostiory {
     public void getUserById(Long id){
         iUserRepository.findById(id);
     }
-    public void updateUser(Long id, String login, char[] password, String email, Address address, Set<Comment> comments){
-        iUserRepository.updateUser(id,login,password,email,address,comments);
+    public void updateUser(Long id, String login, char[] password, String email, Address address){
+        iUserRepository.updateUser(id,login,password,email,address);
     }
 }

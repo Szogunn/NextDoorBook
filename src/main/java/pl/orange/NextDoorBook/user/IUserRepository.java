@@ -13,13 +13,12 @@ import java.util.Set;
 public interface IUserRepository extends JpaRepository<User, Long> {
 
 
-    @Query(value="UPDATE User SET id=:id,login=:login,password=:password,email=:email,address=:address,comments=:comments WHERE id=:id")
+    @Query(value="UPDATE User SET id=:id,login=:login,password=:password,email=:email,address=:address WHERE id=:id")
     @Modifying
     @Transactional
     void updateUser(@Param("id")Long id,
                     @Param("login")String login,
                     @Param("password")char[] password,
                     @Param("email")String email,
-                    @Param("address")Address address,
-                    @Param("comments")Set<Comment> comments);
+                    @Param("address")Address address);
 }
