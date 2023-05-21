@@ -6,6 +6,7 @@ import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.user.User;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -18,8 +19,8 @@ private final IExchangeRepository iExchangeRepository;
     public void deleteExchangeById(Long id){
         iExchangeRepository.deleteById(id);
     }
-    public void getExchangeById(Long id){
-        iExchangeRepository.findById(id);
+    public Optional<Exchange> getExchangeById(Long id){
+        return iExchangeRepository.findById(id);
     }
     public void updateExchange(Long id, LocalDate startRent, LocalDate endRent, User owner, User renter, Book book){
         iExchangeRepository.updateExchange(id,startRent,endRent,owner,renter,book);
