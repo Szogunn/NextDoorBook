@@ -30,10 +30,15 @@ public class Book {
     @Enumerated(EnumType.STRING)
     BookGenre bookGenre;
 
-    @ManyToMany(mappedBy = "books")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "book_author",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "author_id")
+    )
     private Set<Author> authors = new HashSet<>();
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "OWNER_ID")
     private User owner;
 
