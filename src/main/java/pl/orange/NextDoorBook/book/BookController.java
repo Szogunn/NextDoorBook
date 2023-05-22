@@ -11,13 +11,14 @@ public class BookController {
 
     private final BookService bookService;
 
-    @PostMapping(path = "")
-    public ResponseEntity<Book> addBook(@RequestBody Book book) {
-        return bookService.addBook(book);
+    //TODO trzeba numer id zmienić tak aby był przekazywany przez Spring Security jako ID zalogowanego użytkownika
+    @PostMapping(path = "{id}")
+    public ResponseEntity<Book> addBook(@RequestBody Book book, @PathVariable Long id) {
+        return bookService.addBook(book, id);
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<Book> deleteBook(@PathVariable Long id){
+    public ResponseEntity<Book> deleteBook(@PathVariable Long id) {
         return bookService.deleteBook(id);
     }
 }
