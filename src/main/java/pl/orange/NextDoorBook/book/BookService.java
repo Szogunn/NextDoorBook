@@ -13,13 +13,13 @@ public class BookService {
 
     private final BookRepository bookRepository;
 
-    public ResponseEntity<Book> addBook(Book book){
+    public ResponseEntity<Book> addBook(Book book, Long id){
         if (book == null){
             return ResponseEntity
                     .status(404)
                     .build();
         }
-        bookRepository.addBook(book);
+        bookRepository.addBook(book, id);
         return ResponseEntity
                 .status(201)
                 .build();
