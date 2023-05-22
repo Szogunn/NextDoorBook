@@ -6,6 +6,7 @@ import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.user.User;
 
 import java.util.Optional;
+import java.util.Set;
 
 @Repository
 @RequiredArgsConstructor
@@ -23,6 +24,10 @@ public class CommentRepository {
 
     public Optional<Comment> getCommentByID(Long id) {
         return iCommentRepository.findById(id);
+    }
+
+    public Optional<Set<Comment>> getCommentsByBookID(Long id){
+        return iCommentRepository.findCommentsByBookId(id);
     }
 
     public void updateComment(Long id, String message, boolean spoilerAlert, Book book, User user) {
