@@ -8,9 +8,11 @@ import org.springframework.data.repository.query.Param;
 import pl.orange.NextDoorBook.comment.Comment;
 import pl.orange.NextDoorBook.user.User;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
-public interface IAuthorRepository extends JpaRepository<Author,Long> {
+public interface IAuthorRepository extends JpaRepository<Author, Long> {
 
     @Query(value = "UPDATE Author SET firstName = :firstName" +
             ",lastName =:lastName" +
@@ -19,7 +21,17 @@ public interface IAuthorRepository extends JpaRepository<Author,Long> {
     @Modifying
     @Transactional
     void updateAuthor(@Param("id") Long id,
-                       @Param("firstName") String firstName,
-                       @Param("lastName") String lastName,
-                       @Param("nationality") String nationality);
+                      @Param("firstName") String firstName,
+                      @Param("lastName") String lastName,
+                      @Param("nationality") String nationality);
+
+
+    @Query("SELECT a FROM Author a " +
+            "WHERE a.firstName = :firstName " +
+            "AND a.lastName = :lastName  " +
+            "AND a.nationality =:nationality")
+    Optional<Author> findByFirstNameAndLastNameAndNationality
+            (@Param("firstName") String firstName
+                    , @Param("lastName") String lastName
+                    , @Param("nationality") String nationality);
 }
