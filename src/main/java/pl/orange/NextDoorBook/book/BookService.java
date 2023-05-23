@@ -14,30 +14,15 @@ public class BookService {
 
     private final BookRepository bookRepository;
 
-    public ResponseEntity<Book> addBook(Book book, Long id){
-        if (book == null){
-            return ResponseEntity
-                    .status(404)
-                    .build();
-        }
-        bookRepository.addBook(book, id);
-        return ResponseEntity
-                .status(201)
-                .build();
+    public Book addBook(Book book, Long id) {
+        return bookRepository.addBook(book, id);
     }
 
-    public ResponseEntity<Book> deleteBook(Long id){
-        Optional<Book> bookByID = bookRepository.getBookByID(id);
-
-        if (bookByID.isPresent()){
-            bookRepository.deleteBookByID(id);
-            return ResponseEntity
-                    .status(200)
-                    .build();
-        }
-        return ResponseEntity
-                .status(404)
-                .build();
+    public void deleteBook(Long id) {
+        bookRepository
+                .getBookByID(id)
+                .orElseThrow(() ->
+                        new BookNotFoundException("Book with id " + id + " does not exist"));
     }
     public ResponseEntity<List<Book>> getBooksByGenre(BookGenre bookGenre){
         return bookRepository.getBooksByGenre(bookGenre).map(value->ResponseEntity
