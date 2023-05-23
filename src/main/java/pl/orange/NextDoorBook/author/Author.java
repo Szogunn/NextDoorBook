@@ -20,6 +20,6 @@ public class Author {
     private String lastName;
     private String nationality;
 
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(mappedBy = "authors", cascade = CascadeType.ALL)
     private Set<Book> books = new HashSet<>();
 }
