@@ -30,7 +30,7 @@ public class Book {
     @Enumerated(EnumType.STRING)
     BookGenre bookGenre;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
             name = "book_author",
             joinColumns = @JoinColumn(name = "book_id"),
