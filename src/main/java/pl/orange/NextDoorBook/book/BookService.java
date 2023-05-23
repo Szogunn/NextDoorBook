@@ -1,7 +1,6 @@
 package pl.orange.NextDoorBook.book;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import pl.orange.NextDoorBook.book.exceptions.BookNotFoundException;
 
@@ -23,6 +22,8 @@ public class BookService {
                 .getBookByID(id)
                 .orElseThrow(() ->
                         new BookNotFoundException("Book with id " + id + " does not exist"));
+
+        bookRepository.deleteBookByID(id);
     }
     public List<Book> getBooksByGenre(BookGenre bookGenre){
         return bookRepository
