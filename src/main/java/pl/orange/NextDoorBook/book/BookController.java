@@ -31,7 +31,11 @@ public class BookController {
                 .build();
     }
     @GetMapping(path = "/{bookGenre}")
-    public ResponseEntity<List<Book>> getBooksByGenre(@PathVariable BookGenre bookGenre){
-        return bookService.getBooksByGenre(bookGenre);}
+    public ResponseEntity<List<Book>> getBooksByGenre(@PathVariable BookGenre bookGenre) {
+        List<Book> booksByGenre = bookService.getBooksByGenre(bookGenre);
+        return ResponseEntity
+                .status(200)
+                .body(booksByGenre);
+    }
 }
 
