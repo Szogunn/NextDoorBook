@@ -9,6 +9,8 @@ import pl.orange.NextDoorBook.author.Author;
 import pl.orange.NextDoorBook.comment.Comment;
 import pl.orange.NextDoorBook.user.User;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 public interface IBookRepository extends JpaRepository<Book, Long> {
@@ -28,4 +30,8 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
                        @Param("numPages") int numPages,
                        @Param("authors") Set<Author> authors,
                        @Param("owner") User owner);
+
+    Optional<List<Book>> findBooksByBookGenre(BookGenre bookGenre);
+
+
 }

@@ -51,5 +51,9 @@ public class BookRepository {
         iBookRepository.updateBook(id, tittle, isbn, pages, authors, owner);
     }
 
+    public Optional<List<Book>> getBooksByGenre(BookGenre bookGenre){
+        return iBookRepository.findBooksByBookGenre(bookGenre);
+    }
+
 
 }
