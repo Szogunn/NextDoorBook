@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = "/api/books")
@@ -21,4 +23,8 @@ public class BookController {
     public ResponseEntity<Book> deleteBook(@PathVariable Long id) {
         return bookService.deleteBook(id);
     }
+    @GetMapping(path = "/{bookGenre}")
+    public ResponseEntity<List<Book>> getBooksByGenre(@PathVariable BookGenre bookGenre){
+        return bookService.getBooksByGenre(bookGenre);}
 }
+

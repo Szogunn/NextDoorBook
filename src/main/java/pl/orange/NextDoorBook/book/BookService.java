@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -37,6 +38,14 @@ public class BookService {
         return ResponseEntity
                 .status(404)
                 .build();
+    }
+    public ResponseEntity<List<Book>> getBooksByGenre(BookGenre bookGenre){
+        return bookRepository.getBooksByGenre(bookGenre).map(value->ResponseEntity
+                        .status(200)
+                        .body(value))
+                .orElseGet(()->ResponseEntity
+                        .status(404)
+                        .build());
     }
 
 }

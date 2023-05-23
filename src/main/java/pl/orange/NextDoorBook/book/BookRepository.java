@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import pl.orange.NextDoorBook.author.Author;
 import pl.orange.NextDoorBook.author.AuthorRepository;
-import pl.orange.NextDoorBook.comment.Comment;
 import pl.orange.NextDoorBook.user.User;
 import pl.orange.NextDoorBook.user.UserRepostiory;
 
@@ -49,6 +48,10 @@ public class BookRepository {
                            int pages,
                            Set<Author> authors, User owner) {
         iBookRepository.updateBook(id, tittle, isbn, pages, authors, owner);
+    }
+
+    public Optional<List<Book>> getBooksByGenre(BookGenre bookGenre) {
+        return iBookRepository.findBooksByBookGenre(bookGenre);
     }
 
 
