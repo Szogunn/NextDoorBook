@@ -29,6 +29,7 @@ public class Comment {
     @JoinColumn(name = "user_id")
     private User user;
 
+    //@Column(columnDefinition = )
     @Convert(converter = RateConverter.class)
     private Rate rate;
 
