@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import pl.orange.NextDoorBook.address.Address;
 import pl.orange.NextDoorBook.comment.Comment;
 
+import java.util.Optional;
 import java.util.Set;
 
 @Repository
@@ -18,8 +19,8 @@ public class UserRepostiory {
     public void deleteUserById(Long id){
         iUserRepository.deleteById(id);
     }
-    public void getUserById(Long id){
-        iUserRepository.findById(id);
+    public Optional<User> getUserById(Long id){
+        return iUserRepository.findById(id);
     }
     public void updateUser(Long id, String login, char[] password, String email, Address address){
         iUserRepository.updateUser(id,login,password,email,address);

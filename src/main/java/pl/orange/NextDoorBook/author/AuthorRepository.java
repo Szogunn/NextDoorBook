@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import pl.orange.NextDoorBook.book.Book;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -24,7 +25,15 @@ public class AuthorRepository {
         return iAuthorRepository.findById(id);
     }
 
-    public void updateAuthor(Long id, String firstName, String lastName, String nationality){
-        iAuthorRepository.updateAuthor(id,firstName,lastName,nationality);
+    public Optional<Author> getAuthor(Author author) {
+        return iAuthorRepository
+                .findByFirstNameAndLastNameAndNationality
+                        (author.getFirstName()
+                        , author.getLastName()
+                        , author.getNationality());
+    }
+
+    public void updateAuthor(Long id, String firstName, String lastName, String nationality) {
+        iAuthorRepository.updateAuthor(id, firstName, lastName, nationality);
     }
 }

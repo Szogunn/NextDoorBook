@@ -25,5 +25,4 @@ public class User {
     @JoinColumn(name = "ADDRESS_ID")
     private Address address;
 
-
 }

@@ -3,9 +3,13 @@ package pl.orange.NextDoorBook.book;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import pl.orange.NextDoorBook.author.Author;
+import pl.orange.NextDoorBook.author.AuthorRepository;
 import pl.orange.NextDoorBook.comment.Comment;
 import pl.orange.NextDoorBook.user.User;
+import pl.orange.NextDoorBook.user.UserRepostiory;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -14,8 +18,22 @@ import java.util.Set;
 public class BookRepository {
 
     private final IBookRepository iBookRepository;
+    private final UserRepostiory userRepostiory;
+    private final AuthorRepository authorRepository;
 
-    public void addBook(Book book) {
+    public void addBook(Book book, Long id) {
+        User userById = userRepostiory.getUserById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid user ID: " + id));
+        book.setOwner(userById);
+
+        //TODO continue implementation for authors
+        List<Author> authors = new ArrayList<>();
+        //pobieram listę autorów z JSONA
+        for (Author author : new ArrayList<>(book.getAuthors())) {
+            //Interuję po niej i szukam czy jest w bazie danych, jeśli jest to dodaję do listy authorów
+            authors.add(authorRepository.getAuthor(author).orElseThrow());
+        }
+
         iBookRepository.save(book);
     }
 
