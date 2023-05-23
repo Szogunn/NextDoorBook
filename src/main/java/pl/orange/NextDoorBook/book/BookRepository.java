@@ -20,20 +20,20 @@ public class BookRepository {
     private final UserRepostiory userRepostiory;
     private final AuthorRepository authorRepository;
 
-    public void addBook(Book book, Long id) {
+    public Book addBook(Book book, Long id) {
         User userById = userRepostiory.getUserById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user ID: " + id));
         book.setOwner(userById);
 
-        //TODO continue implementation for authors
-        List<Author> authors = new ArrayList<>();
-        //pobieram listę autorów z JSONA
-        for (Author author : new ArrayList<>(book.getAuthors())) {
-            //Interuję po niej i szukam czy jest w bazie danych, jeśli jest to dodaję do listy authorów
-            authors.add(authorRepository.getAuthor(author).orElseThrow());
-        }
+//        //TODO continue implementation for authors
+//        List<Author> authors = new ArrayList<>();
+//        //pobieram listę autorów z JSONA
+//        for (Author author : new ArrayList<>(book.getAuthors())) {
+//            //Interuję po niej i szukam czy jest w bazie danych, jeśli jest to dodaję do listy authorów
+//            authors.add(authorRepository.getAuthor(author).orElseThrow());
+//        }
 
-        iBookRepository.save(book);
+        return iBookRepository.save(book);
     }
 
     public void deleteBookByID(Long id) {
