@@ -1,12 +1,21 @@
 package pl.orange.NextDoorBook.book;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ReflectionUtils;
+import pl.orange.NextDoorBook.author.Author;
 import pl.orange.NextDoorBook.book.exceptions.BookNotFoundException;
+import pl.orange.NextDoorBook.user.User;
 
+import java.lang.reflect.Field;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
+@Transactional
 @Service
 @RequiredArgsConstructor
 public class BookService {
@@ -25,19 +34,28 @@ public class BookService {
 
         bookRepository.deleteBookByID(id);
     }
-    public List<Book> getBooksByGenre(BookGenre bookGenre){
+
+    public List<Book> getBooksByGenre(BookGenre bookGenre) {
         return bookRepository
                 .getBooksByGenre(bookGenre)
                 .orElseThrow(() ->
                         new BookNotFoundException
                                 ("Books with Genre " + bookGenre.name() + " does not exist"));
-
-//                .map(value->ResponseEntity
-//                        .status(200)
-//                        .body(value))
-//                .orElseGet(()->ResponseEntity
-//                        .status(404)
-//                        .build());
     }
 
+
+    public Book updateBook(Long id , Map<Object, Object> fields) {
+        Book book = bookRepository
+                .getBookByID(id)
+                .orElseThrow(() ->
+                        new BookNotFoundException
+                                ("Books with id " + id + " does not exist"));
+
+        fields.forEach((key,value)->{
+            Field field = ReflectionUtils.findField(Book.class, (String) key);
+            field.setAccessible(true);
+            ReflectionUtils.setField(field,book,value);
+        });
+        return bookRepository.updateBook(book);
+    }
 }
