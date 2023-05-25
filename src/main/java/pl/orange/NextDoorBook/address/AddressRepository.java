@@ -23,6 +23,9 @@ public class AddressRepository {
     public Optional<Address> getAddressById(Long id) {
         return addressRepository.findById(id);
     }
+    public Address save(Address address){
+        return addressRepository.save(address);
+    }
 
     public void updateAddress(Long id, String cityName, String street, int numberHouse, int zipCode, String district) {
         addressRepository.updateAddress(id, cityName, street, numberHouse, zipCode, district);
