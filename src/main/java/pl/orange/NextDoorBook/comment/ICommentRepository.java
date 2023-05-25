@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.user.User;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -18,6 +17,7 @@ public interface ICommentRepository extends JpaRepository<Comment, Long> {
             ",spoilerAlert =:spoilerAlert" +
             ",book=:book" +
             ",user=:user" +
+            ",rate=:rate" +
             " WHERE id =:id")
     @Modifying
     @Transactional
@@ -25,7 +25,8 @@ public interface ICommentRepository extends JpaRepository<Comment, Long> {
                        @Param("message") String message,
                        @Param("spoilerAlert") boolean spoilerAlert,
                        @Param("book") Book book,
-                       @Param("user") User user);
+                       @Param("user") User user,
+                       @Param("rate") int rate);
 
     Optional<Set<Comment>> findCommentsByBookId(Long id);
 }
