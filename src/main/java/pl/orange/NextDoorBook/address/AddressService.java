@@ -5,8 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.orange.NextDoorBook.address.DTO.AddressDTO;
 import pl.orange.NextDoorBook.address.DTO.AddressDTOMapper;
-
-import java.util.Optional;
+import pl.orange.NextDoorBook.address.exception.AddressNotFoundException;
 
 @Service
 @Transactional
@@ -15,33 +14,38 @@ public class AddressService {
     private final AddressRepository addressRepository;
     private final AddressDTOMapper addressDTOMapper;
 
-    public void addAddress(AddressDTO addressDTO) {
-        addressRepository.addAddress(addressDTOMapper.apply(addressDTO));
-    }
-
-    public boolean deleteAddressById(Long id) {
-        if (addressRepository.getAddressById(id).isEmpty()){
-            return false;
+    public void addAddress(Address address) {
+        if (address == null) {
+            throw new IllegalStateException("Cant save null data address");
         }
-        addressRepository.deleteAddressById(id);
-        return true;
+        addressRepository.addAddress(address);
     }
 
-    public Optional<AddressDTO> getAddressById(Long id) {
-        return addressRepository.getAddressById(id).map(addressDTOMapper);
+    public void deleteAddressById(Long id) {
+        addressRepository.getAddressById(id)
+                .orElseThrow(() ->
+                        new AddressNotFoundException("Address with id " + id + " does not exist"));
     }
 
-    public boolean updateAddress(Long id, AddressDTO addressDTO) {
-        if (addressRepository.getAddressById(id).isEmpty()){
-            return false;
+    public AddressDTO getAddressById(Long id) {
+        return addressRepository.getAddressById(id)
+                .map(addressDTOMapper)
+                .orElseThrow(() ->
+                        new AddressNotFoundException("Address with id " + id + " does not exist"));
+    }
+
+    public Address updateAddress(Address address) {
+        if (addressRepository.getAddressById(address.getId()).isEmpty()) {
+            throw new AddressNotFoundException("Address with id " + address.getId() + " does not exist");
         }
-        addressRepository.updateAddress(
-                id,
-                addressDTO.cityName(),
-                addressDTO.street(),
-                addressDTO.numberHouse(),
-                addressDTO.zipCode(), addressDTO.district());
-        return true;
+        Address addressToUpdate = addressRepository.getAddressById(address.getId()).get();
+        addressToUpdate.setCityName(address.getCityName());
+        addressToUpdate.setStreet(address.getStreet());
+        addressToUpdate.setZipCode(address.getZipCode());
+        addressToUpdate.setNumberHouse(address.getNumberHouse());
+        addressToUpdate.setDistrict(address.getDistrict());
+
+        return addressRepository.save(addressToUpdate);
     }
 
 }
