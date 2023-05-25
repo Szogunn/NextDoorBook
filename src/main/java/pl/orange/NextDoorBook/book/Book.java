@@ -38,7 +38,7 @@ public class Book {
     )
     private Set<Author> authors = new HashSet<>();
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "OWNER_ID")
     private User owner;
 
