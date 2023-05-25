@@ -1,10 +1,14 @@
 package pl.orange.NextDoorBook.address;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "ADDRESSES")
 public class Address {
 
@@ -17,8 +21,6 @@ public class Address {
     private int zipCode;
     private String district;
 
-    public Address() {
-    }
 
     public Address(String cityName, String street, int numberHouse, int zipCode, String district) {
         this.cityName = cityName;
