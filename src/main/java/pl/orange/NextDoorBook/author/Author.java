@@ -1,5 +1,6 @@
 package pl.orange.NextDoorBook.author;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import pl.orange.NextDoorBook.book.Book;
@@ -20,6 +21,7 @@ public class Author {
     private String lastName;
     private String nationality;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "authors", cascade = CascadeType.ALL)
     private Set<Book> books = new HashSet<>();
 }
