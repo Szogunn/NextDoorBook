@@ -7,6 +7,7 @@ import pl.orange.NextDoorBook.author.AuthorRepository;
 import pl.orange.NextDoorBook.user.User;
 import pl.orange.NextDoorBook.user.UserRepostiory;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -44,10 +45,14 @@ public class BookRepository {
         return iBookRepository.findById(id);
     }
 
-    public void updateBook(Long id, String tittle, long isbn,
-                           int pages,
-                           Set<Author> authors, User owner) {
-        iBookRepository.updateBook(id, tittle, isbn, pages, authors, owner);
+    public Book updateBook(Book book) {
+        return iBookRepository.save(book);
+
+
+//        iBookRepository.updateBook(id, book.getTittle(), book.getIsbn(),
+//                book.getNumPages(), book.getLanguage(), book.getPublisher(),
+//                book.getPublishedYear(), book.getBookGenre(),
+//                book.getAuthors(), book.getOwner());
     }
 
     public Optional<List<Book>> getBooksByGenre(BookGenre bookGenre) {
