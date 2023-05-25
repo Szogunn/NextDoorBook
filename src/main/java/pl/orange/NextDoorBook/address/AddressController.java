@@ -5,52 +5,42 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.orange.NextDoorBook.address.DTO.AddressDTO;
+import pl.orange.NextDoorBook.address.DTO.AddressDTOMapper;
 
 @Controller
 @RequiredArgsConstructor
 public class AddressController {
     private final AddressService addressService;
+    private final AddressDTOMapper addressDTOMapper;
 
     @GetMapping("/addresses/{id}")
     public ResponseEntity<AddressDTO> getAddressById(@PathVariable Long id) {
-        return addressService.getAddressById(id)
-                .map(addressDTO -> ResponseEntity
-                        .status(200)
-                        .body(addressDTO)
-                ).orElseGet(() -> ResponseEntity
-                        .status(404)
-                        .build());
+        return ResponseEntity
+                .status(200)
+                .body(addressService.getAddressById(id));
     }
 
     @PostMapping("/addresses")
     public ResponseEntity<AddressDTO> addAddress(@RequestBody AddressDTO addressDTO) {
-        addressService.addAddress(addressDTO);
+        addressService.addAddress(addressDTOMapper.apply(addressDTO));
         return ResponseEntity
                 .status(200)
                 .body(addressDTO);
     }
 
     @DeleteMapping("/addresses/{id}")
-    public ResponseEntity<?> deleteAddressById(@PathVariable Long id){
-
-        return addressService.deleteAddressById(id) ?
-                ResponseEntity
+    public ResponseEntity<AddressDTO> deleteAddressById(@PathVariable Long id){
+        addressService.deleteAddressById(id);
+        return ResponseEntity
                 .status(200)
-                .build()
-                :ResponseEntity
-                .status(404)
                 .build();
     }
 
-    @PutMapping("/addresses/{id}")
-    public ResponseEntity<AddressDTO> updateAddress(@PathVariable Long id,@RequestBody AddressDTO addressDTO){
-        return addressService.updateAddress(id,addressDTO) ?
-                ResponseEntity
+    @PutMapping("/addresses")
+    public ResponseEntity<AddressDTO> updateAddress(@RequestBody AddressDTO addressDTO){
+        return ResponseEntity
                 .status(200)
-                .body(addressDTO)
-                :ResponseEntity
-                .status(404)
-                .build() ;
+                .body(addressDTOMapper.apply(addressService.updateAddress(addressDTOMapper.apply(addressDTO))));
     }
 
 
