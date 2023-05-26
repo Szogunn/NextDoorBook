@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import pl.orange.NextDoorBook.address.Address;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -21,6 +22,9 @@ public class UserRepository {
     }
     public Optional<User> getUserById(Long id){
         return iUserRepository.findById(id);
+    }
+    public List<User> getUsersByAddressId(Long addressId){
+        return iUserRepository.findUserByAddressId(addressId);
     }
     public void updateUser(Long id, String login, char[] password, String email, Address address){
         iUserRepository.updateUser(id,login,password,email,address);

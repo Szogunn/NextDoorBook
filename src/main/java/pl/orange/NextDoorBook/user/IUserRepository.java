@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import pl.orange.NextDoorBook.address.Address;
 import pl.orange.NextDoorBook.comment.Comment;
 
+import java.util.List;
 import java.util.Set;
 
 public interface IUserRepository extends JpaRepository<User, Long> {
@@ -21,4 +22,6 @@ public interface IUserRepository extends JpaRepository<User, Long> {
                     @Param("password")char[] password,
                     @Param("email")String email,
                     @Param("address")Address address);
+
+    List<User> findUserByAddressId(Long id);
 }
