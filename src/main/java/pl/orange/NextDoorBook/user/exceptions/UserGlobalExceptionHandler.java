@@ -15,4 +15,11 @@ public class UserGlobalExceptionHandler {
     String userNotFoundException(UserNotFoundException exception){
         return exception.getMessage();
     }
+
+    @ResponseBody
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(IllegalStateException.class)
+    String illegalStateException(IllegalStateException exception){
+        return exception.getMessage();
+    }
 }
