@@ -17,7 +17,7 @@ public class AddressController {
     public ResponseEntity<AddressDTO> getAddressById(@PathVariable Long id) {
         return ResponseEntity
                 .status(200)
-                .body(addressService.getAddressById(id));
+                .body(addressDTOMapper.apply(addressService.getAddressById(id)));
     }
 
     @PostMapping("/addresses")
