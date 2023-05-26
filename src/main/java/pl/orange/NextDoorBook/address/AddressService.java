@@ -23,8 +23,11 @@ public class AddressService {
 
     public void deleteAddressById(Long id) {
         addressRepository.getAddressById(id)
-                .orElseThrow(() ->
-                        new AddressNotFoundException("Address with id " + id + " does not exist"));
+                .ifPresentOrElse(
+                        (address) -> addressRepository.deleteAddressById(id),
+                        () -> {
+                            throw new AddressNotFoundException("Address with id " + id + " does not exist");
+                        });
     }
 
     public AddressDTO getAddressById(Long id) {
