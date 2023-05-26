@@ -12,7 +12,6 @@ import pl.orange.NextDoorBook.address.exception.AddressNotFoundException;
 @RequiredArgsConstructor
 public class AddressService {
     private final AddressRepository addressRepository;
-    private final AddressDTOMapper addressDTOMapper;
 
     public void addAddress(Address address) {
         if (address == null) {
@@ -30,9 +29,8 @@ public class AddressService {
                         });
     }
 
-    public AddressDTO getAddressById(Long id) {
+    public Address getAddressById(Long id) {
         return addressRepository.getAddressById(id)
-                .map(addressDTOMapper)
                 .orElseThrow(() ->
                         new AddressNotFoundException("Address with id " + id + " does not exist"));
     }
