@@ -2,10 +2,9 @@ package pl.orange.NextDoorBook.author;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import pl.orange.NextDoorBook.book.Book;
 
-import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Repository
 @RequiredArgsConstructor
@@ -36,4 +35,13 @@ public class AuthorRepository {
     public void updateAuthor(Long id, String firstName, String lastName, String nationality) {
         iAuthorRepository.updateAuthor(id, firstName, lastName, nationality);
     }
+
+    public Set<Author> checkIfAuthorsAreInUse(){
+        return iAuthorRepository.checkIfAuthorsAreInUse();
+    }
+
+    public void deleteAuthorsByIDList(Set<Long> Id){
+        iAuthorRepository.deleteByIdIn(Id);
+    }
+
 }
