@@ -1,46 +1,14 @@
 package pl.orange.NextDoorBook.book;
 
-import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-import pl.orange.NextDoorBook.author.Author;
-import pl.orange.NextDoorBook.user.User;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 
 public interface IBookRepository extends JpaRepository<Book, Long> {
 
 
-    @Query(value = "UPDATE Book SET " +
-            "tittle = :tittle" +
-            ",isbn =:isbn" +
-            ",numPages=:numPages" +
-            ",language=:language" +
-            ",publisher=:publisher" +
-            ",publishedYear=:publishedYear" +
-            ",bookGenre=:bookGenre" +
-            ",authors=:authors" +
-            ",owner=:owner  " +
-            "WHERE id =:id")
-    @Modifying
-    @Transactional
-    void updateBook(@Param("id") Long id,
-                    @Param("tittle") String tittle,
-                    @Param("isbn") long isbn,
-                    @Param("numPages") int numPages,
-                    @Param("language") String language,
-                    @Param("publisher") String publisher,
-                    @Param("publishedYear") LocalDate publishedYear,
-                    @Param("bookGenre") BookGenre bookGenre,
-                    @Param("authors") Set<Author> authors,
-                    @Param("owner") User owner);
 
-    Optional<List<Book>> findBooksByBookGenre(BookGenre bookGenre);
+    List<Book> findByBookGenre(BookGenre bookGenre);
 
 
 }
