@@ -5,15 +5,13 @@ import org.springframework.stereotype.Service;
 import pl.orange.NextDoorBook.address.DTO.AddressDTOMapper;
 import pl.orange.NextDoorBook.user.User;
 
-import java.util.function.Function;
-
 @Service
 @RequiredArgsConstructor
 public class UserDTOMapper {
 
     private final AddressDTOMapper addressDTOMapper;
 
-    public UserDTO apply(User user) {
+    public UserDTO map(User user) {
         return UserDTO.builder()
                 .id(user.getId())
                 .login(user.getLogin())
@@ -22,7 +20,7 @@ public class UserDTOMapper {
                 .build();
     }
 
-    public User apply(UserDTO userDTO){
+    public User map(UserDTO userDTO){
         return User.builder()
                 .id(userDTO.id())
                 .login(userDTO.login())
