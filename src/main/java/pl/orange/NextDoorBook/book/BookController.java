@@ -3,11 +3,10 @@ package pl.orange.NextDoorBook.book;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.orange.NextDoorBook.book.dto.BookAddDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTO;
-import pl.orange.NextDoorBook.book.dto.BookDTOMapper;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,7 +17,7 @@ public class BookController {
 
     //TODO trzeba numer id zmienić tak aby był przekazywany przez Spring Security jako ID zalogowanego użytkownika
     @PostMapping(path = "{id}")
-    public ResponseEntity<BookDTO> addBook(@RequestBody Book requestBook, @PathVariable Long id) {
+    public ResponseEntity<BookAddDTO> addBook(@RequestBody BookAddDTO requestBook, @PathVariable Long id) {
         return ResponseEntity
                 .status(200)
                 .body(bookService.addBook(requestBook,id));
