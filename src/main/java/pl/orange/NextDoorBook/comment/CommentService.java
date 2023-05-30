@@ -51,6 +51,11 @@ public class CommentService {
     }
 
     public ResponseEntity<?> updateComment(Long id, Comment comment) {
+        if(comment.getRate()>5){
+            throw new RateIllegalArgumentException("Rate should not be greater than 5");
+        } else if (comment.getRate()<1) {
+            throw new RateIllegalArgumentException("Rate should not be less than 1");
+        }else{
         if (iCommentRepository.findById(id).isEmpty()) {
             return ResponseEntity
                     .status(404)
@@ -60,5 +65,5 @@ public class CommentService {
         return ResponseEntity
                 .status(200)
                 .build();
-    }
+    }}
 }
