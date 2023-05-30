@@ -1,0 +1,1424 @@
+2023-05-30 17:51:39,052 1354 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 15052 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 17:51:39,057 1359 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 17:51:40,777 3079 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 17:51:40,958 3260 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 164 ms. Found 6 JPA repository interfaces.
+2023-05-30 17:51:41,358 1142 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 9260 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 17:51:41,362 1146 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 17:51:42,066 4368 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 17:51:42,085 4387 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 17:51:42,087 4389 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 17:51:42,087 4389 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 17:51:42,263 4565 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 17:51:42,264 4566 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3107 ms
+2023-05-30 17:51:42,316 4618 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 17:51:42,481 2265 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 17:51:42,603 2387 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 109 ms. Found 6 JPA repository interfaces.
+2023-05-30 17:51:42,707 5009 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 17:51:42,711 5013 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 17:51:42,730 5032 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 17:51:42,945 5247 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 17:51:43,057 5359 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 17:51:43,317 3101 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 17:51:43,328 3112 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 17:51:43,330 3114 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 17:51:43,330 3114 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 17:51:43,458 3242 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 17:51:43,458 3242 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2023 ms
+2023-05-30 17:51:43,498 3282 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 17:51:43,607 5909 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 17:51:43,779 3563 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 17:51:43,781 3565 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 17:51:43,796 3580 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 17:51:43,972 3756 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 17:51:44,052 3836 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 17:51:44,456 4240 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 17:51:45,112 7414 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 17:51:45,129 7431 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 17:51:45,827 5611 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 17:51:45,840 5624 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 17:51:46,403 8705 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 17:51:46,966 9268 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 17:51:46,999 9301 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 17:51:47,014 9316 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 8.661 seconds (process running for 11.127)
+2023-05-30 17:51:47,090 6874 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 17:51:47,690 7474 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 17:51:47,692 9994 [http-nio-8080-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 17:51:47,692 9994 [http-nio-8080-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 17:51:47,694 9996 [http-nio-8080-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-05-30 17:51:47,698 7482 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2023-05-30 17:51:47,704 7488 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 17:51:47,707 7491 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 17:51:47,710 7494 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 17:51:47,713 7497 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2023-05-30 17:51:47,713 7497 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-05-30 17:51:47,720 7504 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2023-05-30 17:51:47,721 7505 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2023-05-30 17:51:47,738 7522 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-05-30 17:51:47,771 7555 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-05-30 18:22:14,088 1836390 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:22:14,091 1836393 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 18:22:14,095 1836397 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 18:22:29,453 1848 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 7040 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 18:22:29,461 1856 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 18:22:30,980 3375 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 18:22:31,130 3525 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 131 ms. Found 6 JPA repository interfaces.
+2023-05-30 18:22:32,036 4431 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 18:22:32,052 4447 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:22:32,053 4448 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 18:22:32,054 4449 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 18:22:32,188 4583 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 18:22:32,189 4584 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2583 ms
+2023-05-30 18:22:32,238 4633 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 18:22:32,608 5003 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 18:22:32,612 5007 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 18:22:32,628 5023 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 18:22:32,840 5235 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 18:22:32,966 5361 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 18:22:33,555 5950 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 18:22:35,083 7478 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 18:22:35,103 7498 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:22:36,758 9153 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 18:22:37,260 9655 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:22:37,290 9685 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 18:22:37,306 9701 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 8.857 seconds (process running for 10.857)
+2023-05-30 18:24:35,352 127747 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 18:24:35,353 127748 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 18:24:35,355 127750 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-05-30 18:24:45,279 137674 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'userId' for method parameter type Long is not present]
+2023-05-30 18:24:59,792 152187 [http-nio-8080-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'userId' for method parameter type Long is not present]
+2023-05-30 18:25:56,012 208407 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:25:56,019 208414 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 18:25:56,025 208420 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 18:26:07,568 1773 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 7920 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 18:26:07,576 1781 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 18:26:09,175 3380 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 18:26:09,304 3509 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 114 ms. Found 6 JPA repository interfaces.
+2023-05-30 18:26:10,153 4358 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 18:26:10,167 4372 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:26:10,168 4373 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 18:26:10,170 4375 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 18:26:10,337 4542 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 18:26:10,338 4543 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2598 ms
+2023-05-30 18:26:10,385 4590 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 18:26:10,756 4961 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 18:26:10,759 4964 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 18:26:10,773 4978 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 18:26:10,988 5193 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 18:26:11,089 5294 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 18:26:11,639 5844 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 18:26:13,182 7387 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 18:26:13,201 7406 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:26:14,444 8649 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 18:26:14,959 9164 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:26:14,986 9191 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 18:26:14,998 9203 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 8.369 seconds (process running for 10.466)
+2023-05-30 18:26:19,412 13617 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 18:26:19,414 13619 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 18:26:19,416 13621 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-30 18:26:22,625 16830 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null] with root cause
+java.lang.IllegalArgumentException: The given id must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:204)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:293)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:288)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:77)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:163)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy2/jdk.proxy2.$Proxy126.findById(Unknown Source)
+	at pl.orange.NextDoorBook.book.BookRepository.getBookByID(BookRepository.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookRepository$$SpringCGLIB$$0.getBookByID(<generated>)
+	at pl.orange.NextDoorBook.book.dto.BookDTOMapper.apply(BookDTOMapper.java:49)
+	at pl.orange.NextDoorBook.book.BookService.addBook(BookService.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookService$$SpringCGLIB$$0.addBook(<generated>)
+	at pl.orange.NextDoorBook.book.BookController.addBook(BookController.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-05-30 18:26:42,847 37052 [http-nio-8080-exec-5] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null] with root cause
+java.lang.IllegalArgumentException: The given id must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:204)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:293)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:288)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:77)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:163)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy2/jdk.proxy2.$Proxy126.findById(Unknown Source)
+	at pl.orange.NextDoorBook.book.BookRepository.getBookByID(BookRepository.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookRepository$$SpringCGLIB$$0.getBookByID(<generated>)
+	at pl.orange.NextDoorBook.book.dto.BookDTOMapper.apply(BookDTOMapper.java:49)
+	at pl.orange.NextDoorBook.book.BookService.addBook(BookService.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookService$$SpringCGLIB$$0.addBook(<generated>)
+	at pl.orange.NextDoorBook.book.BookController.addBook(BookController.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-05-30 18:26:51,424 45629 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:26:51,428 45633 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 18:26:51,442 45647 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 18:27:02,805 1802 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 15160 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 18:27:02,811 1808 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 18:27:04,438 3435 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 18:27:04,591 3588 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 136 ms. Found 6 JPA repository interfaces.
+2023-05-30 18:27:05,470 4467 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 18:27:05,519 4516 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:27:05,520 4517 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 18:27:05,521 4518 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 18:27:05,685 4682 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 18:27:05,686 4683 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2708 ms
+2023-05-30 18:27:05,781 4778 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 18:27:06,248 5245 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 18:27:06,260 5257 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 18:27:06,322 5319 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 18:27:06,833 5830 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 18:27:06,925 5922 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 18:27:07,516 6513 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 18:27:09,328 8325 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 18:27:09,350 8347 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:27:10,936 9933 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 18:27:11,580 10577 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:27:11,626 10623 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 18:27:11,643 10640 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 9.718 seconds (process running for 11.94)
+2023-05-30 18:28:06,234 65231 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 18:28:06,235 65232 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 18:28:06,237 65234 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-30 18:28:09,955 68952 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null] with root cause
+java.lang.IllegalArgumentException: The given id must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:204)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:293)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:288)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:77)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:163)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy2/jdk.proxy2.$Proxy126.findById(Unknown Source)
+	at pl.orange.NextDoorBook.book.BookRepository.getBookByID(BookRepository.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookRepository$$SpringCGLIB$$0.getBookByID(<generated>)
+	at pl.orange.NextDoorBook.book.dto.BookDTOMapper.apply(BookDTOMapper.java:49)
+	at pl.orange.NextDoorBook.book.BookService.addBook(BookService.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookService$$SpringCGLIB$$0.addBook(<generated>)
+	at pl.orange.NextDoorBook.book.BookController.addBook(BookController.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-05-30 18:29:19,216 138213 [http-nio-8080-exec-8] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null] with root cause
+java.lang.IllegalArgumentException: The given id must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:204)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:293)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:288)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:77)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:163)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy2/jdk.proxy2.$Proxy126.findById(Unknown Source)
+	at pl.orange.NextDoorBook.book.BookRepository.getBookByID(BookRepository.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookRepository$$SpringCGLIB$$0.getBookByID(<generated>)
+	at pl.orange.NextDoorBook.book.dto.BookDTOMapper.apply(BookDTOMapper.java:49)
+	at pl.orange.NextDoorBook.book.BookService.addBook(BookService.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookService$$SpringCGLIB$$0.addBook(<generated>)
+	at pl.orange.NextDoorBook.book.BookController.addBook(BookController.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-05-30 18:33:13,591 372588 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:33:13,695 372692 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 18:33:13,698 372695 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 18:37:32,483 1579 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 15352 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 18:37:32,487 1583 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 18:37:33,467 2563 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 18:37:33,566 2662 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 6 JPA repository interfaces.
+2023-05-30 18:37:34,190 3286 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 18:37:34,202 3298 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:37:34,204 3300 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 18:37:34,204 3300 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 18:37:34,317 3413 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 18:37:34,317 3413 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1754 ms
+2023-05-30 18:37:34,349 3445 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 18:37:34,625 3721 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 18:37:34,627 3723 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 18:37:34,640 3736 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 18:37:34,789 3885 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 18:37:34,879 3975 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 18:37:35,293 4389 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 18:37:36,555 5651 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 18:37:36,570 5666 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:37:37,957 7053 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 18:37:38,404 7500 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:37:38,430 7526 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 18:37:38,443 7539 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 6.691 seconds (process running for 8.449)
+2023-05-30 18:37:51,284 20380 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:37:51,286 20382 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 18:37:51,288 20384 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 18:44:35,594 1501 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 11444 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 18:44:35,599 1506 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 18:44:36,805 2712 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 18:44:36,920 2827 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 104 ms. Found 6 JPA repository interfaces.
+2023-05-30 18:44:37,608 3515 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 18:44:37,624 3531 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:44:37,625 3532 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 18:44:37,625 3532 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 18:44:37,741 3648 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 18:44:37,742 3649 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2035 ms
+2023-05-30 18:44:37,777 3684 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 18:44:38,075 3982 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 18:44:38,077 3984 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 18:44:38,093 4000 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 18:44:38,246 4153 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 18:44:38,329 4236 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 18:44:38,826 4733 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 18:44:40,672 6579 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 18:44:40,688 6595 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:44:41,741 7648 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 18:44:42,159 8066 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:44:42,183 8090 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 18:44:42,194 8101 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 7.409 seconds (process running for 9.021)
+2023-05-30 18:44:42,793 8700 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 18:44:42,793 8700 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 18:44:42,794 8701 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-30 18:46:18,612 104519 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:46:18,614 104521 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 18:46:18,615 104522 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 18:46:26,583 1213 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 10044 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 18:46:26,587 1217 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 18:46:27,608 2238 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 18:46:27,701 2331 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 6 JPA repository interfaces.
+2023-05-30 18:46:28,269 2899 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 18:46:28,279 2909 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:46:28,280 2910 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 18:46:28,281 2911 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 18:46:28,381 3011 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 18:46:28,382 3012 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1724 ms
+2023-05-30 18:46:28,412 3042 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 18:46:28,629 3259 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 18:46:28,631 3261 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 18:46:28,642 3272 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 18:46:28,771 3401 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 18:46:28,827 3457 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 18:46:29,194 3824 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 18:46:30,285 4915 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 18:46:30,296 4926 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:46:31,251 5881 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 18:46:31,731 6361 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:46:31,758 6388 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 18:46:31,770 6400 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 5.848 seconds (process running for 7.22)
+2023-05-30 18:46:36,134 10764 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 18:46:36,134 10764 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 18:46:36,134 10764 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2023-05-30 18:47:03,312 37942 [http-nio-8080-exec-8] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: Invalid user ID: 2] with root cause
+java.lang.IllegalArgumentException: Invalid user ID: 2
+	at pl.orange.NextDoorBook.book.BookRepository.lambda$addBook$0(BookRepository.java:27)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at pl.orange.NextDoorBook.book.BookRepository.addBook(BookRepository.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookRepository$$SpringCGLIB$$0.addBook(<generated>)
+	at pl.orange.NextDoorBook.book.BookService.addBook(BookService.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookService$$SpringCGLIB$$0.addBook(<generated>)
+	at pl.orange.NextDoorBook.book.BookController.addBook(BookController.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-05-30 18:55:51,788 566418 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:55:51,791 566421 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 18:55:51,793 566423 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 18:55:59,323 963  [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 11628 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 18:55:59,326 966  [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 18:56:00,167 1807 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 18:56:00,264 1904 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 6 JPA repository interfaces.
+2023-05-30 18:56:00,841 2481 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 18:56:00,852 2492 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:56:00,853 2493 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 18:56:00,853 2493 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 18:56:00,955 2595 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 18:56:00,955 2595 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1575 ms
+2023-05-30 18:56:00,986 2626 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 18:56:01,242 2882 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 18:56:01,244 2884 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 18:56:01,257 2897 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 18:56:01,404 3044 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 18:56:01,475 3115 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 18:56:01,857 3497 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 18:56:02,958 4598 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 18:56:02,969 4609 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 18:56:03,976 5616 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 18:56:04,389 6029 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 18:56:04,412 6052 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 18:56:04,422 6062 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 5.624 seconds (process running for 6.664)
+2023-05-30 18:56:08,747 10387 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 18:56:08,747 10387 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 18:56:08,750 10390 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-05-30 19:19:11,546 1393186 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:19:11,547 1393187 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 19:19:11,550 1393190 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 19:19:23,043 1365 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 16160 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 19:19:23,048 1370 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 19:19:24,225 2547 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 19:19:24,321 2643 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 6 JPA repository interfaces.
+2023-05-30 19:19:24,951 3273 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 19:19:24,964 3286 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:19:24,965 3287 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 19:19:24,965 3287 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 19:19:25,080 3402 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 19:19:25,080 3402 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1940 ms
+2023-05-30 19:19:25,113 3435 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 19:19:25,399 3721 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 19:19:25,401 3723 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 19:19:25,415 3737 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 19:19:25,563 3885 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 19:19:25,668 3990 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 19:19:26,103 4425 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 19:19:27,260 5582 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 19:19:27,272 5594 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:19:28,163 6485 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookController' defined in file [E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes\pl\orange\NextDoorBook\book\BookController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'bookService' defined in file [E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes\pl\orange\NextDoorBook\book\BookService.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'bookDTOMapper' defined in file [E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes\pl\orange\NextDoorBook\book\dto\BookDTOMapper.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'pl.orange.NextDoorBook.author.dto.AuthorDTOMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-05-30 19:19:28,163 6485 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:19:28,165 6487 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 19:19:28,167 6489 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 19:19:28,169 6491 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-05-30 19:19:28,182 6504 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-05-30 19:19:28,215 6537 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in pl.orange.NextDoorBook.book.dto.BookDTOMapper required a bean of type 'pl.orange.NextDoorBook.author.dto.AuthorDTOMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'pl.orange.NextDoorBook.author.dto.AuthorDTOMapper' in your configuration.
+
+2023-05-30 19:19:52,401 1518 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 15636 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 19:19:52,409 1526 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 19:19:53,686 2803 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 19:19:53,809 2926 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 109 ms. Found 6 JPA repository interfaces.
+2023-05-30 19:19:54,533 3650 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 19:19:54,547 3664 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:19:54,548 3665 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 19:19:54,548 3665 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 19:19:54,672 3789 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 19:19:54,675 3792 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2138 ms
+2023-05-30 19:19:54,733 3850 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 19:19:55,021 4138 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 19:19:55,025 4142 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 19:19:55,041 4158 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 19:19:55,278 4395 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 19:19:55,354 4471 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 19:19:55,850 4967 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 19:19:57,178 6295 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 19:19:57,192 6309 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:19:58,307 7424 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 19:19:58,756 7873 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:19:58,783 7900 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 19:19:58,796 7913 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 7.243 seconds (process running for 9.193)
+2023-05-30 19:20:19,649 28766 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 19:20:19,649 28766 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 19:20:19,650 28767 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-30 19:21:45,535 114652 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:21:45,537 114654 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 19:21:45,540 114657 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 19:21:54,432 1254 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 9344 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 19:21:54,438 1260 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 19:21:55,434 2256 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 19:21:55,544 2366 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 6 JPA repository interfaces.
+2023-05-30 19:21:56,179 3001 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 19:21:56,189 3011 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:21:56,190 3012 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 19:21:56,190 3012 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 19:21:56,299 3121 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 19:21:56,300 3122 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1778 ms
+2023-05-30 19:21:56,333 3155 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 19:21:56,639 3461 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 19:21:56,642 3464 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 19:21:56,677 3499 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 19:21:56,870 3692 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 19:21:56,940 3762 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 19:21:57,373 4195 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 19:21:58,559 5381 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 19:21:58,571 5393 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:21:59,591 6413 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 19:22:00,011 6833 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:22:00,042 6864 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 19:22:00,055 6877 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 6.283 seconds (process running for 7.712)
+2023-05-30 19:22:04,564 11386 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 19:22:04,565 11387 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 19:22:04,567 11389 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-05-30 19:24:34,615 161437 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:24:34,617 161439 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 19:24:34,620 161442 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 19:24:48,936 1647 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 8828 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 19:24:48,941 1652 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 19:24:49,976 2687 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 19:24:50,076 2787 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 6 JPA repository interfaces.
+2023-05-30 19:24:50,661 3372 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 19:24:50,673 3384 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:24:50,674 3385 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 19:24:50,674 3385 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 19:24:50,778 3489 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 19:24:50,779 3490 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1746 ms
+2023-05-30 19:24:50,810 3521 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 19:24:51,044 3755 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 19:24:51,046 3757 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 19:24:51,059 3770 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 19:24:51,198 3909 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 19:24:51,258 3969 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 19:24:51,602 4313 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 19:24:52,687 5398 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 19:24:52,698 5409 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:24:53,677 6388 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 19:24:54,102 6813 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:24:54,136 6847 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 19:24:54,146 6857 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 6.091 seconds (process running for 7.734)
+2023-05-30 19:25:05,987 18698 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 19:25:05,988 18699 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 19:25:05,990 18701 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-30 19:25:06,201 18912 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: Invalid user ID: 1] with root cause
+java.lang.IllegalArgumentException: Invalid user ID: 1
+	at pl.orange.NextDoorBook.book.BookRepository.lambda$addBook$0(BookRepository.java:27)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at pl.orange.NextDoorBook.book.BookRepository.addBook(BookRepository.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookRepository$$SpringCGLIB$$0.addBook(<generated>)
+	at pl.orange.NextDoorBook.book.BookService.addBook(BookService.java:32)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at pl.orange.NextDoorBook.book.BookService$$SpringCGLIB$$0.addBook(<generated>)
+	at pl.orange.NextDoorBook.book.BookController.addBook(BookController.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-05-30 19:31:42,908 415619 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:31:42,910 415621 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 19:31:42,912 415623 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 19:31:53,826 1285 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 14964 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 19:31:53,830 1289 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 19:31:54,837 2296 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 19:31:54,939 2398 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 92 ms. Found 6 JPA repository interfaces.
+2023-05-30 19:31:55,550 3009 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 19:31:55,560 3019 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:31:55,561 3020 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 19:31:55,561 3020 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 19:31:55,675 3134 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 19:31:55,676 3135 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1763 ms
+2023-05-30 19:31:55,709 3168 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 19:31:55,958 3417 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 19:31:55,960 3419 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 19:31:55,975 3434 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 19:31:56,128 3587 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 19:31:56,195 3654 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 19:31:56,555 4014 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 19:31:57,668 5127 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 19:31:57,680 5139 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:31:58,758 6217 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 19:31:59,284 6743 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:31:59,313 6772 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 19:31:59,324 6783 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 6.18 seconds (process running for 7.695)
+2023-05-30 19:32:11,686 19145 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 19:32:11,686 19145 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 19:32:11,687 19146 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-30 19:32:25,714 33173 [http-nio-8080-exec-4] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:37:16,648 324107 [http-nio-8080-exec-8] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:37:16,661 324120 [http-nio-8080-exec-8] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=2, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:37:25,127 332586 [http-nio-8080-exec-10] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Przykładowa Książka99, isbn=1234567890, numPages=6, language=null, publisher=Mickiewicz, publishedYear=2023-12-12, bookGenre=FANTASY, authors=[Author(id=7, firstName=Jakub, lastName=Smith, nationality=Holandia, books=null)], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:37:32,285 339744 [http-nio-8080-exec-9] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Przykładowa Książka99, isbn=1234567890, numPages=6, language=null, publisher=Mickiewicz, publishedYear=2023-12-12, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:37:32,319 339778 [http-nio-8080-exec-9] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=2, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:39:30,813 458272 [http-nio-8080-exec-2] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Przykładowa Książka99, isbn=1234567890, numPages=6, language=null, publisher=Mickiewicz, publishedYear=2023-12-12, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:39:30,820 458279 [http-nio-8080-exec-2] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=2, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:39:56,155 483614 [http-nio-8080-exec-1] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Przykładowa Książka99, isbn=1234567890, numPages=6, language=null, publisher=Mickiewicz, publishedYear=2023-12-12, bookGenre=FANTASY, authors=[Author(id=8, firstName=Jakub, lastName=Smith, nationality=Holandia, books=null)], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:41:06,683 554142 [http-nio-8080-exec-3] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=2, tittle=Przykładowa Książka99, isbn=1234567890, numPages=6, language=null, publisher=Mickiewicz, publishedYear=2023-12-12, bookGenre=FANTASY, authors=[Author(id=9, firstName=Jakub, lastName=Smith, nationality=Holandia, books=null)], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:41:16,334 563793 [http-nio-8080-exec-9] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Przykładowa Książka99, isbn=1234567890, numPages=6, language=null, publisher=Mickiewicz, publishedYear=2023-12-12, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:41:16,343 563802 [http-nio-8080-exec-9] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=2, tittle=Przykładowa Książka99, isbn=1234567890, numPages=6, language=null, publisher=Mickiewicz, publishedYear=2023-12-12, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:47:19,083 926542 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:47:19,085 926544 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 19:47:19,087 926546 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 19:47:29,203 1425 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 7824 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 19:47:29,210 1432 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 19:47:30,339 2561 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 19:47:30,449 2671 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 6 JPA repository interfaces.
+2023-05-30 19:47:31,099 3321 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 19:47:31,111 3333 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:47:31,112 3334 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 19:47:31,113 3335 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 19:47:31,227 3449 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 19:47:31,227 3449 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1916 ms
+2023-05-30 19:47:31,275 3497 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 19:47:31,544 3766 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 19:47:31,546 3768 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 19:47:31,560 3782 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 19:47:31,741 3963 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 19:47:31,866 4088 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 19:47:32,401 4623 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 19:47:33,783 6005 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 19:47:33,799 6021 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:47:34,829 7051 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 19:47:35,219 7441 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:47:35,242 7464 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 19:47:35,251 7473 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 6.841 seconds (process running for 8.327)
+2023-05-30 19:47:38,991 11213 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 19:47:38,993 11215 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 19:47:38,995 11217 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-05-30 19:47:43,129 15351 [http-nio-8080-exec-4] INFO  p.o.N.book.BookRepository - [Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))]
+2023-05-30 19:47:43,133 15355 [http-nio-8080-exec-4] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:48:38,261 70483 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:48:38,263 70485 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 19:48:38,264 70486 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 19:48:46,448 1277 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 11764 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 19:48:46,452 1281 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 19:48:47,439 2268 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 19:48:47,540 2369 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 6 JPA repository interfaces.
+2023-05-30 19:48:48,132 2961 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 19:48:48,142 2971 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:48:48,143 2972 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 19:48:48,143 2972 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 19:48:48,248 3077 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 19:48:48,248 3077 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1716 ms
+2023-05-30 19:48:48,282 3111 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 19:48:48,554 3383 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 19:48:48,556 3385 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 19:48:48,571 3400 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 19:48:48,736 3565 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 19:48:48,822 3651 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 19:48:49,228 4057 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 19:48:50,471 5300 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 19:48:50,482 5311 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:48:51,472 6301 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 19:48:51,850 6679 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:48:51,873 6702 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 19:48:51,884 6713 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 6.114 seconds (process running for 7.525)
+2023-05-30 19:48:58,018 12847 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 19:48:58,019 12848 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 19:48:58,020 12849 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-30 19:49:03,200 18029 [http-nio-8080-exec-4] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[Author(id=1, firstName=Emma, lastName=Johnson, nationality=null, books=[]), Author(id=2, firstName=John, lastName=Smith, nationality=null, books=[]), Author(id=3, firstName=Miłosz, lastName=Smith, nationality=null, books=[])], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:50:20,731 95560 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:50:20,733 95562 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 19:50:20,735 95564 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 19:50:28,392 1244 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 1600 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 19:50:28,396 1248 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 19:50:29,444 2296 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 19:50:29,546 2398 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 6 JPA repository interfaces.
+2023-05-30 19:50:30,159 3011 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 19:50:30,169 3021 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:50:30,170 3022 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 19:50:30,171 3023 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 19:50:30,275 3127 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 19:50:30,275 3127 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1791 ms
+2023-05-30 19:50:30,307 3159 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 19:50:30,581 3433 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 19:50:30,583 3435 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 19:50:30,602 3454 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 19:50:30,765 3617 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 19:50:30,840 3692 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 19:50:31,239 4091 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 19:50:32,549 5401 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 19:50:32,561 5413 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 19:50:33,572 6424 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 19:50:33,990 6842 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 19:50:34,012 6864 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 19:50:34,023 6875 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 6.286 seconds (process running for 7.681)
+2023-05-30 19:50:37,380 10232 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 19:50:37,380 10232 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 19:50:37,384 10236 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2023-05-30 19:50:44,003 16855 [http-nio-8080-exec-4] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[Author(id=1, firstName=Emma, lastName=Johnson, nationality=null, books=[]), Author(id=2, firstName=John, lastName=Smith, nationality=null, books=[]), Author(id=3, firstName=Miłosz, lastName=Smith, nationality=null, books=[])], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 19:50:46,833 19685 [http-nio-8080-exec-5] INFO  p.o.N.book.BookRepository - [Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[Author(id=1, firstName=Emma, lastName=Johnson, nationality=null, books=[]), Author(id=2, firstName=John, lastName=Smith, nationality=null, books=[]), Author(id=3, firstName=Miłosz, lastName=Smith, nationality=null, books=[])], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))]
+2023-05-30 19:50:46,836 19688 [http-nio-8080-exec-5] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[Author(id=1, firstName=Emma, lastName=Johnson, nationality=null, books=[]), Author(id=2, firstName=John, lastName=Smith, nationality=null, books=[]), Author(id=3, firstName=Miłosz, lastName=Smith, nationality=null, books=[])], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:01:44,270 677122 [http-nio-8080-exec-8] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[Author(id=1, firstName=Emma, lastName=Johnson, nationality=null, books=[]), Author(id=2, firstName=John, lastName=Smith, nationality=null, books=[]), Author(id=3, firstName=Miłosz, lastName=Smith, nationality=null, books=[])], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:02:02,945 695797 [http-nio-8080-exec-10] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=2, tittle=Przykładowa Książka99, isbn=1234567890, numPages=6, language=null, publisher=Mickiewicz, publishedYear=2023-12-12, bookGenre=FANTASY, authors=[Author(id=7, firstName=Jakub, lastName=Smith, nationality=Holandia, books=[])], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:03:44,571 797423 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:03:44,572 797424 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 20:03:44,575 797427 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 20:03:54,448 1575 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 15528 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 20:03:54,454 1581 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 20:03:55,744 2871 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 20:03:55,874 3001 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 115 ms. Found 6 JPA repository interfaces.
+2023-05-30 20:03:56,564 3691 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 20:03:56,577 3704 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:03:56,580 3707 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 20:03:56,580 3707 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 20:03:56,717 3844 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 20:03:56,718 3845 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2147 ms
+2023-05-30 20:03:56,759 3886 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 20:03:57,104 4231 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 20:03:57,106 4233 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 20:03:57,122 4249 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 20:03:57,301 4428 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 20:03:57,385 4512 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 20:03:57,817 4944 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 20:03:59,337 6464 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 20:03:59,351 6478 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:04:00,380 7507 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 20:04:00,874 8001 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 20:04:00,885 8012 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 7.312 seconds (process running for 8.921)
+2023-05-30 20:04:00,913 8040 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:04:00,914 8041 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 20:04:00,917 8044 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 20:04:08,468 1298 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 6032 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 20:04:08,473 1303 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 20:04:09,427 2257 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 20:04:09,524 2354 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 6 JPA repository interfaces.
+2023-05-30 20:04:10,099 2929 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 20:04:10,111 2941 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:04:10,112 2942 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 20:04:10,113 2943 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 20:04:10,216 3046 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 20:04:10,216 3046 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1665 ms
+2023-05-30 20:04:10,247 3077 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 20:04:10,500 3330 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 20:04:10,501 3331 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 20:04:10,515 3345 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 20:04:10,654 3484 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 20:04:10,716 3546 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 20:04:11,064 3894 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 20:04:12,204 5034 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 20:04:12,217 5047 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:04:13,261 6091 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 20:04:13,731 6561 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:04:13,758 6588 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 20:04:13,769 6599 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 5.998 seconds (process running for 7.375)
+2023-05-30 20:04:17,840 10670 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 20:04:17,840 10670 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 20:04:17,841 10671 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-30 20:04:23,306 16136 [http-nio-8080-exec-4] INFO  p.o.N.book.BookRepository - [Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))]
+2023-05-30 20:04:23,310 16140 [http-nio-8080-exec-4] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:21:45,787 1058617 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:21:45,932 1058762 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 20:21:45,939 1058769 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 20:21:53,374 1264 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 13964 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 20:21:53,378 1268 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 20:21:54,446 2336 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 20:21:54,542 2432 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 6 JPA repository interfaces.
+2023-05-30 20:21:55,085 2975 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 20:21:55,097 2987 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:21:55,098 2988 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 20:21:55,099 2989 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 20:21:55,198 3088 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 20:21:55,199 3089 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1740 ms
+2023-05-30 20:21:55,250 3140 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 20:21:55,512 3402 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 20:21:55,514 3404 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 20:21:55,526 3416 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 20:21:55,674 3564 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 20:21:55,778 3668 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 20:21:56,241 4131 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 20:21:57,515 5405 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 20:21:57,531 5421 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:21:59,162 7052 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 20:21:59,581 7471 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:21:59,606 7496 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 20:21:59,617 7507 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 6.899 seconds (process running for 8.269)
+2023-05-30 20:22:06,007 13897 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 20:22:06,007 13897 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 20:22:06,008 13898 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-30 20:22:10,106 17996 [http-nio-8080-exec-4] INFO  p.o.N.book.BookRepository - Authors from findAll method: []
+2023-05-30 20:22:10,119 18009 [http-nio-8080-exec-4] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:23:18,423 86313 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:23:18,425 86315 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 20:23:18,427 86317 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 20:23:24,561 999  [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 7120 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 20:23:24,563 1001 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 20:23:25,313 1751 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 20:23:25,382 1820 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 6 JPA repository interfaces.
+2023-05-30 20:23:25,876 2314 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 20:23:25,884 2322 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:23:25,885 2323 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 20:23:25,885 2323 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 20:23:25,983 2421 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 20:23:25,983 2421 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1359 ms
+2023-05-30 20:23:26,008 2446 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 20:23:26,313 2751 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 20:23:26,315 2753 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 20:23:26,327 2765 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 20:23:26,463 2901 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 20:23:26,524 2962 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 20:23:26,885 3323 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 20:23:28,095 4533 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 20:23:28,110 4548 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:23:29,423 5861 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 20:23:29,840 6278 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:23:29,868 6306 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 20:23:29,878 6316 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 5.843 seconds (process running for 7.103)
+2023-05-30 20:23:31,305 7743 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 20:23:31,305 7743 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 20:23:31,307 7745 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2023-05-30 20:23:33,646 10084 [http-nio-8080-exec-3] INFO  p.o.N.book.BookRepository - Book authors to save: [Author(id=1, firstName=Emma, lastName=Johnson, nationality=null, books=null), Author(id=2, firstName=John, lastName=Smith, nationality=null, books=null), Author(id=3, firstName=Miłosz, lastName=Smith, nationality=null, books=null)]
+2023-05-30 20:26:28,209 184647 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:26:28,210 184648 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 20:26:28,211 184649 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 20:26:36,815 1240 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 13340 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 20:26:36,818 1243 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 20:26:37,883 2308 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 20:26:37,990 2415 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96 ms. Found 6 JPA repository interfaces.
+2023-05-30 20:26:38,911 3336 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 20:26:38,927 3352 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:26:38,929 3354 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 20:26:38,929 3354 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 20:26:39,092 3517 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 20:26:39,093 3518 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2195 ms
+2023-05-30 20:26:39,144 3569 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 20:26:39,498 3923 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 20:26:39,501 3926 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 20:26:39,514 3939 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 20:26:39,695 4120 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 20:26:39,803 4228 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 20:26:40,248 4673 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 20:26:41,711 6136 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 20:26:41,748 6173 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:26:42,972 7397 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 20:26:43,501 7926 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:26:43,531 7956 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 20:26:43,547 7972 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 7.32 seconds (process running for 9.089)
+2023-05-30 20:26:45,403 9828 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 20:26:45,404 9829 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 20:26:45,405 9830 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-30 20:26:48,799 13224 [http-nio-8080-exec-3] INFO  p.o.N.book.BookRepository - Book authors to save: [Author(id=1, firstName=Emma, lastName=Johnson, nationality=null), Author(id=2, firstName=John, lastName=Smith, nationality=null), Author(id=3, firstName=Miłosz, lastName=Smith, nationality=null)]
+2023-05-30 20:26:52,079 16504 [http-nio-8080-exec-4] INFO  p.o.N.book.BookRepository - Authors from findAll method: [Author(id=2, firstName=John, lastName=Smith, nationality=null), Author(id=3, firstName=Miłosz, lastName=Smith, nationality=null), Author(id=1, firstName=Emma, lastName=Johnson, nationality=null)]
+2023-05-30 20:26:52,094 16519 [http-nio-8080-exec-4] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[Author(id=2, firstName=John, lastName=Smith, nationality=null), Author(id=3, firstName=Miłosz, lastName=Smith, nationality=null), Author(id=1, firstName=Emma, lastName=Johnson, nationality=null)], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:26:59,989 24414 [http-nio-8080-exec-5] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Przykładowa Książka99, isbn=1234567890, numPages=6, language=null, publisher=Mickiewicz, publishedYear=2023-12-12, bookGenre=FANTASY, authors=[Author(id=4, firstName=Jakub, lastName=Smith, nationality=Holandia)], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:27:03,397 27822 [http-nio-8080-exec-6] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Przykładowa Książka99, isbn=1234567890, numPages=6, language=null, publisher=Mickiewicz, publishedYear=2023-12-12, bookGenre=FANTASY, authors=[Author(id=4, firstName=Jakub, lastName=Smith, nationality=Holandia)], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:30:10,832 215257 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:30:10,833 215258 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 20:30:10,835 215260 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 20:30:17,759 1041 [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 9152 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 20:30:17,763 1045 [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 20:30:18,661 1943 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 20:30:18,757 2039 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 6 JPA repository interfaces.
+2023-05-30 20:30:19,305 2587 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 20:30:19,314 2596 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:30:19,316 2598 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 20:30:19,316 2598 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 20:30:19,435 2717 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 20:30:19,436 2718 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1607 ms
+2023-05-30 20:30:19,463 2745 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 20:30:19,738 3020 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 20:30:19,741 3023 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 20:30:19,763 3045 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 20:30:19,915 3197 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 20:30:19,988 3270 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 20:30:20,374 3656 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 20:30:21,389 4671 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 20:30:21,403 4685 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:30:22,265 5547 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 20:30:22,600 5882 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:30:22,620 5902 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 20:30:22,628 5910 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 5.462 seconds (process running for 6.564)
+2023-05-30 20:30:35,348 18630 [http-nio-8080-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 20:30:35,350 18632 [http-nio-8080-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 20:30:35,350 18632 [http-nio-8080-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2023-05-30 20:30:38,162 21444 [http-nio-8080-exec-1] INFO  p.o.N.book.BookRepository - Book authors to save: [Author(id=1, firstName=Emma, lastName=Johnson, nationality=null, books=null), Author(id=2, firstName=John, lastName=Smith, nationality=null, books=null), Author(id=3, firstName=Miłosz, lastName=Smith, nationality=null, books=null)]
+2023-05-30 20:30:40,391 23673 [http-nio-8080-exec-7] INFO  p.o.N.book.BookRepository - Authors from findAll method: []
+2023-05-30 20:30:40,401 23683 [http-nio-8080-exec-7] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:32:06,232 109514 [http-nio-8080-exec-1] INFO  p.o.N.book.BookRepository - Authors from findAll method: []
+2023-05-30 20:32:06,233 109515 [http-nio-8080-exec-1] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:41:05,398 648680 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:41:05,400 648682 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 20:41:05,403 648685 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 20:41:10,790 876  [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 15884 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 20:41:10,792 878  [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 20:41:11,478 1564 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 20:41:11,553 1639 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67 ms. Found 6 JPA repository interfaces.
+2023-05-30 20:41:12,024 2110 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 20:41:12,033 2119 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:41:12,035 2121 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 20:41:12,035 2121 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 20:41:12,115 2201 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 20:41:12,115 2201 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1267 ms
+2023-05-30 20:41:12,139 2225 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 20:41:12,327 2413 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 20:41:12,328 2414 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 20:41:12,338 2424 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 20:41:12,449 2535 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 20:41:12,508 2594 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 20:41:12,793 2879 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 20:41:13,674 3760 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 20:41:13,682 3768 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:41:14,409 4495 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 20:41:14,710 4796 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:41:14,728 4814 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 20:41:14,735 4821 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 4.425 seconds (process running for 5.36)
+2023-05-30 20:41:19,662 9748 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30 20:41:19,662 9748 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-30 20:41:19,663 9749 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-05-30 20:41:24,135 14221 [http-nio-8080-exec-3] INFO  p.o.N.book.BookRepository - [HIBERNATE] Checking if user exist in database
+2023-05-30 20:41:24,179 14265 [http-nio-8080-exec-3] INFO  p.o.N.book.BookRepository - [HIBERNATE] Saving book to database from addBook method
+2023-05-30 20:41:24,191 14277 [http-nio-8080-exec-3] INFO  p.o.N.book.BookRepository - Book authors to save: [Author(id=1, firstName=Emma, lastName=Johnson, nationality=null, books=null), Author(id=2, firstName=John, lastName=Smith, nationality=null, books=null), Author(id=3, firstName=Miłosz, lastName=Smith, nationality=null, books=null)]
+2023-05-30 20:41:24,192 14278 [http-nio-8080-exec-3] INFO  p.o.N.book.BookRepository - [HIBERNATE] looking in database for book with id: 1
+2023-05-30 20:44:52,409 222495 [http-nio-8080-exec-6] INFO  p.o.N.book.BookRepository - [HIBERNATE] looking in database for all books existing in db
+2023-05-30 20:44:52,468 222554 [http-nio-8080-exec-6] INFO  p.o.N.book.BookRepository - Authors from findAll method: []
+2023-05-30 20:44:52,475 222561 [http-nio-8080-exec-6] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:44:52,476 222562 [http-nio-8080-exec-6] INFO  p.o.N.book.BookRepository - [HIBERNATE] looking in database for book with id: 1
+2023-05-30 20:46:11,634 301720 [http-nio-8080-exec-8] INFO  p.o.N.book.BookRepository - [HIBERNATE] Checking if user exist in database
+2023-05-30 20:46:11,636 301722 [http-nio-8080-exec-8] INFO  p.o.N.book.BookRepository - [HIBERNATE] Saving book to database from addBook method
+2023-05-30 20:46:11,641 301727 [http-nio-8080-exec-8] INFO  p.o.N.book.BookRepository - Book authors to save: [Author(id=4, firstName=Emma, lastName=Johnson, nationality=null, books=null), Author(id=5, firstName=John, lastName=Smith, nationality=null, books=null), Author(id=6, firstName=Miłosz, lastName=Smith, nationality=null, books=null)]
+2023-05-30 20:46:11,641 301727 [http-nio-8080-exec-8] INFO  p.o.N.book.BookRepository - [HIBERNATE] looking in database for book with id: 2
+2023-05-30 20:46:14,040 304126 [http-nio-8080-exec-10] INFO  p.o.N.book.BookRepository - [HIBERNATE] looking in database for all books existing in db
+2023-05-30 20:46:14,054 304140 [http-nio-8080-exec-10] INFO  p.o.N.book.BookRepository - Authors from findAll method: []
+2023-05-30 20:46:14,061 304147 [http-nio-8080-exec-10] INFO  p.o.N.book.BookRepository - Authors from findAll method: []
+2023-05-30 20:46:14,063 304149 [http-nio-8080-exec-10] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=1, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:46:14,063 304149 [http-nio-8080-exec-10] INFO  p.o.N.book.BookRepository - [HIBERNATE] looking in database for book with id: 1
+2023-05-30 20:46:14,064 304150 [http-nio-8080-exec-10] INFO  p.o.N.book.dto.BookDTOMapper - Book provide to map into BookDTO: Book(id=2, tittle=Ksiąka nowa, isbn=1234567890, numPages=200, language=polish, publisher=mickiewicz, publishedYear=null, bookGenre=FANTASY, authors=[], owner=User(id=1, login=john123, password=[p, a, s, s, w, o, r, d, 1, 2, 3], email=john@example.com, address=Address(id=1, cityName=Cityville, street=Main Street, numberHouse=123, zipCode=12345, district=null)))
+2023-05-30 20:46:14,064 304150 [http-nio-8080-exec-10] INFO  p.o.N.book.BookRepository - [HIBERNATE] looking in database for book with id: 2
+2023-05-30 20:49:11,611 481697 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:49:11,613 481699 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-05-30 20:49:11,615 481701 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-05-30 20:49:15,594 953  [main] INFO  p.o.N.NextDoorBookApplication - Starting NextDoorBookApplication using Java 17.0.5 with PID 14592 (E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook\target\classes started by Lenovo in E:\Szkoła Kodowania\Projekt końcowy\NextDoorBook)
+2023-05-30 20:49:15,597 956  [main] INFO  p.o.N.NextDoorBookApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-30 20:49:16,330 1689 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-30 20:49:16,401 1760 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 6 JPA repository interfaces.
+2023-05-30 20:49:16,845 2204 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-30 20:49:16,853 2212 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:49:16,855 2214 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-30 20:49:16,855 2214 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-30 20:49:16,939 2298 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-30 20:49:16,940 2299 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1277 ms
+2023-05-30 20:49:16,965 2324 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-05-30 20:49:17,152 2511 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-05-30 20:49:17,153 2512 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-05-30 20:49:17,163 2522 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-05-30 20:49:17,275 2634 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-30 20:49:17,326 2685 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-30 20:49:17,608 2967 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-30 20:49:18,482 3841 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-30 20:49:18,491 3850 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-30 20:49:19,225 4584 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-30 20:49:19,530 4889 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-30 20:49:19,549 4908 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30 20:49:19,557 4916 [main] INFO  p.o.N.NextDoorBookApplication - Started NextDoorBookApplication in 4.496 seconds (process running for 5.527)
