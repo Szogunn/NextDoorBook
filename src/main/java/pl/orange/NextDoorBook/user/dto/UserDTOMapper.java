@@ -9,16 +9,16 @@ import java.util.function.Function;
 
 @Service
 @RequiredArgsConstructor
-public class UserDTOMapper implements Function<User,UserDTO> {
+public class UserDTOMapper {
 
     private final AddressDTOMapper addressDTOMapper;
-    @Override
+
     public UserDTO apply(User user) {
         return UserDTO.builder()
                 .id(user.getId())
                 .login(user.getLogin())
                 .email(user.getEmail())
-                .addressDTO(addressDTOMapper.apply(user.getAddress()))
+                .address(addressDTOMapper.apply(user.getAddress()))
                 .build();
     }
 
@@ -27,7 +27,7 @@ public class UserDTOMapper implements Function<User,UserDTO> {
                 .id(userDTO.id())
                 .login(userDTO.login())
                 .email(userDTO.email())
-                .address(addressDTOMapper.apply(userDTO.addressDTO()))
+                .address(addressDTOMapper.apply(userDTO.address()))
                 .build();
     }
 }
