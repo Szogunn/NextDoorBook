@@ -28,4 +28,16 @@ public class UserDTOMapper {
                 .address(addressDTOMapper.apply(userDTO.address()))
                 .build();
     }
+
+    public User map(UserAddDTO userAddDTO){
+        return User.builder()
+                .id(userAddDTO.id())
+                .password(userAddDTO.password())
+                .login(userAddDTO.login())
+                .email(userAddDTO.email())
+                .address(addressDTOMapper.apply(userAddDTO.address()))
+                .build();
+    }
+
+
 }
