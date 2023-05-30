@@ -34,4 +34,13 @@ public interface IAuthorRepository extends JpaRepository<Author, Long> {
             (@Param("firstName") String firstName
                     , @Param("lastName") String lastName
                     , @Param("nationality") String nationality);
+
+
+    @Query(value = "SELECT * " +
+            "FROM AUTHORS " +
+            "WHERE ID NOT IN (SELECT AUTHOR_ID FROM BOOK_AUTHOR)", nativeQuery = true)
+    @Transactional
+    Set<Author> checkIfAuthorsAreInUse();
+
+    void deleteByIdIn(Set<Long> Id);
 }

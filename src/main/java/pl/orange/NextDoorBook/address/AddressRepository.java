@@ -4,6 +4,8 @@ package pl.orange.NextDoorBook.address;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 @RequiredArgsConstructor
 public class AddressRepository {
@@ -18,11 +20,14 @@ public class AddressRepository {
         addressRepository.deleteById(id);
     }
 
-    public void getAddressById(Long id) {
-        addressRepository.findById(id);
+    public Optional<Address> getAddressById(Long id) {
+        return addressRepository.findById(id);
+    }
+    public Address save(Address address){
+        return addressRepository.save(address);
     }
 
     public void updateAddress(Long id, String cityName, String street, int numberHouse, int zipCode, String district) {
-        addressRepository.updateAddress(id,cityName,street,numberHouse,zipCode,district);
+        addressRepository.updateAddress(id, cityName, street, numberHouse, zipCode, district);
     }
 }

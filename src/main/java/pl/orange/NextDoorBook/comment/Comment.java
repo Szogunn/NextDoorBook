@@ -25,9 +25,11 @@ public class Comment {
     @JoinColumn(name = "user_id")
     private User user;
 
+
     @Min(value = 1, message = "Rate should not be less than 1")
     @Max(value = 5, message = "Rate should not be greater than 5")
     private int rate;
+
 
 
 }
