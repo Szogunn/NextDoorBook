@@ -9,6 +9,7 @@ public class AddressDTOMapper implements Function<Address,AddressDTO> {
     @Override
     public AddressDTO apply(Address address) {
         return new AddressDTO(
+                address.getId(),
                 address.getCityName(),
                 address.getStreet(),
                 address.getNumberHouse(),
@@ -18,6 +19,7 @@ public class AddressDTOMapper implements Function<Address,AddressDTO> {
     }
     public Address apply(AddressDTO addressDTO) {
         return new Address(
+                addressDTO.id(),
                 addressDTO.cityName(),
                 addressDTO.street(),
                 addressDTO.numberHouse(),
