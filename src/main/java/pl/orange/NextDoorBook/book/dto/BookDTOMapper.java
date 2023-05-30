@@ -1,23 +1,26 @@
 package pl.orange.NextDoorBook.book.dto;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.orange.NextDoorBook.author.AuthorRepository;
+import pl.orange.NextDoorBook.author.dto.AuthorDTOMapper;
 import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.book.BookRepository;
 import pl.orange.NextDoorBook.book.exceptions.BookNotFoundException;
 
-import java.util.function.Function;
+import java.util.stream.Collectors;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
-public class BookDTOMapper implements Function<Book, BookDTO> {
+public class BookDTOMapper {
 
     private final BookRepository bookRepository;
+    private final AuthorDTOMapper authorDTOMapper;
 
 
-    @Override
-    public BookDTO apply(Book book) {
+    public BookDTO BookToBookDTOMap(Book book) {
+        log.info("Book provide to map into BookDTO: " + book);
         return new BookDTO(
                 book.getId(),
                 book.getTittle(),
@@ -27,14 +30,16 @@ public class BookDTOMapper implements Function<Book, BookDTO> {
                 book.getPublisher(),
                 book.getPublishedYear(),
                 book.getBookGenre(),
-                (bookRepository
-                        .getBookByID(book.getId())
+                bookRepository.getBookByID(book.getId())
                         .orElseThrow(() -> new BookNotFoundException(""))
-                        .getAuthors())
+                        .getAuthors()
+                        .stream()
+                        .map(authorDTOMapper::authorTOAuthorDTOMap)
+                        .collect(Collectors.toSet())
         );
     }
 
-    public Book apply(BookDTO book) {
+    public Book BookDTOToBookMap(BookDTO book) {
         return Book.builder()
                 .id(book.id())
                 .tittle(book.tittle())
@@ -44,11 +49,49 @@ public class BookDTOMapper implements Function<Book, BookDTO> {
                 .publisher(book.publisher())
                 .publishedYear(book.publishedYear())
                 .bookGenre(book.bookGenre())
-                .authors(book.authors())
+                .authors(book.authors()
+                        .stream()
+                        .map(authorDTOMapper::authorDTOToAuthorMap)
+                        .collect(Collectors.toSet()))
                 .owner(bookRepository
                         .getBookByID(book.id())
                         .orElseThrow(() -> new BookNotFoundException("Book not found with id: " + book.id()))
                         .getOwner())
+                .build();
+    }
+
+    public BookAddDTO BookToBookAddDTOMap(Book book) {
+        return new BookAddDTO(
+                book.getTittle(),
+                book.getIsbn(),
+                book.getNumPages(),
+                book.getLanguage(),
+                book.getPublisher(),
+                book.getPublishedYear(),
+                book.getBookGenre(),
+                bookRepository.getBookByID(book.getId())
+                        .orElseThrow(() -> new BookNotFoundException(""))
+                        .getAuthors()
+                        .stream()
+                        .map(authorDTOMapper::authorTOAuthorDTOMap)
+                        .collect(Collectors.toSet())
+        );
+    }
+
+    public Book BookAddDTOToBookMap(BookAddDTO book) {
+        return Book.builder()
+                .tittle(book.tittle())
+                .isbn(book.isbn())
+                .numPages(book.numPages())
+                .language(book.language())
+                .publisher(book.publisher())
+                .publishedYear(book.publishedYear())
+                .bookGenre(book.bookGenre())
+                .authors(book.authors()
+                        .stream()
+                        .map(authorDTOMapper::authorDTOToAuthorMap)
+                        .collect(Collectors.toSet()))
+                //TODO implement also .owner() method which provides a user from logged account
                 .build();
     }
 

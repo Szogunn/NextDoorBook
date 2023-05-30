@@ -1,13 +1,13 @@
 package pl.orange.NextDoorBook.book.dto;
 
+import pl.orange.NextDoorBook.author.Author;
 import pl.orange.NextDoorBook.author.dto.AuthorDTO;
 import pl.orange.NextDoorBook.book.BookGenre;
 
 import java.time.LocalDate;
 import java.util.Set;
 
-public record BookDTO(
-        Long id,
+public record BookAddDTO(
         String tittle,
         long isbn,
         int numPages,
