@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class RateGlobalHandleExceptions {
     @ResponseBody
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(RateIllegalArgumentException.class)
     String rateIllegalArgumentException(RateIllegalArgumentException exception){
         return exception.getMessage();
