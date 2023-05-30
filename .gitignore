@@ -32,3 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
+/NextDoorBook/logs/log4j/current.log
