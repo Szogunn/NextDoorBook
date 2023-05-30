@@ -1,13 +1,15 @@
 package pl.orange.NextDoorBook.author;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import pl.orange.NextDoorBook.book.Book;
-
-import java.util.HashSet;
-import java.util.Set;
+import lombok.NoArgsConstructor;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "AUTHORS")
 public class Author {
@@ -20,6 +22,4 @@ public class Author {
     private String lastName;
     private String nationality;
 
-    @ManyToMany(mappedBy = "authors", cascade = CascadeType.ALL)
-    private Set<Book> books = new HashSet<>();
 }
