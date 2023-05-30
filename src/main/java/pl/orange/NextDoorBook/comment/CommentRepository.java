@@ -26,12 +26,12 @@ public class CommentRepository {
         return iCommentRepository.findById(id);
     }
 
-    public Optional<Set<Comment>> getCommentsByBookID(Long id){
+    public Optional<Set<Comment>> getCommentsByBookID(Long id) {
         return iCommentRepository.findCommentsByBookId(id);
     }
 
-    public void updateComment(Long id, String message, boolean spoilerAlert, Book book, User user) {
-        iCommentRepository.updateComment(id, message, spoilerAlert, book, user);
+    public void updateComment(Long id, String message, boolean spoilerAlert, Book book, User user, int rate) {
+        iCommentRepository.updateComment(id, message, spoilerAlert, book, user, rate);
     }
 
 }
