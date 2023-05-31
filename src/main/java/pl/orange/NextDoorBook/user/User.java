@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 import pl.orange.NextDoorBook.address.Address;
 
 
@@ -15,6 +17,8 @@ import pl.orange.NextDoorBook.address.Address;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "USERS")
+@SQLDelete(sql = "UPDATE USERS SET deleted = true,email = null, password = null ,ADDRESS_ID = null WHERE id=?")
+@Where(clause = "deleted=false")
 public class User {
 
     @Id
@@ -23,8 +27,9 @@ public class User {
     private String login;
     private char[] password;
     private String email;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "ADDRESS_ID")
     private Address address;
+    private boolean deleted = Boolean.FALSE;
 
 }
