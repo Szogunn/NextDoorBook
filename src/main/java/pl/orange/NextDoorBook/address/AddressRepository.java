@@ -3,7 +3,7 @@ package pl.orange.NextDoorBook.address;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import pl.orange.NextDoorBook.address.DTO.UserAddressDTO;
+import pl.orange.NextDoorBook.address.DTO.AddressAddDTO;
 
 import java.util.Optional;
 
@@ -27,13 +27,13 @@ public class AddressRepository {
     public Address save(Address address){
         return addressRepository.save(address);
     }
-    public Optional<Address> findAddressByFieldsWithoutId(UserAddressDTO userAddressDTO){
+    public Optional<Address> findAddressByFieldsWithoutId(AddressAddDTO addressAddDTO){
         return addressRepository.findAddressByCityNameAndStreetAndNumberHouseAndZipCodeAndDistrict(
-                userAddressDTO.cityName(),
-                userAddressDTO.street(),
-                userAddressDTO.numberHouse(),
-                userAddressDTO.zipCode(),
-                userAddressDTO.district()
+                addressAddDTO.cityName(),
+                addressAddDTO.street(),
+                addressAddDTO.numberHouse(),
+                addressAddDTO.zipCode(),
+                addressAddDTO.district()
         );
     }
 
