@@ -13,8 +13,8 @@ import java.util.Optional;
 public class ExchangeRepository {
 private final IExchangeRepository iExchangeRepository;
 
-    public void addExchange(Exchange exchange){
-        iExchangeRepository.save(exchange);
+    public Exchange addExchange(Exchange exchange){
+       return iExchangeRepository.save(exchange);
     }
     public void deleteExchangeById(Long id){
         iExchangeRepository.deleteById(id);
@@ -24,5 +24,9 @@ private final IExchangeRepository iExchangeRepository;
     }
     public void updateExchange(Long id, LocalDate startRent, LocalDate endRent, User owner, User renter, Book book){
         iExchangeRepository.updateExchange(id,startRent,endRent,owner,renter,book);
+    }
+
+    public Exchange save(Exchange exchange) {
+        return iExchangeRepository.save(exchange);
     }
 }

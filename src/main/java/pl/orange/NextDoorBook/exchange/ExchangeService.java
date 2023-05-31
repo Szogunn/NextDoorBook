@@ -1,63 +1,52 @@
 package pl.orange.NextDoorBook.exchange;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import pl.orange.NextDoorBook.exchange.exception.ExchangeNotFoundException;
 
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class ExchangeService {
     private final ExchangeRepository exchangeRepository;
 
-    public ResponseEntity<?> addExchange(Exchange exchange){
-        if (exchange == null){
-            return ResponseEntity
-                    .status(404)
-                    .build();
+    public Exchange addExchange(Exchange exchange) {
+        if (exchange == null) {
+            throw new IllegalStateException("Can't save null exchange");
         }
-        exchangeRepository.addExchange(exchange);
-        return ResponseEntity
-                .status(200)
-                .build();
+        return exchangeRepository.addExchange(exchange);
+
     }
 
-    public ResponseEntity<?> deleteExchangeById(Long id){
-        if (exchangeRepository.getExchangeById(id).isEmpty()){
-            return ResponseEntity
-                    .status(404)
-                    .build();
+    public void deleteExchangeById(Long id) {
+        if (exchangeRepository.getExchangeById(id).isEmpty()) {
+            throw new ExchangeNotFoundException("Exchange with id " + id + " doesn't exist");
         }
         exchangeRepository.deleteExchangeById(id);
-        return ResponseEntity
-                .status(200)
-                .build();
+
     }
 
-    public ResponseEntity<?> getExchangeById(Long id){
-        Optional<Exchange> exchange = exchangeRepository.getExchangeById(id);
-        if (exchange.isEmpty()){
-            return ResponseEntity
-                    .status(404)
-                    .build();
+    public Exchange getExchangeById(Long id) {
+        return exchangeRepository.getExchangeById(id)
+                .orElseThrow(() ->
+                        new ExchangeNotFoundException("Exchange with id " + id + " doesn't exist"));
+    }
+
+    public Exchange updateExchange(Exchange exchange) {
+        if (exchangeRepository.getExchangeById(exchange.getId()).isEmpty()) {
+            throw new ExchangeNotFoundException("Exchange with id " + exchange.getId() + " doesn't exist");
         }
-        return ResponseEntity
-                .status(200)
-                .body(exchange);
+        Exchange exchangeToUpdate = exchangeRepository.getExchangeById(exchange.getId()).get();
+        exchangeToUpdate.setBook(exchange.getBook());
+        exchangeToUpdate.setOwner(exchange.getOwner());
+        exchangeToUpdate.setRenter(exchange.getRenter());
+        exchangeToUpdate.setStartRent(exchange.getStartRent());
+        exchangeToUpdate.setEndRent(exchange.getEndRent());
+        return exchangeRepository.save(exchangeToUpdate);
+
     }
-
-    public ResponseEntity<?> updateExchange(Long id, Exchange toUpdate){
-        if (exchangeRepository.getExchangeById(id).isEmpty()){
-            return ResponseEntity
-                    .status(404)
-                    .build();
-        }
-        exchangeRepository.updateExchange(id, toUpdate.getStartRent(),toUpdate.getEndRent(),toUpdate.getOwner(),toUpdate.getRenter(),toUpdate.getBook());
-        return ResponseEntity
-                .status(200)
-                .build();
-    }
-
-
 }
