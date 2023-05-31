@@ -27,7 +27,7 @@ public class AddressDTOMapper {
         );
     }
 
-    public AddressAddDTO mapUserAddressDTO(Address address) {
+    public AddressAddDTO mapAddressAddDTO(Address address) {
         return new AddressAddDTO(
                 address.getCityName(),
                 address.getStreet(),
@@ -36,7 +36,7 @@ public class AddressDTOMapper {
                 address.getDistrict()
         );
     }
-    public Address mapUserAddressDTO(AddressAddDTO addressAddDTO) {
+    public Address mapAddressAddDTO(AddressAddDTO addressAddDTO) {
         return new Address(
                 addressAddDTO.cityName(),
                 addressAddDTO.street(),
