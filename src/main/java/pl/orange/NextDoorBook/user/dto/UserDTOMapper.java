@@ -34,7 +34,7 @@ public class UserDTOMapper {
                 .password(userAddDTO.password())
                 .login(userAddDTO.login())
                 .email(userAddDTO.email())
-                .address(addressDTOMapper.mapUserAddressDTO(userAddDTO.address()))
+                .address(addressDTOMapper.mapAddressAddDTO(userAddDTO.address()))
                 .build();
     }
 
