@@ -16,7 +16,7 @@ public class UserDTOMapper {
                 .id(user.getId())
                 .login(user.getLogin())
                 .email(user.getEmail())
-                .address(addressDTOMapper.apply(user.getAddress()))
+                .address(addressDTOMapper.mapAddressDTO(user.getAddress()))
                 .build();
     }
 
@@ -25,17 +25,16 @@ public class UserDTOMapper {
                 .id(userDTO.id())
                 .login(userDTO.login())
                 .email(userDTO.email())
-                .address(addressDTOMapper.apply(userDTO.address()))
+                .address(addressDTOMapper.mapAddressDTO(userDTO.address()))
                 .build();
     }
 
     public User map(UserAddDTO userAddDTO){
         return User.builder()
-                .id(userAddDTO.id())
                 .password(userAddDTO.password())
                 .login(userAddDTO.login())
                 .email(userAddDTO.email())
-                .address(addressDTOMapper.apply(userAddDTO.address()))
+                .address(addressDTOMapper.mapUserAddressDTO(userAddDTO.address()))
                 .build();
     }
 
