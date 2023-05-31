@@ -8,7 +8,7 @@ import pl.orange.NextDoorBook.exchange.Exchange;
 
 public class ExchangeDTOMapper {
 
-    public ExchangeDTO apply(Exchange exchange) {
+    public ExchangeDTO mapToDTO(Exchange exchange) {
         return new ExchangeDTO(
                 exchange.getId(),
                 exchange.getStartRent(),
@@ -19,7 +19,7 @@ public class ExchangeDTOMapper {
         );
     }
 
-    public Exchange apply(ExchangeDTO exchangeDTO) {
+    public Exchange mapToEntity(ExchangeDTO exchangeDTO) {
         return new Exchange(
                 exchangeDTO.id(),
                 exchangeDTO.startRent(),
