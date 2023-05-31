@@ -1,6 +1,7 @@
 package pl.orange.NextDoorBook.exchange;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.user.User;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 
 @Entity
 @Data
+@AllArgsConstructor
 @Table(name = "EXCHANGES")
 public class Exchange {
 
