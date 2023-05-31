@@ -6,11 +6,12 @@ import org.springframework.stereotype.Service;
 import pl.orange.NextDoorBook.address.Address;
 import pl.orange.NextDoorBook.address.AddressRepository;
 import pl.orange.NextDoorBook.address.DTO.AddressDTOMapper;
-import pl.orange.NextDoorBook.address.exception.AddressNotFoundException;
+import pl.orange.NextDoorBook.user.dto.UserAddDTO;
 import pl.orange.NextDoorBook.user.dto.UserDTO;
 import pl.orange.NextDoorBook.user.dto.UserDTOMapper;
-import pl.orange.NextDoorBook.user.dto.UserAddDTO;
 import pl.orange.NextDoorBook.user.exceptions.UserNotFoundException;
+
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -25,15 +26,12 @@ public class UserService {
         if (userToRegister == null) {
             throw new IllegalStateException("Cant save null data user");
         }
-        if (userToRegister.address().id() == null) {
+        Optional<Address> addressToAdd = addressRepository.findAddressByFieldsWithoutId(userToRegister.address());
+        if (addressToAdd.isEmpty()) {
             return userDTOMapper.map(userRepository.save(userDTOMapper.map(userToRegister)));
         }
         User userToAdd = userDTOMapper.map(userToRegister);
-        userToAdd.setAddress(
-                addressRepository.getAddressById(userToRegister.address().id())
-                        .orElseThrow(() ->
-                                new AddressNotFoundException("Address with id " + userToRegister.address().id() + "does not exits."))
-        );
+        userToAdd.setAddress(addressToAdd.get());
 
         return userDTOMapper.map(userRepository.save(userToAdd));
     }
@@ -45,43 +43,47 @@ public class UserService {
                         new UserNotFoundException("User with id " + id + " does not exist"));
     }
 
-    public void deleteUserById(Long id) {
-        userRepository.getUserById(id)
-                .ifPresentOrElse(
-                        (user) -> {
-                            user.setPassword(null);
-                            user.setEmail(null);
-                            addressRepository.deleteAddressById(user.getAddress().getId());
-                            user.setAddress(null);
-                            userRepository.save(user);
-                        },
-                        () -> {
-                            throw new UserNotFoundException("User with id " + id + " does not exist");
-                        });
+    public UserDTO deleteUserById(Long id) {
+        return userRepository.getUserById(id)
+                .map((user) -> {
+                    deleteUnusedAddress(user.getAddress().getId());
+                    userRepository.deleteUserById(id);
+                    return userDTOMapper.map(user);
+                })
+                .orElseThrow(() ->
+                        new UserNotFoundException("User with id " + id + " does not exist"));
     }
 
-    public UserDTO updateUser(UserDTO userDTO) {
-        if (userRepository.getUserById(userDTO.id()).isEmpty()) {
-            throw new UserNotFoundException("User with id " + userDTO.id() + "does not exist");
+    public UserDTO updateUser(UserAddDTO userAddDTO, Long userId) {
+        if (userRepository.getUserById(userId).isEmpty()) {
+            throw new UserNotFoundException("User with id " + userId + "does not exist");
         }
-        User userToUpdate = userRepository.getUserById(userDTO.id()).get();
-        userToUpdate.setLogin(userDTO.login());
-        userToUpdate.setEmail(userDTO.email());
+        User userToUpdate = userRepository.getUserById(userId).get();
+        userToUpdate.setLogin(userAddDTO.login());
+        userToUpdate.setPassword(userToUpdate.getPassword());
+        userToUpdate.setEmail(userAddDTO.email());
 
-        deleteUnusedAddress(userDTO, userToUpdate);
+        Optional<Address> addressInDB = addressRepository.findAddressByFieldsWithoutId(userAddDTO.address());
+        if (addressInDB.isEmpty() || !userToUpdate.getAddress().getId().equals(addressInDB.get().getId())) {
+            deleteUnusedAddress(userToUpdate.getAddress().getId());
+        }
+        return addressInDB
+                .map(address -> {
+                    userToUpdate.setAddress(address);
+                    return userDTOMapper.map(userRepository.save(userToUpdate));
+                })
+                .orElseGet(() ->
+                {
+                    Address addressToAdd = addressRepository.addAddress(addressDTOMapper.mapAddressAddDTO(userAddDTO.address()));
+                    userToUpdate.setAddress(addressToAdd);
+                    return userDTOMapper.map(userRepository.save(userToUpdate));
+                });
 
-        Address addressToUpdate = addressDTOMapper.apply(userDTO.address());
-        addressRepository.addAddress(addressToUpdate);
-        userToUpdate.setAddress(addressToUpdate);
-
-        return userDTOMapper.map(userRepository.save(userToUpdate));
     }
 
-    private void deleteUnusedAddress(UserDTO userDTO, User userToUpdate) {
-        if (!userToUpdate.getAddress().getId().equals(userDTO.address().id())) {
-            if (userRepository.getUsersByAddressId(userToUpdate.getAddress().getId()).size() <= 1) {
-                addressRepository.deleteAddressById(userToUpdate.getAddress().getId());
-            }
+    private void deleteUnusedAddress(Long addressId) {
+        if (userRepository.getUsersByAddressId(addressId).size() <= 1) {
+            addressRepository.deleteAddressById(addressId);
         }
     }
 
