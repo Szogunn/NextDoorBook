@@ -16,10 +16,9 @@ public class ExchangeController {
 
     @PostMapping("/exchanges")
     public ResponseEntity<ExchangeDTO> addExchange(@RequestBody ExchangeDTO exchangeDTO){
-        exchangeService.addExchange(exchangeDTOMapper.mapToEntity(exchangeDTO));
         return ResponseEntity
                 .status(200)
-                .body(exchangeDTO);
+                .body(exchangeDTOMapper.mapToDTO(exchangeService.addExchange(exchangeDTOMapper.mapToEntity(exchangeDTO))) );
     }
 
     @DeleteMapping("/exchanges/{id}")
