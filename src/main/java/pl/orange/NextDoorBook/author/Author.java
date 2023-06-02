@@ -2,16 +2,15 @@ package pl.orange.NextDoorBook.author;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import pl.orange.NextDoorBook.book.Book;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(of = {"firstName","lastName","nationality"})
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
