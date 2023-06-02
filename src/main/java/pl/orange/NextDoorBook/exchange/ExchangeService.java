@@ -2,23 +2,22 @@ package pl.orange.NextDoorBook.exchange;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeDTO;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeDTOMapper;
 import pl.orange.NextDoorBook.exchange.exception.ExchangeNotFoundException;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 @Transactional
 public class ExchangeService {
     private final ExchangeRepository exchangeRepository;
+    private final ExchangeDTOMapper exchangeDTOMapper;
 
-    public Exchange addExchange(Exchange exchange) {
-        if (exchange == null) {
-            throw new IllegalStateException("Can't save null exchange");
-        }
-        return exchangeRepository.addExchange(exchange);
+    public ExchangeDTO addExchange(ExchangeDTO exchangeDTO) {
+        Exchange exchangeToAdd = exchangeDTOMapper.mapToEntity(exchangeDTO);
+
+        return exchangeDTOMapper.mapToDTO(exchangeRepository.addExchange(exchangeToAdd));
 
     }
 
@@ -30,23 +29,27 @@ public class ExchangeService {
 
     }
 
-    public Exchange getExchangeById(Long id) {
-        return exchangeRepository.getExchangeById(id)
+    public ExchangeDTO getExchangeById(Long id) {
+        return exchangeRepository
+                .getExchangeById(id)
+                .map(exchangeDTOMapper::mapToDTO)
                 .orElseThrow(() ->
                         new ExchangeNotFoundException("Exchange with id " + id + " doesn't exist"));
+
+
     }
 
-    public Exchange updateExchange(Exchange exchange) {
-        if (exchangeRepository.getExchangeById(exchange.getId()).isEmpty()) {
-            throw new ExchangeNotFoundException("Exchange with id " + exchange.getId() + " doesn't exist");
-        }
-        Exchange exchangeToUpdate = exchangeRepository.getExchangeById(exchange.getId()).get();
-        exchangeToUpdate.setBook(exchange.getBook());
-        exchangeToUpdate.setOwner(exchange.getOwner());
-        exchangeToUpdate.setRenter(exchange.getRenter());
-        exchangeToUpdate.setStartRent(exchange.getStartRent());
-        exchangeToUpdate.setEndRent(exchange.getEndRent());
-        return exchangeRepository.save(exchangeToUpdate);
+    public ExchangeDTO updateExchange(ExchangeDTO exchangeDTO) {
+
+        exchangeRepository
+                .getExchangeById(exchangeDTOMapper.mapToEntity(exchangeDTO).getId())
+                .orElseThrow(() ->
+                        new ExchangeNotFoundException("Exchange with id " + exchangeDTO.id() + " doesn't exist"));
+
+
+        Exchange exchange = exchangeRepository.updateExchange(exchangeDTOMapper.mapToEntity(exchangeDTO));
+
+        return exchangeDTOMapper.mapToDTO(exchange);
 
     }
 }
