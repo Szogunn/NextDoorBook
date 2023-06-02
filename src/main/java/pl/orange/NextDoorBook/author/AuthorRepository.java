@@ -12,8 +12,8 @@ public class AuthorRepository {
 
     private final IAuthorRepository iAuthorRepository;
 
-    public void addAuthor(Author author) {
-        iAuthorRepository.save(author);
+    public Author addAuthor(Author author) {
+       return iAuthorRepository.save(author);
     }
 
     public void deleteAuthorByID(Long id) {
