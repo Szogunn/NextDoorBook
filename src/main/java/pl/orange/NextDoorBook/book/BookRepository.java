@@ -32,6 +32,10 @@ public class BookRepository {
         return result;
     }
 
+    public Book saveBook(Book book){
+        return iBookRepository.save(book);
+    }
+
     public void deleteBookByID(Long id) {
         log.info("[HIBERNATE] deleting from database book with id: " +id);
         iBookRepository.deleteById(id);
