@@ -5,29 +5,40 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import pl.orange.NextDoorBook.author.dto.AuthorAddDTO;
+import pl.orange.NextDoorBook.author.dto.AuthorDTO;
+import pl.orange.NextDoorBook.book.dto.BookDTO;
 
 @Controller
 @RequiredArgsConstructor
 public class AuthorController {
     private final AuthorService authorService;
 
-    @PostMapping("/authors")
-    public ResponseEntity<?> addAuthor(@RequestBody Author author) {
-        return authorService.addAuthor(author);
+    @PostMapping("/books/{idBook}/authors")
+    public ResponseEntity<AuthorAddDTO> addAuthor(@PathVariable Long idBook, @RequestBody AuthorAddDTO authorAddDTO) {
+        return ResponseEntity
+                .status(200)
+                .body(authorService.addAuthor(idBook, authorAddDTO));
     }
 
-    @DeleteMapping("/authors/{id}")
-    public ResponseEntity<?> deleteAuthorByID(@PathVariable Long id) {
-        return authorService.deleteAuthorByID(id);
+    @DeleteMapping("/books/{bookId}/authors/{authorId}")
+    public ResponseEntity<BookDTO> deleteAuthorByID(@PathVariable Long bookId, @PathVariable Long authorId) {
+        return ResponseEntity
+                .status(200)
+                .body(authorService.deleteAuthorFromBook(bookId, authorId));
     }
 
     @GetMapping("/authors/{id}")
-    public ResponseEntity<Author> getAuthorByID(@PathVariable Long id) {
-        return authorService.getAuthorByID(id);
+    public ResponseEntity<AuthorDTO> getAuthorByID(@PathVariable Long id) {
+        return ResponseEntity
+                .status(200)
+                .body(authorService.getAuthorByID(id));
     }
 
     @PutMapping("/authors/{id}")
-    public ResponseEntity<?> updateAuthor(@PathVariable Long id, @RequestBody Author author) {
-        return authorService.updateAuthor(id, author);
+    public ResponseEntity<AuthorDTO> updateAuthor(@PathVariable Long id, @RequestBody AuthorDTO authorDTO) {
+        return ResponseEntity
+                .status(200)
+                .body(authorService.updateAuthor(id, authorDTO));
     }
 }

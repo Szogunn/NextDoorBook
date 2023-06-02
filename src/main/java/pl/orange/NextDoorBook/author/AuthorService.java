@@ -1,60 +1,82 @@
 package pl.orange.NextDoorBook.author;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
+import pl.orange.NextDoorBook.address.exception.AddressNotFoundException;
+import pl.orange.NextDoorBook.author.dto.AuthorAddDTO;
+import pl.orange.NextDoorBook.author.dto.AuthorDTO;
+import pl.orange.NextDoorBook.author.dto.AuthorDTOMapper;
+import pl.orange.NextDoorBook.book.BookRepository;
+import pl.orange.NextDoorBook.book.dto.BookDTO;
+import pl.orange.NextDoorBook.book.dto.BookDTOMapper;
+import pl.orange.NextDoorBook.book.exceptions.BookNotFoundException;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class AuthorService {
     private final AuthorRepository authorRepository;
+    private final BookRepository bookRepository;
+    private final AuthorDTOMapper authorDTOMapper;
+    private final BookDTOMapper bookDTOMapper;
 
-    public ResponseEntity<?> addAuthor(Author author) {
-        if (author == null) {
-            return ResponseEntity
-                    .status(404)
-                    .build();
+    public AuthorAddDTO addAuthor(Long bookId, AuthorAddDTO authorAddDTO) {
+        return authorDTOMapper.authorTOAuthorAddDTOMap(
+                bookRepository.getBookByID(bookId)
+                        .map((book) -> {
+                            if (authorAddDTO.id() != null) {
+                                return authorRepository.getAuthorByID(authorAddDTO.id())
+                                        .map(author -> {
+                                            book.addAuthor(author);
+                                            bookRepository.saveBook(book);
+                                            return author;
+                                        })
+                                        .orElseThrow(() ->
+                                                new BookNotFoundException(""));
+                            }
+                            Author authorToSave = authorDTOMapper.authorAddDTOToAuthorMap(authorAddDTO);
+                            book.addAuthor(authorToSave);
+                            return authorRepository.addAuthor(authorToSave);
+                        }).orElseThrow(() ->
+                                new BookNotFoundException("")));
+
+    }
+
+    public BookDTO deleteAuthorFromBook(Long bookId, Long authorId) {
+        BookDTO bookAfterDelete = bookDTOMapper.BookToBookDTOMap(
+                bookRepository.getBookByID(bookId)
+                        .map(book -> {
+                            book.removeAuthor(authorId);
+                            return bookRepository.saveBook(book);
+                        })
+                        .orElseThrow(() ->
+                                new BookNotFoundException("Book with id " + bookId + "does not exits.")));
+
+        for (Author unusedAuthor : authorRepository.checkIfAuthorsAreInUse()) {
+            authorRepository.deleteAuthorByID(unusedAuthor.getId());
         }
-        authorRepository.addAuthor(author);
-        return ResponseEntity
-                .status(201)
-                .build();
+        return bookAfterDelete;
     }
 
-    public ResponseEntity<?> deleteAuthorByID(Long id) {
-        Optional<Author> toDelete = authorRepository.getAuthorByID(id);
-        if (toDelete.isEmpty()) {
-            return ResponseEntity
-                    .status(404)
-                    .build();
-        }
-        authorRepository.deleteAuthorByID(toDelete.get().getId());
-        return ResponseEntity
-                .status(200)
-                .build();
+    public AuthorDTO getAuthorByID(Long authorId) {
+        return authorRepository.getAuthorByID(authorId)
+                .map(authorDTOMapper::authorTOAuthorDTOMap)
+                .orElseThrow(() ->
+                        new AddressNotFoundException("Author with id " + authorId + "does not exits."));
     }
 
-    public ResponseEntity<Author> getAuthorByID(Long id) {
-        return authorRepository.getAuthorByID(id).map(value -> ResponseEntity
-                        .status(200)
-                        .body(value))
-                .orElseGet(() -> ResponseEntity
-                        .status(404)
-                        .build());
+    public AuthorDTO updateAuthor(Long authorToUpdateId, AuthorDTO authorDTO) {
+        return authorRepository.getAuthorByID(authorToUpdateId)
+                .map(author -> {
+                    author.setFirstName(authorDTO.firstName());
+                    author.setLastName(authorDTO.lastName());
+                    author.setNationality(authorDTO.nationality());
+                    return authorDTOMapper.authorTOAuthorDTOMap(authorRepository.updateAuthor(author));
+                })
+                .orElseThrow(() ->
+                        new AddressNotFoundException("Author with id " + authorToUpdateId + "does not exits."));
+
     }
 
-    public ResponseEntity<?> updateAuthor(Long id, Author author) {
-        Optional<Author> toUpdate = authorRepository.getAuthorByID(id);
-        if (toUpdate.isEmpty()) {
-            return ResponseEntity
-                    .status(404)
-                    .build();
-        }
-        authorRepository.updateAuthor(id, author.getFirstName(), author.getLastName(), author.getNationality());
-        return ResponseEntity
-                .status(200)
-                .build();
-    }
 }
