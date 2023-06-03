@@ -30,4 +30,6 @@ public class Exchange {
     @ManyToOne
     @JoinColumn(name = "BOOK_ID")
     private Book book;
+    private boolean confirmExchange;
+    private boolean confirmReturn;
 }

@@ -1,7 +1,9 @@
 package pl.orange.NextDoorBook.exchange.dto;
 
 import pl.orange.NextDoorBook.book.Book;
+import pl.orange.NextDoorBook.book.dto.BookDTO;
 import pl.orange.NextDoorBook.user.User;
+import pl.orange.NextDoorBook.user.dto.UserDTO;
 
 import java.time.LocalDate;
 
@@ -9,8 +11,10 @@ public record ExchangeDTO(
         Long id,
         LocalDate startRent,
         LocalDate endRent,
-        User owner,
-        User renter,
-        Book book
+        UserDTO owner,
+        UserDTO renter,
+        BookDTO book,
+        boolean confirmExchange,
+        boolean confirmReturn
 ) {
 }

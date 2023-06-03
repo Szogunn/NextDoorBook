@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeAddDTO;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTO;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeReservationDTO;
 
 
 @Controller
@@ -22,6 +23,13 @@ public class ExchangeController {
         return ResponseEntity
                 .status(200)
                 .body(exchangeService.addExchange(exchangeAddDTO));
+    }
+
+    @PostMapping(path = "/reservation")
+    public ResponseEntity<ExchangeDTO> addBookReservation(@RequestBody ExchangeReservationDTO exchangeReservationDTO) {
+        return ResponseEntity
+                .status(200)
+                .body(exchangeService.addBookReservation(exchangeReservationDTO));
     }
 
     @DeleteMapping(path = "{id}")
