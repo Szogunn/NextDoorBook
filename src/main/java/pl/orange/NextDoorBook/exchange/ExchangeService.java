@@ -1,63 +1,56 @@
 package pl.orange.NextDoorBook.exchange;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeAddDTO;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeDTO;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeDTOMapper;
+import pl.orange.NextDoorBook.exchange.exception.ExchangeNotFoundException;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class ExchangeService {
     private final ExchangeRepository exchangeRepository;
+    private final ExchangeDTOMapper exchangeDTOMapper;
 
-    public ResponseEntity<?> addExchange(Exchange exchange){
-        if (exchange == null){
-            return ResponseEntity
-                    .status(404)
-                    .build();
-        }
-        exchangeRepository.addExchange(exchange);
-        return ResponseEntity
-                .status(200)
-                .build();
+    public ExchangeAddDTO addExchange(ExchangeAddDTO exchangeAddDTO) {
+        Exchange exchangeToAdd = exchangeDTOMapper.mapToAddEntity(exchangeAddDTO);
+
+        return exchangeDTOMapper.mapToAddDTO(exchangeRepository.addExchange(exchangeToAdd));
+
     }
 
-    public ResponseEntity<?> deleteExchangeById(Long id){
-        if (exchangeRepository.getExchangeById(id).isEmpty()){
-            return ResponseEntity
-                    .status(404)
-                    .build();
+    public void deleteExchangeById(Long id) {
+        if (exchangeRepository.getExchangeById(id).isEmpty()) {
+            throw new ExchangeNotFoundException("Exchange with id " + id + " doesn't exist");
         }
         exchangeRepository.deleteExchangeById(id);
-        return ResponseEntity
-                .status(200)
-                .build();
+
     }
 
-    public ResponseEntity<?> getExchangeById(Long id){
-        Optional<Exchange> exchange = exchangeRepository.getExchangeById(id);
-        if (exchange.isEmpty()){
-            return ResponseEntity
-                    .status(404)
-                    .build();
-        }
-        return ResponseEntity
-                .status(200)
-                .body(exchange);
+    public ExchangeDTO getExchangeById(Long id) {
+        return exchangeRepository
+                .getExchangeById(id)
+                .map(exchangeDTOMapper::mapToDTO)
+                .orElseThrow(() ->
+                        new ExchangeNotFoundException("Exchange with id " + id + " doesn't exist"));
+
+
     }
 
-    public ResponseEntity<?> updateExchange(Long id, Exchange toUpdate){
-        if (exchangeRepository.getExchangeById(id).isEmpty()){
-            return ResponseEntity
-                    .status(404)
-                    .build();
-        }
-        exchangeRepository.updateExchange(id, toUpdate.getStartRent(),toUpdate.getEndRent(),toUpdate.getOwner(),toUpdate.getRenter(),toUpdate.getBook());
-        return ResponseEntity
-                .status(200)
-                .build();
+    public ExchangeDTO updateExchange(ExchangeDTO exchangeDTO) {
+
+        exchangeRepository
+                .getExchangeById(exchangeDTOMapper.mapToEntity(exchangeDTO).getId())
+                .orElseThrow(() ->
+                        new ExchangeNotFoundException("Exchange with id " + exchangeDTO.id() + " doesn't exist"));
+
+
+        Exchange exchange = exchangeRepository.updateExchange(exchangeDTOMapper.mapToEntity(exchangeDTO));
+
+        return exchangeDTOMapper.mapToDTO(exchange);
+
     }
-
-
 }

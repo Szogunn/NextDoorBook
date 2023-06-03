@@ -1,32 +1,48 @@
 package pl.orange.NextDoorBook.exchange;
 
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeAddDTO;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeDTO;
+
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping(path = "/api/exchanges")
+
 public class ExchangeController {
     private final ExchangeService exchangeService;
 
-    @PostMapping("/exchanges")
-    public ResponseEntity<?> addExchange(Exchange exchange){
-        return exchangeService.addExchange(exchange);
+
+    @PostMapping(path = "")
+    public ResponseEntity<ExchangeAddDTO> addExchange(@RequestBody ExchangeAddDTO exchangeAddDTO) {
+        return ResponseEntity
+                .status(200)
+                .body(exchangeService.addExchange(exchangeAddDTO));
     }
 
-    @DeleteMapping("/exchanges/{id}")
-    public ResponseEntity<?> deleteExchangeById(@PathVariable Long id){
-        return exchangeService.deleteExchangeById(id);
+    @DeleteMapping(path = "{id}")
+    public ResponseEntity<ExchangeDTO> deleteExchangeById(@PathVariable Long id) {
+        exchangeService.deleteExchangeById(id);
+        return ResponseEntity
+                .status(200)
+                .build();
     }
 
-    @GetMapping("/exchanges/{id}")
-    public ResponseEntity<?> getExchangeById(@PathVariable Long id){
-        return exchangeService.getExchangeById(id);
+    @GetMapping(path = "{id}")
+    public ResponseEntity<ExchangeDTO> getExchangeById(@PathVariable Long id) {
+        return ResponseEntity
+                .status(200)
+                .body(exchangeService.getExchangeById(id));
     }
 
-    @PutMapping("/echanges/{id}")
-    public ResponseEntity<?> updateExchange(@PathVariable Long id,@RequestBody Exchange toUpdate){
-        return exchangeService.updateExchange(id,toUpdate);
+    @PatchMapping(path = "")
+    public ResponseEntity<ExchangeDTO> updateExchange(@RequestBody ExchangeDTO exchangeDTO) {
+        return ResponseEntity
+                .status(200)
+                .body(exchangeService.updateExchange(exchangeDTO));
     }
 }
