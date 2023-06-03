@@ -11,7 +11,14 @@ public class ExchangeGlobalExceptionHandler {
     @ResponseBody
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(ExchangeNotFoundException.class)
-    String exchangeNotFoundException(ExchangeNotFoundException exception){
+    String exchangeNotFoundException(ExchangeNotFoundException exception) {
+        return exception.getMessage();
+    }
+
+    @ResponseBody
+    @ResponseStatus(HttpStatus.CONFLICT)
+    @ExceptionHandler(ExchangeOwnerException.class)
+    String exchangeOwnerException(ExchangeOwnerException exception) {
         return exception.getMessage();
     }
 }

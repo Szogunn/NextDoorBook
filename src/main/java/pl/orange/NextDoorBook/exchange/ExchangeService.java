@@ -11,9 +11,12 @@ import pl.orange.NextDoorBook.exchange.dto.ExchangeDTO;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTOMapper;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeReservationDTO;
 import pl.orange.NextDoorBook.exchange.exception.ExchangeNotFoundException;
+import pl.orange.NextDoorBook.exchange.exception.ExchangeOwnerException;
 import pl.orange.NextDoorBook.user.User;
 import pl.orange.NextDoorBook.user.UserRepository;
 import pl.orange.NextDoorBook.user.exceptions.UserNotFoundException;
+
+import java.time.LocalDate;
 
 @Service
 @RequiredArgsConstructor
@@ -34,13 +37,26 @@ public class ExchangeService {
     public ExchangeDTO addBookReservation(ExchangeReservationDTO exchangeReservationDTO) {
         Book bookToExchange = bookRepository.getBookByID(exchangeReservationDTO.bookId())
                 .orElseThrow(() ->
-                        new BookNotFoundException("Book with id " + exchangeReservationDTO.bookId() + "does not exist"));
+                        new BookNotFoundException("Book with id " + exchangeReservationDTO.bookId() + " does not exist"));
         User renter = userRepository.getUserById(exchangeReservationDTO.renterId())
                 .orElseThrow(() ->
                         new UserNotFoundException("User with id " + exchangeReservationDTO.renterId() + " does not exist"));
 
         Exchange reservationToSave = createReservation(bookToExchange, renter);
         return exchangeDTOMapper.mapToDTO(exchangeRepository.saveExchange(reservationToSave));
+    }
+
+    public ExchangeDTO confirmBookExchange(Long exchangeId, Long ownerId){
+        return exchangeRepository.getExchangeById(exchangeId)
+                .map(exchange -> {
+                    if(exchange.getOwner().getId() != ownerId){
+                        throw new ExchangeOwnerException("User with id " + ownerId + " is not this book owner");
+                    }
+                    exchange.setConfirmExchange(true);
+                    exchange.setStartRent(LocalDate.now());
+                    return exchangeDTOMapper.mapToDTO(exchangeRepository.saveExchange(exchange));
+                }).orElseThrow(() ->
+                        new ExchangeNotFoundException("Exchange with id " + exchangeId + " does not exist"));
     }
 
     private Exchange createReservation(Book bookToExchange, User renter) {
