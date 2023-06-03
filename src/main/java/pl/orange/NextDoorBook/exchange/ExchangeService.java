@@ -3,15 +3,24 @@ package pl.orange.NextDoorBook.exchange;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import pl.orange.NextDoorBook.book.Book;
+import pl.orange.NextDoorBook.book.BookRepository;
+import pl.orange.NextDoorBook.book.exceptions.BookNotFoundException;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeAddDTO;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTO;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTOMapper;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeReservationDTO;
 import pl.orange.NextDoorBook.exchange.exception.ExchangeNotFoundException;
+import pl.orange.NextDoorBook.user.User;
+import pl.orange.NextDoorBook.user.UserRepository;
+import pl.orange.NextDoorBook.user.exceptions.UserNotFoundException;
 
 @Service
 @RequiredArgsConstructor
 @Transactional
 public class ExchangeService {
+    private final UserRepository userRepository;
+    private final BookRepository bookRepository;
     private final ExchangeRepository exchangeRepository;
     private final ExchangeDTOMapper exchangeDTOMapper;
 
@@ -20,6 +29,31 @@ public class ExchangeService {
 
         return exchangeDTOMapper.mapToAddDTO(exchangeRepository.addExchange(exchangeToAdd));
 
+    }
+
+    public ExchangeDTO addBookReservation(ExchangeReservationDTO exchangeReservationDTO) {
+        Book bookToExchange = bookRepository.getBookByID(exchangeReservationDTO.bookId())
+                .orElseThrow(() ->
+                        new BookNotFoundException("Book with id " + exchangeReservationDTO.bookId() + "does not exist"));
+        User renter = userRepository.getUserById(exchangeReservationDTO.renterId())
+                .orElseThrow(() ->
+                        new UserNotFoundException("User with id " + exchangeReservationDTO.renterId() + " does not exist"));
+
+        Exchange reservationToSave = createReservation(bookToExchange, renter);
+        return exchangeDTOMapper.mapToDTO(exchangeRepository.saveExchange(reservationToSave));
+    }
+
+    private Exchange createReservation(Book bookToExchange, User renter) {
+        return new Exchange(
+                null,
+                null,
+                null,
+                bookToExchange.getOwner(),
+                renter,
+                bookToExchange,
+                false,
+                false
+        );
     }
 
     public void deleteExchangeById(Long id) {

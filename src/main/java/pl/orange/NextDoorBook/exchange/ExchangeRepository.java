@@ -26,4 +26,8 @@ public class ExchangeRepository {
         return iExchangeRepository.save(exchange);
     }
 
+    public Exchange saveExchange(Exchange exchange){
+        return iExchangeRepository.save(exchange);
+    }
+
 }
