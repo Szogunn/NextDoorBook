@@ -4,29 +4,40 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import pl.orange.NextDoorBook.comment.dto.CommentAddDTO;
+import pl.orange.NextDoorBook.comment.dto.CommentDTO;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping(path = "/api/comments")
 public class CommentController {
     private final CommentService commentService;
 
-    @PostMapping("/comments")
-    public ResponseEntity<?> addComment(@RequestBody Comment comment){
-        return commentService.addComment(comment);
+    @PostMapping(path = "")
+    public ResponseEntity<CommentAddDTO> addComment(@RequestBody CommentAddDTO commentAddDTO) {
+        return ResponseEntity
+                .status(200)
+                .body(commentService.addComment(commentAddDTO));
     }
 
-    @DeleteMapping("/comments/{id}")
-    public ResponseEntity<?> deleteCommentByID(@PathVariable Long id){
-        return commentService.deleteCommentByID(id);
+    @DeleteMapping("{id}")
+    public ResponseEntity<?> deleteCommentByID(@PathVariable Long id) {
+        commentService.deleteCommentByID(id);
+        return ResponseEntity
+                .status(200)
+                .build();
     }
 
-    @GetMapping("/comments/{id}")
-    public ResponseEntity<Comment> getCommentByID(@PathVariable Long id){
-        return commentService.getCommentByID(id);
+    @GetMapping("{id}")
+    public ResponseEntity<CommentDTO> getCommentByID(@PathVariable Long id) {
+
+        return ResponseEntity
+                .status(200)
+                .body(commentService.getCommentByID(id));
     }
 
-    @PutMapping("/comments/{id}")
-    public ResponseEntity<?> updateComment(@PathVariable Long id,@RequestBody Comment comment){
-        return commentService.updateComment(id,comment);
+    @PutMapping("{id}")
+    public ResponseEntity<?> updateComment(@PathVariable Long id, @RequestBody Comment comment) {
+        return commentService.updateComment(id, comment);
     }
 }
