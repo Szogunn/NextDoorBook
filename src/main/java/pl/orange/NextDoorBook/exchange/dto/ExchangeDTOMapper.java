@@ -1,21 +1,28 @@
 package pl.orange.NextDoorBook.exchange.dto;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import pl.orange.NextDoorBook.book.dto.BookDTOMapper;
 import pl.orange.NextDoorBook.exchange.Exchange;
+import pl.orange.NextDoorBook.user.dto.UserDTOMapper;
 
 
 @Service
-
+@RequiredArgsConstructor
 public class ExchangeDTOMapper {
+    private final UserDTOMapper userDTOMapper;
+    private final BookDTOMapper bookDTOMapper;
 
     public ExchangeDTO mapToDTO(Exchange exchange) {
         return new ExchangeDTO(
                 exchange.getId(),
                 exchange.getStartRent(),
                 exchange.getEndRent(),
-                exchange.getOwner(),
-                exchange.getRenter(),
-                exchange.getBook()
+                userDTOMapper.map(exchange.getOwner()),
+                userDTOMapper.map(exchange.getRenter()),
+                bookDTOMapper.BookToBookDTOMap(exchange.getBook()),
+                exchange.isConfirmExchange(),
+                exchange.isConfirmReturn()
         );
     }
 
@@ -24,18 +31,20 @@ public class ExchangeDTOMapper {
                 exchangeDTO.id(),
                 exchangeDTO.startRent(),
                 exchangeDTO.endRent(),
-                exchangeDTO.owner(),
-                exchangeDTO.renter(),
-                exchangeDTO.book()
+                userDTOMapper.map(exchangeDTO.owner()),
+                userDTOMapper.map(exchangeDTO.renter()),
+                bookDTOMapper.BookDTOToBookMap(exchangeDTO.book()),
+                exchangeDTO.confirmExchange(),
+                exchangeDTO.confirmReturn()
         );
     }
     public ExchangeAddDTO mapToAddDTO(Exchange exchange){
         return new ExchangeAddDTO(
                 exchange.getStartRent(),
                 exchange.getEndRent(),
-                exchange.getOwner(),
-                exchange.getRenter(),
-                exchange.getBook()
+                userDTOMapper.map(exchange.getOwner()),
+                userDTOMapper.map(exchange.getRenter()),
+                bookDTOMapper.BookToBookDTOMap(exchange.getBook())
         );
     }
     public Exchange mapToAddEntity(ExchangeAddDTO exchangeAddDTO){
@@ -43,11 +52,11 @@ public class ExchangeDTOMapper {
                 null,
                 exchangeAddDTO.startRent(),
                 exchangeAddDTO.endRent(),
-                exchangeAddDTO.owner(),
-                exchangeAddDTO.renter(),
-                exchangeAddDTO.book()
+                userDTOMapper.map(exchangeAddDTO.owner()),
+                userDTOMapper.map(exchangeAddDTO.renter()),
+                bookDTOMapper.BookDTOToBookMap(exchangeAddDTO.book()),
+                false,
+                false
         );
-
-
     }
 }
