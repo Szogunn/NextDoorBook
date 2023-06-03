@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeAddDTO;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTO;
 
 
@@ -17,10 +18,10 @@ public class ExchangeController {
 
 
     @PostMapping(path = "")
-    public ResponseEntity<ExchangeDTO> addExchange(@RequestBody ExchangeDTO exchangeDTO) {
+    public ResponseEntity<ExchangeAddDTO> addExchange(@RequestBody ExchangeAddDTO exchangeAddDTO) {
         return ResponseEntity
                 .status(200)
-                .body(exchangeService.addExchange(exchangeDTO));
+                .body(exchangeService.addExchange(exchangeAddDTO));
     }
 
     @DeleteMapping(path = "{id}")
