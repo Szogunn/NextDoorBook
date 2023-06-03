@@ -32,6 +32,13 @@ public class ExchangeController {
                 .body(exchangeService.addBookReservation(exchangeReservationDTO));
     }
 
+    @PostMapping(path = "/confirm/{exchangeId}/{ownerId}")
+    public ResponseEntity<ExchangeDTO> confirmBookExchange(@PathVariable Long exchangeId, @PathVariable Long ownerId){
+        return ResponseEntity
+                .status(200)
+                .body(exchangeService.confirmBookExchange(exchangeId,ownerId));
+    }
+
     @DeleteMapping(path = "{id}")
     public ResponseEntity<ExchangeDTO> deleteExchangeById(@PathVariable Long id) {
         exchangeService.deleteExchangeById(id);
