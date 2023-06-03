@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Optional;
+
 public interface IAddressRepository extends JpaRepository<Address, Long> {
 
     @Query(value = "UPDATE Address SET cityName = :cityName, street =:street,numberHouse=:numberHouse,zipCode=:zipCode,district=:district WHERE id =:id")
@@ -18,5 +20,9 @@ public interface IAddressRepository extends JpaRepository<Address, Long> {
                        @Param("zipCode") int zipCode,
                        @Param("district") String district);
 
-
+    Optional<Address> findAddressByCityNameAndStreetAndNumberHouseAndZipCodeAndDistrict(String cityName,
+                                                                                        String street,
+                                                                                        int numberHouse,
+                                                                                        int zipCode,
+                                                                                        String district);
 }

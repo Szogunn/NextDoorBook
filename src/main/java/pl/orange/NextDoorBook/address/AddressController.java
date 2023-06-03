@@ -11,36 +11,34 @@ import pl.orange.NextDoorBook.address.DTO.AddressDTOMapper;
 @RequiredArgsConstructor
 public class AddressController {
     private final AddressService addressService;
-    private final AddressDTOMapper addressDTOMapper;
+
 
     @GetMapping("/addresses/{id}")
     public ResponseEntity<AddressDTO> getAddressById(@PathVariable Long id) {
         return ResponseEntity
                 .status(200)
-                .body(addressDTOMapper.apply(addressService.getAddressById(id)));
+                .body(addressService.getAddressById(id));
     }
 
     @PostMapping("/addresses")
     public ResponseEntity<AddressDTO> addAddress(@RequestBody AddressDTO addressDTO) {
-        addressService.addAddress(addressDTOMapper.apply(addressDTO));
         return ResponseEntity
                 .status(200)
-                .body(addressDTO);
+                .body(addressService.addAddress(addressDTO));
     }
 
     @DeleteMapping("/addresses/{id}")
     public ResponseEntity<AddressDTO> deleteAddressById(@PathVariable Long id){
-        addressService.deleteAddressById(id);
         return ResponseEntity
                 .status(200)
-                .build();
+                .body(addressService.deleteAddressById(id));
     }
 
     @PutMapping("/addresses")
     public ResponseEntity<AddressDTO> updateAddress(@RequestBody AddressDTO addressDTO){
         return ResponseEntity
                 .status(200)
-                .body(addressDTOMapper.apply(addressService.updateAddress(addressDTOMapper.apply(addressDTO))));
+                .body(addressService.updateAddress(addressDTO));
     }
 
 

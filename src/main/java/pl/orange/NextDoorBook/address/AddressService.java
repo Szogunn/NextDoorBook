@@ -12,41 +12,42 @@ import pl.orange.NextDoorBook.address.exception.AddressNotFoundException;
 @RequiredArgsConstructor
 public class AddressService {
     private final AddressRepository addressRepository;
+    private final AddressDTOMapper addressDTOMapper;
 
-    public void addAddress(Address address) {
-        if (address == null) {
+    public AddressDTO addAddress(AddressDTO addressDTO) {
+        if (addressDTO == null) {
             throw new IllegalStateException("Cant save null data address");
         }
-        addressRepository.addAddress(address);
+        return addressDTOMapper.mapAddressDTO(
+                addressRepository.addAddress(
+                        addressDTOMapper.mapAddressDTO(addressDTO)));
     }
 
-    public void deleteAddressById(Long id) {
-        addressRepository.getAddressById(id)
-                .ifPresentOrElse(
-                        (address) -> addressRepository.deleteAddressById(id),
-                        () -> {
-                            throw new AddressNotFoundException("Address with id " + id + " does not exist");
-                        });
-    }
-
-    public Address getAddressById(Long id) {
+    public AddressDTO deleteAddressById(Long id) {
         return addressRepository.getAddressById(id)
+                .map(addressDTOMapper::mapAddressDTO)
                 .orElseThrow(() ->
                         new AddressNotFoundException("Address with id " + id + " does not exist"));
     }
 
-    public Address updateAddress(Address address) {
-        if (addressRepository.getAddressById(address.getId()).isEmpty()) {
-            throw new AddressNotFoundException("Address with id " + address.getId() + " does not exist");
-        }
-        Address addressToUpdate = addressRepository.getAddressById(address.getId()).get();
-        addressToUpdate.setCityName(address.getCityName());
-        addressToUpdate.setStreet(address.getStreet());
-        addressToUpdate.setZipCode(address.getZipCode());
-        addressToUpdate.setNumberHouse(address.getNumberHouse());
-        addressToUpdate.setDistrict(address.getDistrict());
+    public AddressDTO getAddressById(Long id) {
+        return addressRepository.getAddressById(id)
+                .map(addressDTOMapper::mapAddressDTO)
+                .orElseThrow(() ->
+                        new AddressNotFoundException("Address with id " + id + " does not exist"));
+    }
 
-        return addressRepository.save(addressToUpdate);
+    public AddressDTO updateAddress(AddressDTO addressDTO) {
+        if (addressRepository.getAddressById(addressDTO.id()).isEmpty()) {
+            throw new AddressNotFoundException("Address with id " + addressDTO.id() + " does not exist");
+        }
+        Address addressToUpdate = addressRepository.getAddressById(addressDTO.id()).get();
+        addressToUpdate.setCityName(addressDTO.cityName());
+        addressToUpdate.setStreet(addressDTO.street());
+        addressToUpdate.setZipCode(addressDTO.zipCode());
+        addressToUpdate.setNumberHouse(addressDTO.numberHouse());
+        addressToUpdate.setDistrict(addressDTO.district());
+        return addressDTOMapper.mapAddressDTO(addressRepository.save(addressToUpdate));
     }
 
 }

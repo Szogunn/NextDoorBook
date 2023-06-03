@@ -1,22 +1,17 @@
 package pl.orange.NextDoorBook.book;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
+import lombok.*;
 import pl.orange.NextDoorBook.author.Author;
-import pl.orange.NextDoorBook.comment.Comment;
 import pl.orange.NextDoorBook.user.User;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(of = {"tittle", "isbn", "numPages", "language", "publisher", "publishedYear", "bookGenre"})
 @Entity
 @Builder
 @NoArgsConstructor
@@ -40,6 +35,7 @@ public class Book {
     BookGenre bookGenre;
 
 
+    @Setter(AccessLevel.NONE)
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(
             name = "book_author",
@@ -48,8 +44,26 @@ public class Book {
     )
     private Set<Author> authors = new HashSet<>();
 
+
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "OWNER_ID")
     private User owner;
 
+
+    public void addAuthor(Author author) {
+        this.authors.add(author);
+        author.getBooks().add(this);
+    }
+
+    public void removeAuthor(Long authorId) {
+        Author author = this.authors
+                .stream()
+                .filter(a -> a.getId() == authorId)
+                .findFirst()
+                .orElse(null);
+        if (author != null) {
+            this.authors.remove(author);
+            author.getBooks().remove(this);
+        }
+    }
 }

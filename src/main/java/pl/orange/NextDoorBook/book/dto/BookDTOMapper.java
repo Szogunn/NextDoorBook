@@ -73,7 +73,7 @@ public class BookDTOMapper {
                         .orElseThrow(() -> new BookNotFoundException(""))
                         .getAuthors()
                         .stream()
-                        .map(authorDTOMapper::authorTOAuthorDTOMap)
+                        .map(authorDTOMapper::authorTOAuthorAddDTOMap)
                         .collect(Collectors.toSet())
         );
     }
@@ -89,7 +89,7 @@ public class BookDTOMapper {
                 .bookGenre(book.bookGenre())
                 .authors(book.authors()
                         .stream()
-                        .map(authorDTOMapper::authorDTOToAuthorMap)
+                        .map(authorDTOMapper::authorAddDTOToAuthorMap)
                         .collect(Collectors.toSet()))
                 //TODO implement also .owner() method which provides a user from logged account
                 .build();

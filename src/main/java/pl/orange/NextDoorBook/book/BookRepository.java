@@ -1,26 +1,28 @@
 package pl.orange.NextDoorBook.book;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import pl.orange.NextDoorBook.user.User;
-import pl.orange.NextDoorBook.user.UserRepostiory;
+import pl.orange.NextDoorBook.user.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Slf4j
 @Repository
+@Transactional
 @RequiredArgsConstructor
 public class BookRepository {
 
     private final IBookRepository iBookRepository;
-    private final UserRepostiory userRepostiory;
+    private final UserRepository userRepository;
 
 
     public Book addBook(Book book, Long id) {
         log.info("[HIBERNATE] Checking if user exist in database");
-        User userById = userRepostiory.getUserById(id)
+        User userById = userRepository.getUserById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user ID: " + id));
         book.setOwner(userById);
 
@@ -28,6 +30,10 @@ public class BookRepository {
         Book result = iBookRepository.save(book);
         log.info("Book authors to save: " + book.getAuthors());
         return result;
+    }
+
+    public Book saveBook(Book book){
+        return iBookRepository.save(book);
     }
 
     public void deleteBookByID(Long id) {

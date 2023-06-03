@@ -1,7 +1,6 @@
 package pl.orange.NextDoorBook.book.dto;
 
-import pl.orange.NextDoorBook.author.Author;
-import pl.orange.NextDoorBook.author.dto.AuthorDTO;
+import pl.orange.NextDoorBook.author.dto.AuthorAddDTO;
 import pl.orange.NextDoorBook.book.BookGenre;
 
 import java.time.LocalDate;
@@ -15,6 +14,6 @@ public record BookAddDTO(
         String publisher,
         LocalDate publishedYear,
         BookGenre bookGenre,
-        Set<AuthorDTO> authors
-){
+        Set<AuthorAddDTO> authors
+) {
 }

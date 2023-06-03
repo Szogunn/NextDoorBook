@@ -12,8 +12,8 @@ public class AuthorRepository {
 
     private final IAuthorRepository iAuthorRepository;
 
-    public void addAuthor(Author author) {
-        iAuthorRepository.save(author);
+    public Author addAuthor(Author author) {
+        return iAuthorRepository.save(author);
     }
 
     public void deleteAuthorByID(Long id) {
@@ -28,19 +28,19 @@ public class AuthorRepository {
         return iAuthorRepository
                 .findByFirstNameAndLastNameAndNationality
                         (author.getFirstName()
-                        , author.getLastName()
-                        , author.getNationality());
+                                , author.getLastName()
+                                , author.getNationality());
     }
 
-    public void updateAuthor(Long id, String firstName, String lastName, String nationality) {
-        iAuthorRepository.updateAuthor(id, firstName, lastName, nationality);
+    public Author updateAuthor(Author authorToUpdate) {
+        return iAuthorRepository.save(authorToUpdate);
     }
 
-    public Set<Author> checkIfAuthorsAreInUse(){
+    public Set<Author> checkIfAuthorsAreInUse() {
         return iAuthorRepository.checkIfAuthorsAreInUse();
     }
 
-    public void deleteAuthorsByIDList(Set<Long> Id){
+    public void deleteAuthorsByIDList(Set<Long> Id) {
         iAuthorRepository.deleteByIdIn(Id);
     }
 
