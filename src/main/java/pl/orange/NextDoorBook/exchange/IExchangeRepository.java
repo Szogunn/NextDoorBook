@@ -10,6 +10,7 @@ import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.user.User;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 
 public interface IExchangeRepository extends JpaRepository<Exchange, Long> {
@@ -23,4 +24,6 @@ public interface IExchangeRepository extends JpaRepository<Exchange, Long> {
                         @Param("owner") User owner,
                         @Param("renter") User renter,
                         @Param("book") Book book);
+
+    Optional<Exchange> findExchangeByBookIdAndConfirmExchangeTrueAndConfirmReturnFalse(Long BookId);
 }

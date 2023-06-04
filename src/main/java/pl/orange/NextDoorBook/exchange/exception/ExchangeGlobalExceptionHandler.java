@@ -21,4 +21,11 @@ public class ExchangeGlobalExceptionHandler {
     String exchangeOwnerException(ExchangeOwnerException exception) {
         return exception.getMessage();
     }
+
+    @ResponseBody
+    @ResponseStatus(HttpStatus.CONFLICT)
+    @ExceptionHandler(ExchangeImpossibleException.class)
+    String exchangeOImpossibleException(ExchangeImpossibleException exception) {
+        return exception.getMessage();
+    }
 }
