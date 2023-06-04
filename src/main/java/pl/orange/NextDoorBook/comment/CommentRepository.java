@@ -14,8 +14,8 @@ public class CommentRepository {
 
     private final ICommentRepository iCommentRepository;
 
-    public void addComment(Comment comment) {
-        iCommentRepository.save(comment);
+    public Comment addComment(Comment comment) {
+        return iCommentRepository.save(comment);
     }
 
     public void deleteCommentByID(Long id) {
