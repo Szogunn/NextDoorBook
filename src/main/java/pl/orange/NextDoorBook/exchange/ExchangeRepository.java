@@ -30,4 +30,8 @@ public class ExchangeRepository {
         return iExchangeRepository.save(exchange);
     }
 
+    public boolean checkBookAvailability(Long bookId){
+        return iExchangeRepository.findExchangeByBookIdAndConfirmExchangeTrueAndConfirmReturnFalse(bookId).isPresent();
+    }
+
 }
