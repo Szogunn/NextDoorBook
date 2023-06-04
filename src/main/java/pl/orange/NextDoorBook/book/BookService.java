@@ -71,6 +71,9 @@ public class BookService {
                 .map(bookDTOMapper::BookToBookDTOMap)
                 .collect(Collectors.toList());
     }
+    public List<Book>getBooksByAuthorsLastName(String lastName){
+        return bookRepository.getBooksByAuthorsLastName(lastName);
+    }
 
     public List<BookDTO> getAllBooks() {
 

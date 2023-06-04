@@ -37,6 +37,12 @@ public class BookController {
                 .status(200)
                 .body(bookService.getBooksByGenre(bookGenre));
     }
+    @GetMapping(path = "/authors/{lastName}")
+    public ResponseEntity<List<Book>> getBooksByAuthorLastName(@PathVariable String lastName){
+        return ResponseEntity
+                .status(200)
+                .body(bookService.getBooksByAuthorsLastName(lastName));
+    }
     @GetMapping(path = "")
     public ResponseEntity<List<BookDTO>> getAllBooks() {
         return ResponseEntity

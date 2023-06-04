@@ -4,6 +4,8 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
+import pl.orange.NextDoorBook.author.Author;
+import pl.orange.NextDoorBook.book.dto.BookDTO;
 import pl.orange.NextDoorBook.user.User;
 import pl.orange.NextDoorBook.user.UserRepository;
 
@@ -70,4 +72,7 @@ public class BookRepository {
     }
 
 
+    public List<Book> getBooksByAuthorsLastName(String lastName) {
+        return iBookRepository.findBooksByAuthorsLastName(lastName);
+    }
 }
