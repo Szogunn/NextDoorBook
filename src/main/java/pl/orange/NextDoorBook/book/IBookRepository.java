@@ -15,5 +15,8 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
     @Query("SELECT b FROM Book b JOIN b.authors a WHERE lower(a.lastName) = lower(:lastName) ")
     List<Book> findBooksByAuthorsLastName(String lastName);
 
+    @Query("SELECT b FROM Book b JOIN b.authors a WHERE lower(a.nationality) = lower(:nationality) ")
+    List<Book> findBooksByAuthorsNationality(String nationality);
+
 
 }

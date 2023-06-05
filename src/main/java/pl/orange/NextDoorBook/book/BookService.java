@@ -74,6 +74,9 @@ public class BookService {
     public List<Book>getBooksByAuthorsLastName(String lastName){
         return bookRepository.getBooksByAuthorsLastName(lastName);
     }
+    public List<Book>getBooksByAuthorsNationality(String lastName){
+        return bookRepository.getBooksByAuthorsNationality(lastName);
+    }
 
     public List<BookDTO> getAllBooks() {
 

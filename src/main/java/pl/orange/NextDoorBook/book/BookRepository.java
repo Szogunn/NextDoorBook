@@ -75,4 +75,7 @@ public class BookRepository {
     public List<Book> getBooksByAuthorsLastName(String lastName) {
         return iBookRepository.findBooksByAuthorsLastName(lastName);
     }
+    public List<Book> getBooksByAuthorsNationality(String nationality) {
+        return iBookRepository.findBooksByAuthorsNationality(nationality);
+    }
 }

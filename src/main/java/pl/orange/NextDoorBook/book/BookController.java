@@ -37,12 +37,19 @@ public class BookController {
                 .status(200)
                 .body(bookService.getBooksByGenre(bookGenre));
     }
-    @GetMapping(path = "/authors/{lastName}")
+    @GetMapping(path = "/authors/lastName/{lastName}")
     public ResponseEntity<List<Book>> getBooksByAuthorLastName(@PathVariable String lastName){
         return ResponseEntity
                 .status(200)
                 .body(bookService.getBooksByAuthorsLastName(lastName));
     }
+    @GetMapping(path = "/authors/nationality/{nationality}")
+    public ResponseEntity<List<Book>> getBooksByAuthorNationality(@PathVariable String nationality){
+        return ResponseEntity
+                .status(200)
+                .body(bookService.getBooksByAuthorsNationality(nationality));
+    }
+
     @GetMapping(path = "")
     public ResponseEntity<List<BookDTO>> getAllBooks() {
         return ResponseEntity
