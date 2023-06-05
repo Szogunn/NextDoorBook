@@ -10,6 +10,8 @@ import pl.orange.NextDoorBook.user.UserRepository;
 import pl.orange.NextDoorBook.user.dto.UserDTOMapper;
 import pl.orange.NextDoorBook.user.exceptions.UserNotFoundException;
 
+import java.time.LocalDateTime;
+
 @Service
 @RequiredArgsConstructor
 public class CommentDTOMapper {
@@ -22,6 +24,7 @@ public class CommentDTOMapper {
                 comment.getId(),
                 comment.getMessage(),
                 comment.isSpoilerAlert(),
+                comment.getAddTime(),
                 bookDTOMapper.BookToBookDTOMap(comment.getBook()),
                 userDTOMapper.map(comment.getUser()),
                 comment.getRate()
@@ -33,6 +36,7 @@ public class CommentDTOMapper {
                 commentDTO.id(),
                 commentDTO.message(),
                 commentDTO.spoilerAlert(),
+                commentDTO.addTime(),
                 bookDTOMapper.BookDTOToBookMap(commentDTO.book()),
                 userDTOMapper.map(commentDTO.user()),
                 commentDTO.rate()
@@ -55,8 +59,13 @@ public class CommentDTOMapper {
                 null,
                 commentAddDTO.message(),
                 commentAddDTO.spoilerAlert(),
-                bookRepository.getBookByID(commentAddDTO.bookId()).orElseThrow(()-> new BookNotFoundException("B")),
-                userRepository.getUserById(commentAddDTO.userId()).orElseThrow(()-> new UserNotFoundException("A")),
+                LocalDateTime.now(),
+                bookRepository.getBookByID(commentAddDTO.bookId())
+                        .orElseThrow(()->
+                                new BookNotFoundException("Book with id " + commentAddDTO.bookId() + " does not exist")),
+                userRepository.getUserById(commentAddDTO.userId())
+                        .orElseThrow(()->
+                                new UserNotFoundException("User with id " + commentAddDTO.userId() + " does not exist")),
                 commentAddDTO.rate()
         );
     }
