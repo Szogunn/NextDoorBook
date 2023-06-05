@@ -106,6 +106,12 @@ public class BookService {
                         new BookNotFoundException("Book with isbn " + isbn + " doesn't exist."));
 
     }
+    public BookAddDTO getBookByTitle(String title){
+        return bookRepository.getBookByTitle(title)
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .orElseThrow(() ->
+                        new BookNotFoundException("Book with title " + title + " doesn't exist."));
+    }
 
     public List<BookDTO> getAllBooks() {
 

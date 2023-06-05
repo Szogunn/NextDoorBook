@@ -23,7 +23,7 @@ public class BookDTOMapper {
         log.info("Book provide to map into BookDTO: " + book);
         return new BookDTO(
                 book.getId(),
-                book.getTittle(),
+                book.getTitle(),
                 book.getIsbn(),
                 book.getNumPages(),
                 book.getLanguage(),
@@ -42,7 +42,7 @@ public class BookDTOMapper {
     public Book BookDTOToBookMap(BookDTO book) {
         return Book.builder()
                 .id(book.id())
-                .tittle(book.tittle())
+                .title(book.tittle())
                 .isbn(book.isbn())
                 .numPages(book.numPages())
                 .language(book.language())
@@ -62,7 +62,7 @@ public class BookDTOMapper {
 
     public BookAddDTO BookToBookAddDTOMap(Book book) {
         return new BookAddDTO(
-                book.getTittle(),
+                book.getTitle(),
                 book.getIsbn(),
                 book.getNumPages(),
                 book.getLanguage(),
@@ -80,7 +80,7 @@ public class BookDTOMapper {
 
     public Book BookAddDTOToBookMap(BookAddDTO book) {
         return Book.builder()
-                .tittle(book.tittle())
+                .title(book.title())
                 .isbn(book.isbn())
                 .numPages(book.numPages())
                 .language(book.language())

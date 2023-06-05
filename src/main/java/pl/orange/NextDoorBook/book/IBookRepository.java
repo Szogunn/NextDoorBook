@@ -20,5 +20,7 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
 
     Book findBookByIsbn(Long id);
 
+    Book findBookByTitle(String title);
+
 
 }

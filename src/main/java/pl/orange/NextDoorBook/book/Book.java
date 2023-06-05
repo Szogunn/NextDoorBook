@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-@EqualsAndHashCode(of = {"tittle", "isbn", "numPages", "language", "publisher", "publishedYear", "bookGenre"})
+@EqualsAndHashCode(of = {"title", "isbn", "numPages", "language", "publisher", "publishedYear", "bookGenre"})
 @Entity
 @Builder
 @NoArgsConstructor
@@ -23,7 +23,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String tittle;
+    private String title;
     private long isbn;
     private int numPages;
     private String language;

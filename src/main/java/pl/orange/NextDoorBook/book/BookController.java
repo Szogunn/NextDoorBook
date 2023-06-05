@@ -58,6 +58,12 @@ public class BookController {
                 .status(200)
                 .body(bookService.getBookByISBN(isbn));
     }
+    @GetMapping(path="/title/{title}")
+    public ResponseEntity<BookAddDTO> getBookByTitle(@PathVariable String title) {
+        return ResponseEntity
+                .status(200)
+                .body(bookService.getBookByTitle(title));
+    }
 
     @GetMapping(path = "")
     public ResponseEntity<List<BookDTO>> getAllBooks() {

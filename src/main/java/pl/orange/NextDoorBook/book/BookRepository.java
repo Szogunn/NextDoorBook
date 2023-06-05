@@ -4,8 +4,6 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
-import pl.orange.NextDoorBook.author.Author;
-import pl.orange.NextDoorBook.book.dto.BookDTO;
 import pl.orange.NextDoorBook.user.User;
 import pl.orange.NextDoorBook.user.UserRepository;
 
@@ -80,5 +78,8 @@ public class BookRepository {
     }
     public Optional<Book> getBookByISBN(Long isbn){
         return Optional.ofNullable(iBookRepository.findBookByIsbn(isbn));
+    }
+    public Optional<Book> getBookByTitle(String title){
+        return Optional.ofNullable(iBookRepository.findBookByTitle(title));
     }
 }
