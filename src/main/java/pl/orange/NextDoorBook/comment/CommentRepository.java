@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.user.User;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Set;
 
@@ -15,6 +16,7 @@ public class CommentRepository {
     private final ICommentRepository iCommentRepository;
 
     public Comment addComment(Comment comment) {
+        comment.setAddTime(LocalDateTime.now());
         return iCommentRepository.save(comment);
     }
 
@@ -26,12 +28,15 @@ public class CommentRepository {
         return iCommentRepository.findById(id);
     }
 
-    public Optional<Set<Comment>> getCommentsByBookID(Long id) {
+    public Set<Comment> getCommentsByBookID(Long id) {
         return iCommentRepository.findCommentsByBookId(id);
     }
 
     public void updateComment(Long id, String message, boolean spoilerAlert, Book book, User user, int rate) {
-        iCommentRepository.updateComment(id, message, spoilerAlert, book, user, rate);
+        iCommentRepository.updateComment(id, message, spoilerAlert, LocalDateTime.now(), book, user, rate);
+    }
+    public Double averageBookRate(Book book){
+        return iCommentRepository.averageBookRate(book);
     }
 
 }
