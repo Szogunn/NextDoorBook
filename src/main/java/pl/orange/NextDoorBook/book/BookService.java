@@ -65,23 +65,35 @@ public class BookService {
     }
 
     public List<BookAddDTO> getBooksByGenre(BookGenre bookGenre) {
-        return bookRepository
-                .getBooksByGenre(bookGenre)
-                .stream()
+
+        List<Book> books = bookRepository.getBooksByGenre(bookGenre);
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("Books from category " + bookGenre + " doesn't exist.");
+        }
+        return books.stream()
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .collect(Collectors.toList());
     }
 
     public List<BookAddDTO> getBooksByAuthorsLastName(String lastName) {
-        return bookRepository.getBooksByAuthorsLastName(lastName)
-                .stream()
+        List<Book> books = bookRepository.getBooksByAuthorsLastName(lastName);
+
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("Books with the author's  " + lastName + " doesn't exist.");
+        }
+        return books.stream()
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .collect(Collectors.toList());
     }
 
-    public List<BookAddDTO> getBooksByAuthorsNationality(String lastName) {
-        return bookRepository.getBooksByAuthorsNationality(lastName)
-                .stream()
+    public List<BookAddDTO> getBooksByAuthorsNationality(String nationality) {
+        List<Book> books = bookRepository.getBooksByAuthorsNationality(nationality);
+
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("Books with an author from  " + nationality + " doesn't exist.");
+        }
+
+        return books.stream()
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .collect(Collectors.toList());
     }
@@ -91,7 +103,7 @@ public class BookService {
         return bookRepository.getBookByISBN(isbn)
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .orElseThrow(() ->
-                        new BookNotFoundException("Book with isbn "+isbn+" doesn't exist."));
+                        new BookNotFoundException("Book with isbn " + isbn + " doesn't exist."));
 
     }
 
