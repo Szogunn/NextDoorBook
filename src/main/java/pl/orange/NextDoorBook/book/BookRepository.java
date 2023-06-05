@@ -32,12 +32,12 @@ public class BookRepository {
         return result;
     }
 
-    public Book saveBook(Book book){
+    public Book saveBook(Book book) {
         return iBookRepository.save(book);
     }
 
     public void deleteBookByID(Long id) {
-        log.info("[HIBERNATE] deleting from database book with id: " +id);
+        log.info("[HIBERNATE] deleting from database book with id: " + id);
         iBookRepository.deleteById(id);
     }
 
@@ -59,7 +59,7 @@ public class BookRepository {
 
 
     public Book updateBook(Book book) {
-        log.info("[HIBERNATE] saving book: " + book  + " into database");
+        log.info("[HIBERNATE] saving book: " + book + " into database");
         return iBookRepository.save(book);
     }
 
@@ -73,17 +73,24 @@ public class BookRepository {
     public List<Book> getBooksByAuthorsLastName(String lastName) {
         return iBookRepository.findBooksByAuthorsLastName(lastName);
     }
+
     public List<Book> getBooksByAuthorsNationality(String nationality) {
         return iBookRepository.findBooksByAuthorsNationality(nationality);
     }
-    public Optional<Book> getBookByISBN(Long isbn){
+
+    public Optional<Book> getBookByISBN(Long isbn) {
         return Optional.ofNullable(iBookRepository.findBookByIsbn(isbn));
     }
-    public Optional<Book> getBookByTitle(String title){
+
+    public Optional<Book> getBookByTitle(String title) {
         return Optional.ofNullable(iBookRepository.findBookByTitleIgnoreCase(title));
     }
 
-    public List<Book> getBooksByLanguage(String language){
+    public List<Book> getBooksByLanguage(String language) {
         return iBookRepository.findBooksByLanguageIgnoreCase(language);
+    }
+
+    public List<Book> getBooksByPublisher(String publisher) {
+        return iBookRepository.findBooksByPublisherIgnoreCase(publisher);
     }
 }

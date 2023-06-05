@@ -72,7 +72,12 @@ public class BookController {
                 .status(200)
                 .body(bookService.getBooksByLanguage(language));
     }
-
+    @GetMapping(path = "/publisher/{publisher}")
+    public ResponseEntity<List<BookAddDTO>> getBooksByPublisher(@PathVariable String publisher) {
+        return ResponseEntity
+                .status(200)
+                .body(bookService.getBooksByPublisher(publisher));
+    }
     @GetMapping(path = "")
     public ResponseEntity<List<BookDTO>> getAllBooks() {
         return ResponseEntity

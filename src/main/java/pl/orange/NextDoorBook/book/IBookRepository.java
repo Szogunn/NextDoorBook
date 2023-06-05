@@ -22,6 +22,7 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
     Book findBookByTitleIgnoreCase(String title);
 
     List<Book> findBooksByLanguageIgnoreCase(String language);
+    List<Book> findBooksByPublisherIgnoreCase(String publisher);
 
 
 }

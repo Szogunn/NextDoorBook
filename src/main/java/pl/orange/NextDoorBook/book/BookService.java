@@ -123,6 +123,18 @@ public class BookService {
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .collect(Collectors.toList());
     }
+    public List<BookAddDTO>getBooksByPublisher(String publisher){
+        List<Book> books = bookRepository.getBooksByPublisher(publisher);
+
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("There is no book from " + publisher);
+        }
+
+        return books.stream()
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .collect(Collectors.toList());
+    }
+
 
     public List<BookDTO> getAllBooks() {
 
