@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IBookRepository extends JpaRepository<Book, Long> {
 
@@ -17,9 +18,9 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
     @Query("SELECT b FROM Book b JOIN b.authors a WHERE lower(a.nationality) = lower(:nationality) ")
     List<Book> findBooksByAuthorsNationality(String nationality);
 
-    Book findBookByIsbn(Long id);
+    Optional<Book> findBookByIsbn(Long id);
 
-    Book findBookByTitleIgnoreCase(String title);
+    Optional<Book> findBookByTitleIgnoreCase(String title);
 
     List<Book> findBooksByLanguageIgnoreCase(String language);
     List<Book> findBooksByPublisherIgnoreCase(String publisher);

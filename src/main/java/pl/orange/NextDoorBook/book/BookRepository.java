@@ -79,11 +79,11 @@ public class BookRepository {
     }
 
     public Optional<Book> getBookByISBN(Long isbn) {
-        return Optional.ofNullable(iBookRepository.findBookByIsbn(isbn));
+        return iBookRepository.findBookByIsbn(isbn);
     }
 
     public Optional<Book> getBookByTitle(String title) {
-        return Optional.ofNullable(iBookRepository.findBookByTitleIgnoreCase(title));
+        return iBookRepository.findBookByTitleIgnoreCase(title);
     }
 
     public List<Book> getBooksByLanguage(String language) {
