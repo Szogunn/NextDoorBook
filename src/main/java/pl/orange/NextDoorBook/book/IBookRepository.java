@@ -2,7 +2,6 @@ package pl.orange.NextDoorBook.book;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import pl.orange.NextDoorBook.author.Author;
 
 import java.util.List;
 
@@ -20,7 +19,9 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
 
     Book findBookByIsbn(Long id);
 
-    Book findBookByTitle(String title);
+    Book findBookByTitleIgnoreCase(String title);
+
+    List<Book> findBooksByLanguageIgnoreCase(String language);
 
 
 }

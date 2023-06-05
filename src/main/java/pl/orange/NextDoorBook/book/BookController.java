@@ -58,11 +58,19 @@ public class BookController {
                 .status(200)
                 .body(bookService.getBookByISBN(isbn));
     }
-    @GetMapping(path="/title/{title}")
+
+    @GetMapping(path = "/title/{title}")
     public ResponseEntity<BookAddDTO> getBookByTitle(@PathVariable String title) {
         return ResponseEntity
                 .status(200)
                 .body(bookService.getBookByTitle(title));
+    }
+
+    @GetMapping(path = "/language/{language}")
+    public ResponseEntity<List<BookAddDTO>> getBooksByLanguage(@PathVariable String language) {
+        return ResponseEntity
+                .status(200)
+                .body(bookService.getBooksByLanguage(language));
     }
 
     @GetMapping(path = "")

@@ -112,6 +112,17 @@ public class BookService {
                 .orElseThrow(() ->
                         new BookNotFoundException("Book with title " + title + " doesn't exist."));
     }
+    public List<BookAddDTO> getBooksByLanguage(String language){
+        List<Book> books = bookRepository.getBooksByLanguage(language);
+
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("There is no book in " + language);
+        }
+
+        return books.stream()
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .collect(Collectors.toList());
+    }
 
     public List<BookDTO> getAllBooks() {
 

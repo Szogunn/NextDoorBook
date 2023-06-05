@@ -80,6 +80,10 @@ public class BookRepository {
         return Optional.ofNullable(iBookRepository.findBookByIsbn(isbn));
     }
     public Optional<Book> getBookByTitle(String title){
-        return Optional.ofNullable(iBookRepository.findBookByTitle(title));
+        return Optional.ofNullable(iBookRepository.findBookByTitleIgnoreCase(title));
+    }
+
+    public List<Book> getBooksByLanguage(String language){
+        return iBookRepository.findBooksByLanguageIgnoreCase(language);
     }
 }
