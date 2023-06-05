@@ -38,8 +38,8 @@ public class BookService {
         Book bookToAdd = bookDTOMapper.BookAddDTOToBookMap(bookAddDTO);
         Book addedBook = bookRepository.addBook(bookToAdd, userId);
 
-        for (AuthorAddDTO authorToAdd: authorsToAdd) {
-            if (authorToAdd.id() != null){
+        for (AuthorAddDTO authorToAdd : authorsToAdd) {
+            if (authorToAdd.id() != null) {
                 authorRepository.getAuthorByID(authorToAdd.id())
                         .map(author -> {
                             addedBook.addAuthor(author);
@@ -47,7 +47,7 @@ public class BookService {
                         })
                         .orElseThrow(() ->
                                 new AddressNotFoundException("Author with id " + authorToAdd.id() + " does not exist"));
-            }else {
+            } else {
                 addedBook.addAuthor(authorDTOMapper.authorAddDTOToAuthorMap(authorToAdd));
             }
         }
@@ -64,18 +64,35 @@ public class BookService {
         bookRepository.deleteBookByID(id);
     }
 
-    public List<BookDTO> getBooksByGenre(BookGenre bookGenre) {
+    public List<BookAddDTO> getBooksByGenre(BookGenre bookGenre) {
         return bookRepository
                 .getBooksByGenre(bookGenre)
                 .stream()
-                .map(bookDTOMapper::BookToBookDTOMap)
+                .map(bookDTOMapper::BookToBookAddDTOMap)
                 .collect(Collectors.toList());
     }
-    public List<Book>getBooksByAuthorsLastName(String lastName){
-        return bookRepository.getBooksByAuthorsLastName(lastName);
+
+    public List<BookAddDTO> getBooksByAuthorsLastName(String lastName) {
+        return bookRepository.getBooksByAuthorsLastName(lastName)
+                .stream()
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .collect(Collectors.toList());
     }
-    public List<Book>getBooksByAuthorsNationality(String lastName){
-        return bookRepository.getBooksByAuthorsNationality(lastName);
+
+    public List<BookAddDTO> getBooksByAuthorsNationality(String lastName) {
+        return bookRepository.getBooksByAuthorsNationality(lastName)
+                .stream()
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .collect(Collectors.toList());
+    }
+
+    public BookAddDTO getBookByISBN(Long isbn) {
+
+        return bookRepository.getBookByISBN(isbn)
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .orElseThrow(() ->
+                        new BookNotFoundException("Book with isbn "+isbn+" doesn't exist."));
+
     }
 
     public List<BookDTO> getAllBooks() {

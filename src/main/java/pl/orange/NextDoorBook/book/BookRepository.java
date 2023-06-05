@@ -78,4 +78,7 @@ public class BookRepository {
     public List<Book> getBooksByAuthorsNationality(String nationality) {
         return iBookRepository.findBooksByAuthorsNationality(nationality);
     }
+    public Optional<Book> getBookByISBN(Long isbn){
+        return Optional.ofNullable(iBookRepository.findBookByIsbn(isbn));
+    }
 }

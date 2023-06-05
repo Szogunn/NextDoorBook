@@ -20,7 +20,7 @@ public class BookController {
     public ResponseEntity<BookAddDTO> addBook(@RequestBody BookAddDTO requestBook, @PathVariable Long id) {
         return ResponseEntity
                 .status(200)
-                .body(bookService.addBook(requestBook,id));
+                .body(bookService.addBook(requestBook, id));
     }
 
     @DeleteMapping(path = "/{id}")
@@ -32,22 +32,31 @@ public class BookController {
     }
 
     @GetMapping(path = "/{bookGenre}")
-    public ResponseEntity<List<BookDTO>> getBooksByGenre(@PathVariable BookGenre bookGenre) {
+    public ResponseEntity<List<BookAddDTO>> getBooksByGenre(@PathVariable BookGenre bookGenre) {
         return ResponseEntity
                 .status(200)
                 .body(bookService.getBooksByGenre(bookGenre));
     }
+
     @GetMapping(path = "/authors/lastName/{lastName}")
-    public ResponseEntity<List<Book>> getBooksByAuthorLastName(@PathVariable String lastName){
+    public ResponseEntity<List<BookAddDTO>> getBooksByAuthorLastName(@PathVariable String lastName) {
         return ResponseEntity
                 .status(200)
                 .body(bookService.getBooksByAuthorsLastName(lastName));
     }
+
     @GetMapping(path = "/authors/nationality/{nationality}")
-    public ResponseEntity<List<Book>> getBooksByAuthorNationality(@PathVariable String nationality){
+    public ResponseEntity<List<BookAddDTO>> getBooksByAuthorNationality(@PathVariable String nationality) {
         return ResponseEntity
                 .status(200)
                 .body(bookService.getBooksByAuthorsNationality(nationality));
+    }
+
+    @GetMapping(path = "/isbn/{isbn}")
+    public ResponseEntity<BookAddDTO> getBookByAuthorISBN(@PathVariable Long isbn) {
+        return ResponseEntity
+                .status(200)
+                .body(bookService.getBookByISBN(isbn));
     }
 
     @GetMapping(path = "")
