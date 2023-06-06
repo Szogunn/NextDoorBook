@@ -3,6 +3,7 @@ package pl.orange.NextDoorBook.book;
 import jakarta.persistence.*;
 import lombok.*;
 import pl.orange.NextDoorBook.author.Author;
+import pl.orange.NextDoorBook.comment.Comment;
 import pl.orange.NextDoorBook.user.User;
 
 import java.time.LocalDate;
@@ -43,6 +44,9 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name = "author_id")
     )
     private Set<Author> authors = new HashSet<>();
+
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    private Set<Comment> comments = new HashSet<>();
 
 
     @ManyToOne(cascade = CascadeType.PERSIST)
