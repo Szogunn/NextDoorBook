@@ -9,6 +9,7 @@ import pl.orange.NextDoorBook.user.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Slf4j
 @Repository
@@ -92,5 +93,8 @@ public class BookRepository {
 
     public List<Book> getBooksByPublisher(String publisher) {
         return iBookRepository.findBooksByPublisherIgnoreCase(publisher);
+    }
+    public Set<Book> getBooksByCommentRateAverage(Double rateDouble){
+        return iBookRepository.findBooksByCommentRateAverage(rateDouble);
     }
 }

@@ -7,6 +7,7 @@ import pl.orange.NextDoorBook.book.dto.BookAddDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTO;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequiredArgsConstructor
@@ -78,6 +79,12 @@ public class BookController {
                 .status(200)
                 .body(bookService.getBooksByPublisher(publisher));
     }
+    @GetMapping(path="/averageRate/{rateDouble}")
+    public ResponseEntity<Set<BookAddDTO>> getBooksByCommentRateAverage(@PathVariable Double rateDouble) {
+        return ResponseEntity
+                .status(200)
+                .body(bookService.getBooksByCommentRateAverage(rateDouble));
+}
     @GetMapping(path = "")
     public ResponseEntity<List<BookDTO>> getAllBooks() {
         return ResponseEntity

@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public interface IBookRepository extends JpaRepository<Book, Long> {
 
@@ -25,5 +26,6 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
     List<Book> findBooksByLanguageIgnoreCase(String language);
     List<Book> findBooksByPublisherIgnoreCase(String publisher);
 
-
+    @Query("SELECT b FROM Book b JOIN b.comments c WHERE b.id = c.book.id GROUP BY b.id HAVING AVG(c.rate) = :rateDouble")
+    Set<Book> findBooksByCommentRateAverage(Double rateDouble);
 }

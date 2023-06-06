@@ -134,6 +134,15 @@ public class BookService {
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .collect(Collectors.toList());
     }
+    public Set<BookAddDTO>getBooksByCommentRateAverage(Double rateDouble){
+        Set<Book> books = bookRepository.getBooksByCommentRateAverage(rateDouble);
+        if(books.isEmpty()){
+            throw new BookNotFoundException("Books with average rate "+rateDouble+" doesn't exist");
+        }
+        return books.stream()
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .collect(Collectors.toSet());
+    }
 
 
     public List<BookDTO> getAllBooks() {
