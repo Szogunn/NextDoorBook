@@ -7,10 +7,12 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import pl.orange.NextDoorBook.book.Book;
+import pl.orange.NextDoorBook.book.BookRepository;
 import pl.orange.NextDoorBook.user.User;
 
 import java.time.LocalDate;
 import java.util.Optional;
+import java.util.Set;
 
 
 public interface IExchangeRepository extends JpaRepository<Exchange, Long> {
@@ -26,4 +28,10 @@ public interface IExchangeRepository extends JpaRepository<Exchange, Long> {
                         @Param("book") Book book);
 
     Optional<Exchange> findExchangeByBookIdAndConfirmExchangeTrueAndConfirmReturnFalse(Long BookId);
+
+    Set<Exchange> findExchangesByOwnerAndConfirmExchangeFalse(User owner);
+    Set<Exchange> findExchangesByOwner(User owner);
+    Set<Exchange> findExchangesByRenter(User renter);
+    Set<Exchange> findExchangesByBook(Book book);
+    Set<Exchange> findExchangesByOwnerOrRenter(User owner, User renter);
 }

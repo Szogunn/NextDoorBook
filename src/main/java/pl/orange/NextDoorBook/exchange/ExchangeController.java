@@ -9,6 +9,8 @@ import pl.orange.NextDoorBook.exchange.dto.ExchangeAddDTO;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTO;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeReservationDTO;
 
+import java.util.Set;
+
 
 @Controller
 @RequiredArgsConstructor
@@ -39,6 +41,13 @@ public class ExchangeController {
                 .body(exchangeService.confirmBookExchange(exchangeId,ownerId));
     }
 
+    @PostMapping(path = "/confirm/exchange/{exchangeId}/{ownerId}")
+    public ResponseEntity<ExchangeDTO> rejectBookReservation(@PathVariable Long exchangeId, @PathVariable Long ownerId){
+        return ResponseEntity
+                .status(200)
+                .body(exchangeService.rejectBookReservation(exchangeId,ownerId));
+    }
+
     @PostMapping(path = "/confirm/return/{exchangeId}/{ownerId}")
     public ResponseEntity<ExchangeDTO> confirmBookReturn(@PathVariable Long exchangeId,@PathVariable Long ownerId){
         return ResponseEntity
@@ -48,10 +57,9 @@ public class ExchangeController {
 
     @DeleteMapping(path = "{id}")
     public ResponseEntity<ExchangeDTO> deleteExchangeById(@PathVariable Long id) {
-        exchangeService.deleteExchangeById(id);
         return ResponseEntity
                 .status(200)
-                .build();
+                .body(exchangeService.deleteExchangeById(id));
     }
 
     @GetMapping(path = "{id}")
@@ -66,5 +74,40 @@ public class ExchangeController {
         return ResponseEntity
                 .status(200)
                 .body(exchangeService.updateExchange(exchangeDTO));
+    }
+
+    @GetMapping(path = "/reservation/{ownerId}")
+    public ResponseEntity<Set<ExchangeDTO>> getBookReservationByOwner(@PathVariable Long ownerId){
+        return ResponseEntity
+                .status(200)
+                .body(exchangeService.getBookReservationByOwner(ownerId));
+    }
+
+    @GetMapping(path = "/owner/{ownerId}")
+    public ResponseEntity<Set<ExchangeDTO>> getExchangesByOwner(@PathVariable Long ownerId){
+        return ResponseEntity
+                .status(200)
+                .body(exchangeService.getExchangesByOwner(ownerId));
+    }
+
+    @GetMapping(path = "/renter/{renterId}")
+    public ResponseEntity<Set<ExchangeDTO>> getExchangesByRenter(@PathVariable Long renterId){
+        return ResponseEntity
+                .status(200)
+                .body(exchangeService.getExchangesByRenter(renterId));
+    }
+
+    @GetMapping(path = "/book/{bookId}")
+    public ResponseEntity<Set<ExchangeDTO>> getExchangesByBook(@PathVariable Long bookId){
+        return ResponseEntity
+                .status(200)
+                .body(exchangeService.getExchangesByBook(bookId));
+    }
+
+    @GetMapping(path = "/user/{userId}")
+    public ResponseEntity<Set<ExchangeDTO>> getExchangesByUser(@PathVariable Long userId){
+        return ResponseEntity
+                .status(200)
+                .body(exchangeService.getExchangesByUser(userId));
     }
 }
