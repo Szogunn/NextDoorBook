@@ -9,6 +9,7 @@ import pl.orange.NextDoorBook.user.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Slf4j
 @Repository
@@ -32,12 +33,12 @@ public class BookRepository {
         return result;
     }
 
-    public Book saveBook(Book book){
+    public Book saveBook(Book book) {
         return iBookRepository.save(book);
     }
 
     public void deleteBookByID(Long id) {
-        log.info("[HIBERNATE] deleting from database book with id: " +id);
+        log.info("[HIBERNATE] deleting from database book with id: " + id);
         iBookRepository.deleteById(id);
     }
 
@@ -59,7 +60,7 @@ public class BookRepository {
 
 
     public Book updateBook(Book book) {
-        log.info("[HIBERNATE] saving book: " + book  + " into database");
+        log.info("[HIBERNATE] saving book: " + book + " into database");
         return iBookRepository.save(book);
     }
 
@@ -70,4 +71,30 @@ public class BookRepository {
     }
 
 
+    public List<Book> getBooksByAuthorsLastName(String lastName) {
+        return iBookRepository.findBooksByAuthorsLastName(lastName);
+    }
+
+    public List<Book> getBooksByAuthorsNationality(String nationality) {
+        return iBookRepository.findBooksByAuthorsNationality(nationality);
+    }
+
+    public Optional<Book> getBookByISBN(Long isbn) {
+        return iBookRepository.findBookByIsbn(isbn);
+    }
+
+    public Optional<Book> getBookByTitle(String title) {
+        return iBookRepository.findBookByTitleIgnoreCase(title);
+    }
+
+    public List<Book> getBooksByLanguage(String language) {
+        return iBookRepository.findBooksByLanguageIgnoreCase(language);
+    }
+
+    public List<Book> getBooksByPublisher(String publisher) {
+        return iBookRepository.findBooksByPublisherIgnoreCase(publisher);
+    }
+    public Set<Book> getBooksByCommentRateAverage(Double rateDouble){
+        return iBookRepository.findBooksByCommentRateAverage(rateDouble);
+    }
 }

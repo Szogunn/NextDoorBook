@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 public record BookAddDTO(
-        String tittle,
+        String title,
         long isbn,
         int numPages,
         String language,

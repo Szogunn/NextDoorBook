@@ -38,8 +38,8 @@ public class BookService {
         Book bookToAdd = bookDTOMapper.BookAddDTOToBookMap(bookAddDTO);
         Book addedBook = bookRepository.addBook(bookToAdd, userId);
 
-        for (AuthorAddDTO authorToAdd: authorsToAdd) {
-            if (authorToAdd.id() != null){
+        for (AuthorAddDTO authorToAdd : authorsToAdd) {
+            if (authorToAdd.id() != null) {
                 authorRepository.getAuthorByID(authorToAdd.id())
                         .map(author -> {
                             addedBook.addAuthor(author);
@@ -47,7 +47,7 @@ public class BookService {
                         })
                         .orElseThrow(() ->
                                 new AddressNotFoundException("Author with id " + authorToAdd.id() + " does not exist"));
-            }else {
+            } else {
                 addedBook.addAuthor(authorDTOMapper.authorAddDTOToAuthorMap(authorToAdd));
             }
         }
@@ -64,13 +64,86 @@ public class BookService {
         bookRepository.deleteBookByID(id);
     }
 
-    public List<BookDTO> getBooksByGenre(BookGenre bookGenre) {
-        return bookRepository
-                .getBooksByGenre(bookGenre)
-                .stream()
-                .map(bookDTOMapper::BookToBookDTOMap)
+    public List<BookAddDTO> getBooksByGenre(BookGenre bookGenre) {
+
+        List<Book> books = bookRepository.getBooksByGenre(bookGenre);
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("Books from category " + bookGenre + " doesn't exist.");
+        }
+        return books.stream()
+                .map(bookDTOMapper::BookToBookAddDTOMap)
                 .collect(Collectors.toList());
     }
+
+    public List<BookAddDTO> getBooksByAuthorsLastName(String lastName) {
+        List<Book> books = bookRepository.getBooksByAuthorsLastName(lastName);
+
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("Books with the author's  " + lastName + " doesn't exist.");
+        }
+        return books.stream()
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .collect(Collectors.toList());
+    }
+
+    public List<BookAddDTO> getBooksByAuthorsNationality(String nationality) {
+        List<Book> books = bookRepository.getBooksByAuthorsNationality(nationality);
+
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("Books with an author from  " + nationality + " doesn't exist.");
+        }
+
+        return books.stream()
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .collect(Collectors.toList());
+    }
+
+    public BookAddDTO getBookByISBN(Long isbn) {
+
+        return bookRepository.getBookByISBN(isbn)
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .orElseThrow(() ->
+                        new BookNotFoundException("Book with isbn " + isbn + " doesn't exist."));
+
+    }
+    public BookAddDTO getBookByTitle(String title){
+        return bookRepository.getBookByTitle(title)
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .orElseThrow(() ->
+                        new BookNotFoundException("Book with title " + title + " doesn't exist."));
+    }
+    public List<BookAddDTO> getBooksByLanguage(String language){
+        List<Book> books = bookRepository.getBooksByLanguage(language);
+
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("There is no book in " + language);
+        }
+
+        return books.stream()
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .collect(Collectors.toList());
+    }
+    public List<BookAddDTO>getBooksByPublisher(String publisher){
+        List<Book> books = bookRepository.getBooksByPublisher(publisher);
+
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("There is no book from " + publisher);
+        }
+
+        return books.stream()
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .collect(Collectors.toList());
+    }
+    public Set<BookAddDTO>getBooksByCommentRateAverage(Double rateDouble){
+        Set<Book> books = bookRepository.getBooksByCommentRateAverage(rateDouble);
+        if(books.isEmpty()){
+            throw new BookNotFoundException("Books with average rate "+rateDouble+" doesn't exist");
+        }
+        return books.stream()
+                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .collect(Collectors.toSet());
+    }
+
 
     public List<BookDTO> getAllBooks() {
 

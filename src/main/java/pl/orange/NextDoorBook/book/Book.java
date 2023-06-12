@@ -3,6 +3,7 @@ package pl.orange.NextDoorBook.book;
 import jakarta.persistence.*;
 import lombok.*;
 import pl.orange.NextDoorBook.author.Author;
+import pl.orange.NextDoorBook.comment.Comment;
 import pl.orange.NextDoorBook.user.User;
 
 import java.time.LocalDate;
@@ -11,7 +12,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-@EqualsAndHashCode(of = {"tittle", "isbn", "numPages", "language", "publisher", "publishedYear", "bookGenre"})
+@EqualsAndHashCode(of = {"title", "isbn", "numPages", "language", "publisher", "publishedYear", "bookGenre"})
 @Entity
 @Builder
 @NoArgsConstructor
@@ -23,7 +24,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String tittle;
+    private String title;
     private long isbn;
     private int numPages;
     private String language;
@@ -43,6 +44,9 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name = "author_id")
     )
     private Set<Author> authors = new HashSet<>();
+
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    private Set<Comment> comments = new HashSet<>();
 
 
     @ManyToOne(cascade = CascadeType.PERSIST)
