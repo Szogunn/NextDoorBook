@@ -17,6 +17,7 @@ import pl.orange.NextDoorBook.book.exceptions.BookNotFoundException;
 import pl.orange.NextDoorBook.comment.CommentRepository;
 import pl.orange.NextDoorBook.comment.dto.CommentDTOMapper;
 import pl.orange.NextDoorBook.exchange.ExchangeRepository;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeDTOMapper;
 
 import java.util.HashSet;
 import java.util.List;
@@ -34,9 +35,11 @@ public class BookService {
     private final AuthorRepository authorRepository;
     private final ExchangeRepository exchangeRepository;
     private final CommentRepository commentRepository;
+
     private final BookDTOMapper bookDTOMapper;
     private final AuthorDTOMapper authorDTOMapper;
     private final CommentDTOMapper commentDTOMapper;
+    private final ExchangeDTOMapper exchangeDTOMapper;
 
 
     public BookAddDTO addBook(BookAddDTO bookAddDTO, Long userId) {
@@ -189,8 +192,11 @@ public class BookService {
                 bookDTOMapper.BookToBookDTOMap(book),
                 exchangeRepository.checkBookAvailability(bookId),
                 commentRepository.averageBookRate(book),
-                null,
-                null,
+                exchangeRepository.getExchangesByBook(book).size(),
+                exchangeRepository.getExchangesByBook(book)
+                        .stream()
+                        .map(exchangeDTOMapper::mapToDTO)
+                        .collect(Collectors.toSet()),
                 commentRepository.getCommentsByBookID(bookId)
                         .stream()
                         .map(commentDTOMapper::commentMapToDTO)

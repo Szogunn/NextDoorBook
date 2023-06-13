@@ -10,7 +10,7 @@ public record BookInfoDTO(
         boolean available,
         Double average,
         Integer exchangeCount,
-        ExchangeDTO exchangeHistory,
+        Set<ExchangeDTO> exchangeHistory,
         Set<CommentDTO> comments
 ) {
 }

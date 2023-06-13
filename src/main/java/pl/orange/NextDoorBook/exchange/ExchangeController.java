@@ -41,7 +41,7 @@ public class ExchangeController {
                 .body(exchangeService.confirmBookExchange(exchangeId,ownerId));
     }
 
-    @PostMapping(path = "/confirm/exchange/{exchangeId}/{ownerId}")
+    @PostMapping(path = "/reject/exchange/{exchangeId}/{ownerId}")
     public ResponseEntity<ExchangeDTO> rejectBookReservation(@PathVariable Long exchangeId, @PathVariable Long ownerId){
         return ResponseEntity
                 .status(200)
