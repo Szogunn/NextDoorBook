@@ -34,7 +34,7 @@ public class ExchangeRepository {
     }
 
     public boolean checkBookAvailability(Long bookId){
-        return iExchangeRepository.findExchangeByBookIdAndConfirmExchangeTrueAndConfirmReturnFalse(bookId).isPresent();
+        return iExchangeRepository.findExchangeByBookIdAndConfirmExchangeTrueAndConfirmReturnFalse(bookId).isEmpty();
     }
     public Set<Exchange> getBooksReservationListByOwner(User owner){
         return iExchangeRepository.findExchangesByOwnerAndConfirmExchangeFalse(owner);

@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.orange.NextDoorBook.book.dto.BookAddDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTO;
+import pl.orange.NextDoorBook.book.dto.BookInfoDTO;
 
 import java.util.List;
 import java.util.Set;
@@ -97,6 +98,13 @@ public class BookController {
         return ResponseEntity
                 .status(200)
                 .body(bookService.updateBook(requestBook));
+    }
+
+    @GetMapping("info/{bookId}")
+    public ResponseEntity<BookInfoDTO> getBookInfo(@PathVariable Long bookId) {
+        return ResponseEntity
+                .status(200)
+                .body(bookService.getBookInfo(bookId));
     }
 }
 

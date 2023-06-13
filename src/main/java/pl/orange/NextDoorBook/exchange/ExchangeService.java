@@ -52,7 +52,7 @@ public class ExchangeService {
                     if(exchange.getOwner().getId() != ownerId){
                         throw new ExchangeOwnerException("User with id " + ownerId + " is not this book owner");
                     }
-                    if (exchangeRepository.checkBookAvailability(exchange.getBook().getId())){
+                    if (!exchangeRepository.checkBookAvailability(exchange.getBook().getId())){
                         throw new ExchangeImpossibleException("Exchange is impossible.Book is already borrowed.");
                     }
                     exchange.setConfirmExchange(true);
