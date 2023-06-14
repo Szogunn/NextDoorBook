@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.user.User;
 
+import java.time.LocalDateTime;
+
 
 @Data
 @Entity
@@ -22,6 +24,7 @@ public class Comment {
     private Long id;
     private String message;
     private boolean spoilerAlert;
+    private LocalDateTime addTime;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "books_id")
     private Book book;

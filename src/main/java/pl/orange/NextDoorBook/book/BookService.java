@@ -12,7 +12,12 @@ import pl.orange.NextDoorBook.author.dto.AuthorDTOMapper;
 import pl.orange.NextDoorBook.book.dto.BookAddDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTOMapper;
+import pl.orange.NextDoorBook.book.dto.BookInfoDTO;
 import pl.orange.NextDoorBook.book.exceptions.BookNotFoundException;
+import pl.orange.NextDoorBook.comment.CommentRepository;
+import pl.orange.NextDoorBook.comment.dto.CommentDTOMapper;
+import pl.orange.NextDoorBook.exchange.ExchangeRepository;
+import pl.orange.NextDoorBook.exchange.dto.ExchangeDTOMapper;
 
 import java.util.HashSet;
 import java.util.List;
@@ -28,8 +33,13 @@ public class BookService {
 
     private final BookRepository bookRepository;
     private final AuthorRepository authorRepository;
+    private final ExchangeRepository exchangeRepository;
+    private final CommentRepository commentRepository;
+
     private final BookDTOMapper bookDTOMapper;
     private final AuthorDTOMapper authorDTOMapper;
+    private final CommentDTOMapper commentDTOMapper;
+    private final ExchangeDTOMapper exchangeDTOMapper;
 
 
     public BookAddDTO addBook(BookAddDTO bookAddDTO, Long userId) {
@@ -172,5 +182,24 @@ public class BookService {
 
 
         return bookDTOMapper.BookToBookDTOMap(result);
+    }
+
+    public BookInfoDTO getBookInfo(Long bookId) {
+        Book book = bookRepository.getBookByID(bookId)
+                .orElseThrow(() ->
+                        new BookNotFoundException("Books with id " + bookId + " does not exist"));
+        return new BookInfoDTO(
+                bookDTOMapper.BookToBookDTOMap(book),
+                exchangeRepository.checkBookAvailability(bookId),
+                commentRepository.averageBookRate(book),
+                exchangeRepository.getExchangesByBook(book).size(),
+                exchangeRepository.getExchangesByBook(book)
+                        .stream()
+                        .map(exchangeDTOMapper::mapToDTO)
+                        .collect(Collectors.toSet()),
+                commentRepository.getCommentsByBookID(bookId)
+                        .stream()
+                        .map(commentDTOMapper::commentMapToDTO)
+                        .collect(Collectors.toSet()));
     }
 }
