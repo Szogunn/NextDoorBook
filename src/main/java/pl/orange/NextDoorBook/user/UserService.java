@@ -59,7 +59,7 @@ public class UserService {
             throw new UserNotFoundException("User with id " + userId + "does not exist");
         }
         User userToUpdate = userRepository.getUserById(userId).get();
-        userToUpdate.setLogin(userAddDTO.login());
+        userToUpdate.setUsername(userAddDTO.login());
         userToUpdate.setPassword(userToUpdate.getPassword());
         userToUpdate.setEmail(userAddDTO.email());
 
