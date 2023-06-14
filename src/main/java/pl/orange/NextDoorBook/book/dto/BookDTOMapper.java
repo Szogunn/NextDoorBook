@@ -7,6 +7,7 @@ import pl.orange.NextDoorBook.author.dto.AuthorDTOMapper;
 import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.book.BookRepository;
 import pl.orange.NextDoorBook.book.exceptions.BookNotFoundException;
+import pl.orange.NextDoorBook.user.dto.UserDTOMapper;
 
 import java.util.stream.Collectors;
 
@@ -17,6 +18,7 @@ public class BookDTOMapper {
 
     private final BookRepository bookRepository;
     private final AuthorDTOMapper authorDTOMapper;
+    private final UserDTOMapper userDTOMapper;
 
 
     public BookDTO BookToBookDTOMap(Book book) {
@@ -35,7 +37,8 @@ public class BookDTOMapper {
                         .getAuthors()
                         .stream()
                         .map(authorDTOMapper::authorTOAuthorDTOMap)
-                        .collect(Collectors.toSet())
+                        .collect(Collectors.toSet()),
+                userDTOMapper.map(book.getOwner())
         );
     }
 

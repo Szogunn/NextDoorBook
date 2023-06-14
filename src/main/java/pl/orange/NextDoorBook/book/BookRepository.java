@@ -10,6 +10,7 @@ import pl.orange.NextDoorBook.user.UserRepository;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Repository
@@ -24,6 +25,7 @@ public class BookRepository {
     public Book addBook(Book book, Long id) {
         log.info("[HIBERNATE] Checking if user exist in database");
         User userById = userRepository.getUserById(id)
+                .filter(user -> !user.isDeleted())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user ID: " + id));
         book.setOwner(userById);
 
@@ -44,7 +46,11 @@ public class BookRepository {
 
     public Optional<Book> getBookByID(Long id) {
         log.info("[HIBERNATE] looking in database for book with id: " + id);
-        return iBookRepository.findById(id);
+        Optional<Book> bookById = iBookRepository.findById(id);
+        if (bookById.isPresent() && bookById.get().getOwner().isDeleted()) {
+            bookById = Optional.empty();
+        }
+        return bookById;
     }
 
     public List<Book> getAllBooks() {
@@ -55,7 +61,10 @@ public class BookRepository {
             log.info("Authors from findAll method: " + book.getAuthors());
         }
 
-        return all;
+        return all
+                .stream()
+                .filter(book -> !book.getOwner().isDeleted())
+                .collect(Collectors.toList());
     }
 
 
@@ -67,34 +76,61 @@ public class BookRepository {
 
     public List<Book> getBooksByGenre(BookGenre bookGenre) {
         log.info("[HIBERNATE] looking in database for all books with genre: " + bookGenre);
-        return iBookRepository.findByBookGenre(bookGenre);
+        return iBookRepository.findByBookGenre(bookGenre)
+                .stream()
+                .filter(book -> !book.getOwner().isDeleted())
+                .collect(Collectors.toList());
     }
 
 
     public List<Book> getBooksByAuthorsLastName(String lastName) {
-        return iBookRepository.findBooksByAuthorsLastName(lastName);
+        return iBookRepository.findBooksByAuthorsLastName(lastName)
+                .stream()
+                .filter(book -> !book.getOwner().isDeleted())
+                .collect(Collectors.toList());
     }
 
     public List<Book> getBooksByAuthorsNationality(String nationality) {
-        return iBookRepository.findBooksByAuthorsNationality(nationality);
+        return iBookRepository.findBooksByAuthorsNationality(nationality)
+                .stream()
+                .filter(book -> !book.getOwner().isDeleted())
+                .collect(Collectors.toList());
     }
 
     public Optional<Book> getBookByISBN(Long isbn) {
-        return iBookRepository.findBookByIsbn(isbn);
+        Optional<Book> bookByIsbn = iBookRepository.findBookByIsbn(isbn);
+        if (bookByIsbn.isPresent() && bookByIsbn.get().getOwner().isDeleted()) {
+            bookByIsbn = Optional.empty();
+        }
+        return bookByIsbn;
     }
 
     public Optional<Book> getBookByTitle(String title) {
-        return iBookRepository.findBookByTitleIgnoreCase(title);
+        Optional<Book> bookByTitle = iBookRepository.findBookByTitleIgnoreCase(title);
+        if (bookByTitle.isPresent() && bookByTitle.get().getOwner().isDeleted()) {
+            bookByTitle = Optional.empty();
+        }
+        return bookByTitle;
     }
 
     public List<Book> getBooksByLanguage(String language) {
-        return iBookRepository.findBooksByLanguageIgnoreCase(language);
+        return iBookRepository.findBooksByLanguageIgnoreCase(language)
+                .stream()
+                .filter(book -> !book.getOwner().isDeleted())
+                .collect(Collectors.toList());
     }
 
     public List<Book> getBooksByPublisher(String publisher) {
-        return iBookRepository.findBooksByPublisherIgnoreCase(publisher);
+        return iBookRepository.findBooksByPublisherIgnoreCase(publisher)
+                .stream()
+                .filter(book -> !book.getOwner().isDeleted())
+                .collect(Collectors.toList());
     }
-    public Set<Book> getBooksByCommentRateAverage(Double rateDouble){
-        return iBookRepository.findBooksByCommentRateAverage(rateDouble);
+
+    public Set<Book> getBooksByCommentRateAverage(Double rateDouble) {
+        return iBookRepository.findBooksByCommentRateAverage(rateDouble)
+                .stream()
+                .filter(book -> !book.getOwner().isDeleted())
+                .collect(Collectors.toSet());
     }
 }

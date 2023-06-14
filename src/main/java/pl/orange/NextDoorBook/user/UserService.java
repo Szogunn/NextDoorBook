@@ -38,6 +38,7 @@ public class UserService {
 
     public UserDTO getUserById(Long id) {
         return userRepository.getUserById(id)
+                .filter(user -> !user.isDeleted())
                 .map(userDTOMapper::map)
                 .orElseThrow(() ->
                         new UserNotFoundException("User with id " + id + " does not exist"));
@@ -45,6 +46,7 @@ public class UserService {
 
     public UserDTO deleteUserById(Long id) {
         return userRepository.getUserById(id)
+                .filter(user -> !user.isDeleted())
                 .map((user) -> {
                     deleteUnusedAddress(user.getAddress().getId());
                     userRepository.deleteUserById(id);
@@ -55,10 +57,11 @@ public class UserService {
     }
 
     public UserDTO updateUser(UserAddDTO userAddDTO, Long userId) {
-        if (userRepository.getUserById(userId).isEmpty()) {
+        Optional<User> findUser = userRepository.getUserById(userId);
+        if (findUser.isEmpty() || findUser.get().isDeleted() ) {
             throw new UserNotFoundException("User with id " + userId + "does not exist");
         }
-        User userToUpdate = userRepository.getUserById(userId).get();
+        User userToUpdate = findUser.get();
         userToUpdate.setLogin(userAddDTO.login());
         userToUpdate.setPassword(userToUpdate.getPassword());
         userToUpdate.setEmail(userAddDTO.email());

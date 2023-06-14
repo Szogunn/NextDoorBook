@@ -18,7 +18,6 @@ import pl.orange.NextDoorBook.address.Address;
 @AllArgsConstructor
 @Table(name = "USERS")
 @SQLDelete(sql = "UPDATE USERS SET deleted = true,email = null, password = null ,ADDRESS_ID = null WHERE id=?")
-@Where(clause = "deleted=false")
 public class User {
 
     @Id
