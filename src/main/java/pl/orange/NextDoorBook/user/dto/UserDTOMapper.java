@@ -20,7 +20,7 @@ public class UserDTOMapper {
                 .build();
     }
 
-    public User map(UserDTO userDTO){
+    public User map(UserDTO userDTO) {
         return User.builder()
                 .id(userDTO.id())
                 .username(userDTO.login())
@@ -29,12 +29,30 @@ public class UserDTOMapper {
                 .build();
     }
 
-    public User map(UserAddDTO userAddDTO){
+    public User map(UserAddDTO userAddDTO) {
         return User.builder()
                 .password(userAddDTO.password())
                 .username(userAddDTO.login())
                 .email(userAddDTO.email())
                 .address(addressDTOMapper.mapAddressAddDTO(userAddDTO.address()))
+                .build();
+    }
+
+    public UserAuthDTO userToUserAuthDTO(User user) {
+        return new UserAuthDTO(
+                user.getUsername(),
+                user.getPassword(),
+                user.getEmail(),
+                user.getRoles(),
+                addressDTOMapper.mapAddressAddDTO(user.getAddress()));
+    }
+    public User userAuthDTOToUser(UserAuthDTO user) {
+        return User.builder()
+                .password(user.password())
+                .username(user.login())
+                .email(user.email())
+                .roles(user.roles())
+                .address(addressDTOMapper.mapAddressAddDTO(user.address()))
                 .build();
     }
 

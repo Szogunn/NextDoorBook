@@ -13,13 +13,6 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping(path = "")
-    public ResponseEntity<UserDTO> addUser(@RequestBody UserAddDTO userToAdd) {
-        return ResponseEntity
-                .status(200)
-                .body(userService.addUser(userToAdd));
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable Long id) {
         return ResponseEntity

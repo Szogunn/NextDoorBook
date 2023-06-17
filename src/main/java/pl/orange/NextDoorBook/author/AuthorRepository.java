@@ -40,8 +40,5 @@ public class AuthorRepository {
         return iAuthorRepository.checkIfAuthorsAreInUse();
     }
 
-    public void deleteAuthorsByIDList(Set<Long> Id) {
-        iAuthorRepository.deleteByIdIn(Id);
-    }
 
 }

@@ -4,11 +4,6 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.orange.NextDoorBook.address.exception.AddressNotFoundException;
-import pl.orange.NextDoorBook.author.Author;
-import pl.orange.NextDoorBook.author.AuthorRepository;
-import pl.orange.NextDoorBook.author.dto.AuthorAddDTO;
-import pl.orange.NextDoorBook.author.dto.AuthorDTOMapper;
 import pl.orange.NextDoorBook.book.dto.BookAddDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTOMapper;
@@ -19,9 +14,7 @@ import pl.orange.NextDoorBook.comment.dto.CommentDTOMapper;
 import pl.orange.NextDoorBook.exchange.ExchangeRepository;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTOMapper;
 import pl.orange.NextDoorBook.user.User;
-import pl.orange.NextDoorBook.user.dto.UserDTO;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -34,12 +27,10 @@ import java.util.stream.Collectors;
 public class BookService {
 
     private final BookRepository bookRepository;
-    private final AuthorRepository authorRepository;
     private final ExchangeRepository exchangeRepository;
     private final CommentRepository commentRepository;
 
     private final BookDTOMapper bookDTOMapper;
-    private final AuthorDTOMapper authorDTOMapper;
     private final CommentDTOMapper commentDTOMapper;
     private final ExchangeDTOMapper exchangeDTOMapper;
 
@@ -165,21 +156,13 @@ public class BookService {
     }
 
 
-    public BookDTO updateBook(BookDTO book) {
-        bookRepository
-                .getBookByID(bookDTOMapper.BookDTOToBookMap(book).getId())
-                .orElseThrow(() ->
-                        new BookNotFoundException
-                                ("Books with id " + book.id() + " does not exist"));
+    public BookDTO updateBook(BookDTO bookDTO) {
+        Book bookFromDB = bookRepository
+                .getBookByID(bookDTOMapper.BookDTOToBookMap(bookDTO).getId())
+                .orElseThrow(() -> new BookNotFoundException("Books with id " + bookDTO.id() + " does not exist"));
 
-        Book result = bookRepository.updateBook(bookDTOMapper.BookDTOToBookMap(book));
 
-        authorRepository.deleteAuthorsByIDList(authorRepository
-                .checkIfAuthorsAreInUse()
-                .stream()
-                .mapToLong(Author::getId)
-                .boxed()
-                .collect(Collectors.toSet()));
+        Book result = bookRepository.updateBook(bookDTOMapper.updateBookMapper(bookDTO, bookFromDB));
 
 
         return bookDTOMapper.BookToBookDTOMap(result);
@@ -200,7 +183,7 @@ public class BookService {
                         .collect(Collectors.toSet()),
                 commentRepository.getCommentsByBookID(bookId)
                         .stream()
-                        .map(commentDTOMapper::commentMapToDTO)
+                        .map(commentDTOMapper::commentToCommentDTOMap)
                         .collect(Collectors.toSet()));
     }
 }

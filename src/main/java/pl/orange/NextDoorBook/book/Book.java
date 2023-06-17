@@ -36,7 +36,7 @@ public class Book {
     BookGenre bookGenre;
 
 
-    @Setter(AccessLevel.NONE)
+
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(
             name = "book_author",

@@ -36,12 +36,12 @@ public class BookController {
 
     @DeleteMapping(path = "/{id}")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity deleteBook(@PathVariable Long id, UsernamePasswordAuthenticationToken user) {
+    public ResponseEntity<?> deleteBook(@PathVariable Long id, UsernamePasswordAuthenticationToken user) {
         User userFromObjectMapper = objectMapper.convertValue(user.getPrincipal(), User.class);
 
         if (!bookService.isBookOwnedByUser(id,userFromObjectMapper)){
             return ResponseEntity.badRequest().body(new MessageResponse("Error: Book has another owner"));
-        };
+        }
 
         bookService.deleteBook(id);
         return ResponseEntity
@@ -123,7 +123,13 @@ public class BookController {
 
     @PatchMapping(path = "")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<BookDTO> updateBook(@RequestBody BookDTO requestBook) {
+    public ResponseEntity<?> updateBook(@RequestBody BookDTO requestBook
+            , UsernamePasswordAuthenticationToken user) {
+
+        User userFromObjectMapper = objectMapper.convertValue(user.getPrincipal(), User.class);
+        if (!bookService.isBookOwnedByUser(requestBook.id(), userFromObjectMapper)){
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: Book has another owner"));
+        }
         return ResponseEntity
                 .status(200)
                 .body(bookService.updateBook(requestBook));
@@ -132,6 +138,7 @@ public class BookController {
     @GetMapping("info/{bookId}")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<BookInfoDTO> getBookInfo(@PathVariable Long bookId) {
+
         return ResponseEntity
                 .status(200)
                 .body(bookService.getBookInfo(bookId));

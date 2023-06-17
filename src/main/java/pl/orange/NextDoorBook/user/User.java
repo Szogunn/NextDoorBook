@@ -49,7 +49,7 @@ public class User {
     @Email
     private String email;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "ADDRESS_ID")
     private Address address;
 
