@@ -13,6 +13,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import pl.orange.NextDoorBook.address.DTO.AddressDTOMapper;
 import pl.orange.NextDoorBook.security.jwt.JwtUtils;
 import pl.orange.NextDoorBook.security.payloads.LoginRequest;
 import pl.orange.NextDoorBook.security.payloads.MessageResponse;
@@ -37,6 +38,7 @@ import java.util.stream.Collectors;
 public class AuthController {
 
 
+    private final AddressDTOMapper addressDTOMapper;
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
@@ -79,6 +81,7 @@ public class AuthController {
         // Create new user's account
         User user = new User(signUpRequest.username(),
                 signUpRequest.email(),
+                addressDTOMapper.mapAddressAddDTO(signUpRequest.address()),
                 encoder.encode(signUpRequest.password()));
 
         Set<String> strRoles = signUpRequest.roles();
