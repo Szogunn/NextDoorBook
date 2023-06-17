@@ -43,24 +43,9 @@ public class BookService {
 
 
     public BookAddDTO addBook(BookAddDTO bookAddDTO, Long userId) {
-        Set<AuthorAddDTO> authorsToAdd = new HashSet<>(bookAddDTO.authors());
-        bookAddDTO.authors().clear();
-        Book bookToAdd = bookDTOMapper.BookAddDTOToBookMap(bookAddDTO);
-        Book addedBook = bookRepository.addBook(bookToAdd, userId);
+        Book book = bookDTOMapper.BookAddDTOToBookMap(bookAddDTO);
 
-        for (AuthorAddDTO authorToAdd : authorsToAdd) {
-            if (authorToAdd.id() != null) {
-                authorRepository.getAuthorByID(authorToAdd.id())
-                        .map(author -> {
-                            addedBook.addAuthor(author);
-                            return author;
-                        })
-                        .orElseThrow(() ->
-                                new AddressNotFoundException("Author with id " + authorToAdd.id() + " does not exist"));
-            } else {
-                addedBook.addAuthor(authorDTOMapper.authorAddDTOToAuthorMap(authorToAdd));
-            }
-        }
+        Book addedBook = bookRepository.addBook(book, userId);
         return bookDTOMapper
                 .BookToBookAddDTOMap(addedBook);
     }
@@ -74,14 +59,14 @@ public class BookService {
         bookRepository.deleteBookByID(id);
     }
 
-    public List<BookAddDTO> getBooksByGenre(BookGenre bookGenre) {
+    public List<BookDTO> getBooksByGenre(BookGenre bookGenre) {
 
         List<Book> books = bookRepository.getBooksByGenre(bookGenre);
         if (books.isEmpty()) {
             throw new BookNotFoundException("Books from category " + bookGenre + " doesn't exist.");
         }
         return books.stream()
-                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .map(bookDTOMapper::BookToBookDTOMap)
                 .collect(Collectors.toList());
     }
 
