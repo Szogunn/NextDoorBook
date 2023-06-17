@@ -18,6 +18,8 @@ import pl.orange.NextDoorBook.comment.CommentRepository;
 import pl.orange.NextDoorBook.comment.dto.CommentDTOMapper;
 import pl.orange.NextDoorBook.exchange.ExchangeRepository;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTOMapper;
+import pl.orange.NextDoorBook.user.User;
+import pl.orange.NextDoorBook.user.dto.UserDTO;
 
 import java.util.HashSet;
 import java.util.List;
@@ -101,13 +103,25 @@ public class BookService {
                         new BookNotFoundException("Book with isbn " + isbn + " doesn't exist."));
 
     }
-    public BookAddDTO getBookByTitle(String title){
+
+    public BookAddDTO getBookByTitle(String title) {
         return bookRepository.getBookByTitle(title)
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .orElseThrow(() ->
                         new BookNotFoundException("Book with title " + title + " doesn't exist."));
     }
-    public List<BookAddDTO> getBooksByLanguage(String language){
+
+    public boolean isBookOwnedByUser(Long bookId, User user) {
+        Book book = bookRepository.getBookByID(bookId)
+                .orElseThrow(() ->
+                        new BookNotFoundException("Book with id " + bookId + " doesn't exist."));
+        if (book.getOwner().getId().equals(user.getId())) {
+            return true; // Książka należy do użytkownika
+        }
+        return false; // Książka nie należy do użytkownika
+    }
+
+    public List<BookAddDTO> getBooksByLanguage(String language) {
         List<Book> books = bookRepository.getBooksByLanguage(language);
 
         if (books.isEmpty()) {
@@ -118,7 +132,8 @@ public class BookService {
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .collect(Collectors.toList());
     }
-    public List<BookAddDTO>getBooksByPublisher(String publisher){
+
+    public List<BookAddDTO> getBooksByPublisher(String publisher) {
         List<Book> books = bookRepository.getBooksByPublisher(publisher);
 
         if (books.isEmpty()) {
@@ -129,10 +144,11 @@ public class BookService {
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .collect(Collectors.toList());
     }
-    public Set<BookAddDTO>getBooksByCommentRateAverage(Double rateDouble){
+
+    public Set<BookAddDTO> getBooksByCommentRateAverage(Double rateDouble) {
         Set<Book> books = bookRepository.getBooksByCommentRateAverage(rateDouble);
-        if(books.isEmpty()){
-            throw new BookNotFoundException("Books with average rate "+rateDouble+" doesn't exist");
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("Books with average rate " + rateDouble + " doesn't exist");
         }
         return books.stream()
                 .map(bookDTOMapper::BookToBookAddDTOMap)
