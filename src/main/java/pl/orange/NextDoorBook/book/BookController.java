@@ -1,11 +1,14 @@
 package pl.orange.NextDoorBook.book;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 import pl.orange.NextDoorBook.book.dto.BookAddDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTO;
 import pl.orange.NextDoorBook.book.dto.BookInfoDTO;
+import pl.orange.NextDoorBook.user.User;
 
 import java.util.List;
 import java.util.Set;
@@ -16,13 +19,15 @@ import java.util.Set;
 public class BookController {
 
     private final BookService bookService;
+    private final ObjectMapper objectMapper;
 
-    //TODO trzeba numer id zmienić tak aby był przekazywany przez Spring Security jako ID zalogowanego użytkownika
-    @PostMapping(path = "{id}")
-    public ResponseEntity<BookAddDTO> addBook(@RequestBody BookAddDTO requestBook, @PathVariable Long id) {
+    @PostMapping(path = "")
+    public ResponseEntity<BookAddDTO> addBook(@RequestBody BookAddDTO requestBook
+            , UsernamePasswordAuthenticationToken user) {
+        User userFromObjectMapper = objectMapper.convertValue(user.getPrincipal(), User.class);
         return ResponseEntity
                 .status(200)
-                .body(bookService.addBook(requestBook, id));
+                .body(bookService.addBook(requestBook, userFromObjectMapper.getId()));
     }
 
     @DeleteMapping(path = "/{id}")
@@ -74,18 +79,21 @@ public class BookController {
                 .status(200)
                 .body(bookService.getBooksByLanguage(language));
     }
+
     @GetMapping(path = "/publisher/{publisher}")
     public ResponseEntity<List<BookAddDTO>> getBooksByPublisher(@PathVariable String publisher) {
         return ResponseEntity
                 .status(200)
                 .body(bookService.getBooksByPublisher(publisher));
     }
-    @GetMapping(path="/averageRate/{rateDouble}")
+
+    @GetMapping(path = "/averageRate/{rateDouble}")
     public ResponseEntity<Set<BookAddDTO>> getBooksByCommentRateAverage(@PathVariable Double rateDouble) {
         return ResponseEntity
                 .status(200)
                 .body(bookService.getBooksByCommentRateAverage(rateDouble));
-}
+    }
+
     @GetMapping(path = "")
     public ResponseEntity<List<BookDTO>> getAllBooks() {
         return ResponseEntity
