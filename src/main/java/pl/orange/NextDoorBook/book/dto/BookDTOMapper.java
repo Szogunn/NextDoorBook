@@ -71,13 +71,7 @@ public class BookDTOMapper {
                 book.getLanguage(),
                 book.getPublisher(),
                 book.getPublishedYear(),
-                book.getBookGenre(),
-                bookRepository.getBookByID(book.getId())
-                        .orElseThrow(() -> new BookNotFoundException(""))
-                        .getAuthors()
-                        .stream()
-                        .map(authorDTOMapper::authorTOAuthorAddDTOMap)
-                        .collect(Collectors.toSet())
+                book.getBookGenre()
         );
     }
 
@@ -90,10 +84,6 @@ public class BookDTOMapper {
                 .publisher(book.publisher())
                 .publishedYear(book.publishedYear())
                 .bookGenre(book.bookGenre())
-                .authors(book.authors()
-                        .stream()
-                        .map(authorDTOMapper::authorAddDTOToAuthorMap)
-                        .collect(Collectors.toSet()))
                 //TODO implement also .owner() method which provides a user from logged account
                 .build();
     }

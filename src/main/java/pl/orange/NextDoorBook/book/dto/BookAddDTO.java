@@ -13,7 +13,7 @@ public record BookAddDTO(
         String language,
         String publisher,
         LocalDate publishedYear,
-        BookGenre bookGenre,
-        Set<AuthorAddDTO> authors
+        BookGenre bookGenre
+
 ) {
 }
