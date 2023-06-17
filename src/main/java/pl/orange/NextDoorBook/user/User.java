@@ -29,7 +29,6 @@ import java.util.Set;
                 @UniqueConstraint(columnNames = "email")
         })
 @SQLDelete(sql = "UPDATE USERS SET deleted = true,email = null, password = null ,ADDRESS_ID = null WHERE id=?")
-@Where(clause = "deleted=false")
 public class User {
 
     @Id
