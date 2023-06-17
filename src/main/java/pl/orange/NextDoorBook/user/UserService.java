@@ -61,8 +61,10 @@ public class UserService {
         if (findUser.isEmpty() || findUser.get().isDeleted() ) {
             throw new UserNotFoundException("User with id " + userId + "does not exist");
         }
+        fix/UserSoftDelete
         User userToUpdate = findUser.get();
         userToUpdate.setLogin(userAddDTO.login());
+
         userToUpdate.setPassword(userToUpdate.getPassword());
         userToUpdate.setEmail(userAddDTO.email());
 

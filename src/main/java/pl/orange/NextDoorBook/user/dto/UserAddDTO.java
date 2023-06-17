@@ -6,7 +6,7 @@ import pl.orange.NextDoorBook.address.DTO.AddressAddDTO;
 @Builder
 public record UserAddDTO(
         String login,
-        char[] password,
+        String password,
         String email,
         AddressAddDTO address) {
 

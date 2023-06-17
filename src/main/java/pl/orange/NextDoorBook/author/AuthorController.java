@@ -3,14 +3,14 @@ package pl.orange.NextDoorBook.author;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.orange.NextDoorBook.author.dto.AuthorAddDTO;
 import pl.orange.NextDoorBook.author.dto.AuthorDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTO;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
+@RequestMapping(path = "/api/authors")
 public class AuthorController {
     private final AuthorService authorService;
 
