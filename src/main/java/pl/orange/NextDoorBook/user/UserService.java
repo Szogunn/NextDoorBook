@@ -7,6 +7,7 @@ import pl.orange.NextDoorBook.address.Address;
 import pl.orange.NextDoorBook.address.AddressRepository;
 import pl.orange.NextDoorBook.address.DTO.AddressDTOMapper;
 import pl.orange.NextDoorBook.user.dto.UserAddDTO;
+import pl.orange.NextDoorBook.user.dto.UserAuthDTO;
 import pl.orange.NextDoorBook.user.dto.UserDTO;
 import pl.orange.NextDoorBook.user.dto.UserDTOMapper;
 import pl.orange.NextDoorBook.user.exceptions.UserNotFoundException;
@@ -22,18 +23,18 @@ public class UserService {
     private final UserDTOMapper userDTOMapper;
     private final AddressDTOMapper addressDTOMapper;
 
-    public UserDTO addUser(UserAddDTO userToRegister) {
+    public UserAuthDTO addUser(UserAuthDTO userToRegister) {
         if (userToRegister == null) {
             throw new IllegalStateException("Cant save null data user");
         }
         Optional<Address> addressToAdd = addressRepository.findAddressByFieldsWithoutId(userToRegister.address());
         if (addressToAdd.isEmpty()) {
-            return userDTOMapper.map(userRepository.save(userDTOMapper.map(userToRegister)));
+            return userDTOMapper.userToUserAuthDTO(userRepository.save(userDTOMapper.userAuthDTOToUser(userToRegister)));
         }
-        User userToAdd = userDTOMapper.map(userToRegister);
+        User userToAdd = userDTOMapper.userAuthDTOToUser(userToRegister);
         userToAdd.setAddress(addressToAdd.get());
 
-        return userDTOMapper.map(userRepository.save(userToAdd));
+        return userDTOMapper.userToUserAuthDTO(userRepository.save(userToAdd));
     }
 
     public UserDTO getUserById(Long id) {

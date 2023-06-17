@@ -8,6 +8,5 @@ public record CommentAddDTO(
         String message,
         boolean spoilerAlert,
         Long bookId,
-        Long userId,
         int rate) {
 }

@@ -25,6 +25,8 @@ import pl.orange.NextDoorBook.role.RoleRepository;
 import pl.orange.NextDoorBook.security.web_security.UserDetailsImpl;
 import pl.orange.NextDoorBook.user.User;
 import pl.orange.NextDoorBook.user.UserRepository;
+import pl.orange.NextDoorBook.user.UserService;
+import pl.orange.NextDoorBook.user.dto.UserDTOMapper;
 
 import java.util.HashSet;
 import java.util.List;
@@ -41,6 +43,8 @@ public class AuthController {
     private final AddressDTOMapper addressDTOMapper;
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
+    private final UserDTOMapper userDTOMapper;
+    private final UserService userService;
     private final RoleRepository roleRepository;
     private final PasswordEncoder encoder;
     private final JwtUtils jwtUtils;
@@ -115,7 +119,7 @@ public class AuthController {
         }
 
         user.setRoles(roles);
-        userRepository.save(user);
+        userService.addUser(userDTOMapper.userToUserAuthDTO(user));
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }

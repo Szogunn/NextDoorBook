@@ -89,4 +89,32 @@ public class BookDTOMapper {
     }
 
 
+    public Book updateBookMapper(BookDTO bookDTO, Book book) {
+
+        if (bookDTO.tittle() != null) {
+            book.setTitle(bookDTO.tittle());
+        }
+        if (bookDTO.isbn() != 0) {
+            book.setIsbn(bookDTO.isbn());
+        }
+        if (bookDTO.numPages() != 0) {
+            book.setNumPages(bookDTO.numPages());
+        }
+        if (bookDTO.bookGenre() != null) {
+            book.setBookGenre(bookDTO.bookGenre());
+        }
+        if (bookDTO.publishedYear() != null) {
+            book.setPublishedYear(bookDTO.publishedYear());
+        }
+        if (bookDTO.publisher() != null) {
+            book.setPublisher(bookDTO.publisher());
+        }
+        if (bookDTO.authors() != null) {
+            book.setAuthors(bookDTO.authors()
+                    .stream()
+                    .map(authorDTOMapper::authorDTOToAuthorMap)
+                    .collect(Collectors.toSet()));
+        }
+        return book;
+    }
 }
