@@ -4,11 +4,6 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.orange.NextDoorBook.address.exception.AddressNotFoundException;
-import pl.orange.NextDoorBook.author.Author;
-import pl.orange.NextDoorBook.author.AuthorRepository;
-import pl.orange.NextDoorBook.author.dto.AuthorAddDTO;
-import pl.orange.NextDoorBook.author.dto.AuthorDTOMapper;
 import pl.orange.NextDoorBook.book.dto.BookAddDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTOMapper;
@@ -18,8 +13,8 @@ import pl.orange.NextDoorBook.comment.CommentRepository;
 import pl.orange.NextDoorBook.comment.dto.CommentDTOMapper;
 import pl.orange.NextDoorBook.exchange.ExchangeRepository;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTOMapper;
+import pl.orange.NextDoorBook.user.User;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -32,35 +27,18 @@ import java.util.stream.Collectors;
 public class BookService {
 
     private final BookRepository bookRepository;
-    private final AuthorRepository authorRepository;
     private final ExchangeRepository exchangeRepository;
     private final CommentRepository commentRepository;
 
     private final BookDTOMapper bookDTOMapper;
-    private final AuthorDTOMapper authorDTOMapper;
     private final CommentDTOMapper commentDTOMapper;
     private final ExchangeDTOMapper exchangeDTOMapper;
 
 
     public BookAddDTO addBook(BookAddDTO bookAddDTO, Long userId) {
-        Set<AuthorAddDTO> authorsToAdd = new HashSet<>(bookAddDTO.authors());
-        bookAddDTO.authors().clear();
-        Book bookToAdd = bookDTOMapper.BookAddDTOToBookMap(bookAddDTO);
-        Book addedBook = bookRepository.addBook(bookToAdd, userId);
+        Book book = bookDTOMapper.BookAddDTOToBookMap(bookAddDTO);
 
-        for (AuthorAddDTO authorToAdd : authorsToAdd) {
-            if (authorToAdd.id() != null) {
-                authorRepository.getAuthorByID(authorToAdd.id())
-                        .map(author -> {
-                            addedBook.addAuthor(author);
-                            return author;
-                        })
-                        .orElseThrow(() ->
-                                new AddressNotFoundException("Author with id " + authorToAdd.id() + " does not exist"));
-            } else {
-                addedBook.addAuthor(authorDTOMapper.authorAddDTOToAuthorMap(authorToAdd));
-            }
-        }
+        Book addedBook = bookRepository.addBook(book, userId);
         return bookDTOMapper
                 .BookToBookAddDTOMap(addedBook);
     }
@@ -74,14 +52,14 @@ public class BookService {
         bookRepository.deleteBookByID(id);
     }
 
-    public List<BookAddDTO> getBooksByGenre(BookGenre bookGenre) {
+    public List<BookDTO> getBooksByGenre(BookGenre bookGenre) {
 
         List<Book> books = bookRepository.getBooksByGenre(bookGenre);
         if (books.isEmpty()) {
             throw new BookNotFoundException("Books from category " + bookGenre + " doesn't exist.");
         }
         return books.stream()
-                .map(bookDTOMapper::BookToBookAddDTOMap)
+                .map(bookDTOMapper::BookToBookDTOMap)
                 .collect(Collectors.toList());
     }
 
@@ -116,13 +94,25 @@ public class BookService {
                         new BookNotFoundException("Book with isbn " + isbn + " doesn't exist."));
 
     }
-    public BookAddDTO getBookByTitle(String title){
+
+    public BookAddDTO getBookByTitle(String title) {
         return bookRepository.getBookByTitle(title)
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .orElseThrow(() ->
                         new BookNotFoundException("Book with title " + title + " doesn't exist."));
     }
-    public List<BookAddDTO> getBooksByLanguage(String language){
+
+    public boolean isBookOwnedByUser(Long bookId, User user) {
+        Book book = bookRepository.getBookByID(bookId)
+                .orElseThrow(() ->
+                        new BookNotFoundException("Book with id " + bookId + " doesn't exist."));
+        if (book.getOwner().getId().equals(user.getId())) {
+            return true; // Książka należy do użytkownika
+        }
+        return false; // Książka nie należy do użytkownika
+    }
+
+    public List<BookAddDTO> getBooksByLanguage(String language) {
         List<Book> books = bookRepository.getBooksByLanguage(language);
 
         if (books.isEmpty()) {
@@ -133,7 +123,8 @@ public class BookService {
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .collect(Collectors.toList());
     }
-    public List<BookAddDTO>getBooksByPublisher(String publisher){
+
+    public List<BookAddDTO> getBooksByPublisher(String publisher) {
         List<Book> books = bookRepository.getBooksByPublisher(publisher);
 
         if (books.isEmpty()) {
@@ -144,10 +135,11 @@ public class BookService {
                 .map(bookDTOMapper::BookToBookAddDTOMap)
                 .collect(Collectors.toList());
     }
-    public Set<BookAddDTO>getBooksByCommentRateAverage(Double rateDouble){
+
+    public Set<BookAddDTO> getBooksByCommentRateAverage(Double rateDouble) {
         Set<Book> books = bookRepository.getBooksByCommentRateAverage(rateDouble);
-        if(books.isEmpty()){
-            throw new BookNotFoundException("Books with average rate "+rateDouble+" doesn't exist");
+        if (books.isEmpty()) {
+            throw new BookNotFoundException("Books with average rate " + rateDouble + " doesn't exist");
         }
         return books.stream()
                 .map(bookDTOMapper::BookToBookAddDTOMap)
@@ -164,21 +156,13 @@ public class BookService {
     }
 
 
-    public BookDTO updateBook(BookDTO book) {
-        bookRepository
-                .getBookByID(bookDTOMapper.BookDTOToBookMap(book).getId())
-                .orElseThrow(() ->
-                        new BookNotFoundException
-                                ("Books with id " + book.id() + " does not exist"));
+    public BookDTO updateBook(BookDTO bookDTO) {
+        Book bookFromDB = bookRepository
+                .getBookByID(bookDTOMapper.BookDTOToBookMap(bookDTO).getId())
+                .orElseThrow(() -> new BookNotFoundException("Books with id " + bookDTO.id() + " does not exist"));
 
-        Book result = bookRepository.updateBook(bookDTOMapper.BookDTOToBookMap(book));
 
-        authorRepository.deleteAuthorsByIDList(authorRepository
-                .checkIfAuthorsAreInUse()
-                .stream()
-                .mapToLong(Author::getId)
-                .boxed()
-                .collect(Collectors.toSet()));
+        Book result = bookRepository.updateBook(bookDTOMapper.updateBookMapper(bookDTO, bookFromDB));
 
 
         return bookDTOMapper.BookToBookDTOMap(result);
@@ -199,7 +183,7 @@ public class BookService {
                         .collect(Collectors.toSet()),
                 commentRepository.getCommentsByBookID(bookId)
                         .stream()
-                        .map(commentDTOMapper::commentMapToDTO)
+                        .map(commentDTOMapper::commentToCommentDTOMap)
                         .collect(Collectors.toSet()));
     }
 }

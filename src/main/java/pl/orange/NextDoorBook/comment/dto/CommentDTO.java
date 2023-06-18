@@ -6,7 +6,6 @@ import pl.orange.NextDoorBook.user.dto.UserDTO;
 import java.time.LocalDateTime;
 
 public record CommentDTO(
-        Long id,
         String message,
         boolean spoilerAlert,
         LocalDateTime addTime,

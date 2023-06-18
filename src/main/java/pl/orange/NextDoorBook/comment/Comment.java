@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import pl.orange.NextDoorBook.book.Book;
@@ -15,8 +16,9 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "COMMENTS")
-@AllArgsConstructor
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Comment {
 
     @Id

@@ -8,7 +8,6 @@ import pl.orange.NextDoorBook.book.exceptions.BookNotFoundException;
 import pl.orange.NextDoorBook.comment.Comment;
 import pl.orange.NextDoorBook.user.UserRepository;
 import pl.orange.NextDoorBook.user.dto.UserDTOMapper;
-import pl.orange.NextDoorBook.user.exceptions.UserNotFoundException;
 
 import java.time.LocalDateTime;
 
@@ -19,9 +18,9 @@ public class CommentDTOMapper {
     private final BookDTOMapper bookDTOMapper;
     private final BookRepository bookRepository;
     private final UserRepository userRepository;
-    public CommentDTO commentMapToDTO(Comment comment) {
+
+    public CommentDTO commentToCommentDTOMap(Comment comment) {
         return new CommentDTO(
-                comment.getId(),
                 comment.getMessage(),
                 comment.isSpoilerAlert(),
                 comment.getAddTime(),
@@ -31,43 +30,44 @@ public class CommentDTOMapper {
         );
     }
 
-    public Comment commentMapToEntity(CommentDTO commentDTO) {
-        return new Comment(
-                commentDTO.id(),
-                commentDTO.message(),
-                commentDTO.spoilerAlert(),
-                commentDTO.addTime(),
-                bookDTOMapper.BookDTOToBookMap(commentDTO.book()),
-                userDTOMapper.map(commentDTO.user()),
-                commentDTO.rate()
-
-        );
+    public Comment commentDTOtoCommentMap(CommentDTO commentDTO) {
+        return Comment.builder()
+                .message(commentDTO.message())
+                .spoilerAlert(commentDTO.spoilerAlert())
+                .addTime(LocalDateTime.now())
+                .book(bookRepository.getBookByID(commentDTO.book().id())
+                        .orElseThrow(() ->
+                                new BookNotFoundException("Book with id " + commentDTO.book().id() + " does not exist")))
+                .user(bookRepository.getBookByID(commentDTO.book().id())
+                        .orElseThrow(() ->
+                                new BookNotFoundException("Book with id " + commentDTO.book().id() + " does not exist"))
+                        .getOwner())
+                .rate(commentDTO.rate())
+                .build();
     }
 
     public CommentAddDTO commentMapToAddDTO(Comment comment) {
         return new CommentAddDTO(
                 comment.getMessage(),
                 comment.isSpoilerAlert(),
-                comment.getBook().getId(),
-                comment.getUser().getId(),
+                bookRepository.getBookByID(comment.getBook().getId()).get().getId(),
                 comment.getRate()
         );
     }
 
+
+
     public Comment commentMapToAddEntity(CommentAddDTO commentAddDTO) {
-        return new Comment(
-                null,
-                commentAddDTO.message(),
-                commentAddDTO.spoilerAlert(),
-                LocalDateTime.now(),
-                bookRepository.getBookByID(commentAddDTO.bookId())
-                        .orElseThrow(()->
-                                new BookNotFoundException("Book with id " + commentAddDTO.bookId() + " does not exist")),
-                userRepository.getUserById(commentAddDTO.userId())
-                        .orElseThrow(()->
-                                new UserNotFoundException("User with id " + commentAddDTO.userId() + " does not exist")),
-                commentAddDTO.rate()
-        );
+        return Comment.builder()
+                .message(commentAddDTO.message())
+                .spoilerAlert(commentAddDTO.spoilerAlert())
+                .addTime(LocalDateTime.now())
+                .book(bookRepository.getBookByID(commentAddDTO.bookId())
+                        .orElseThrow(() ->
+                                new BookNotFoundException("Book with id " + commentAddDTO.bookId() + " does not exist")))
+                .rate(commentAddDTO.rate())
+                .build();
+
     }
 
 }

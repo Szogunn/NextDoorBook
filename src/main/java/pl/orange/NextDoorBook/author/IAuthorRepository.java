@@ -27,5 +27,5 @@ public interface IAuthorRepository extends JpaRepository<Author, Long> {
     @Transactional
     Set<Author> checkIfAuthorsAreInUse();
 
-    void deleteByIdIn(Set<Long> Id);
+
 }

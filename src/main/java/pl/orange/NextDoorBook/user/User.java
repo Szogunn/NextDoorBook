@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import pl.orange.NextDoorBook.address.Address;
+import pl.orange.NextDoorBook.address.DTO.AddressAddDTO;
 import pl.orange.NextDoorBook.role.Role;
 
 import java.util.HashSet;
@@ -48,7 +49,7 @@ public class User {
     @Email
     private String email;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "ADDRESS_ID")
     private Address address;
 
@@ -60,9 +61,14 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    public User(String username, String email, String password) {
+
+
+    public User(String username, String email, Address address, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.address = address;
     }
+
+
 }

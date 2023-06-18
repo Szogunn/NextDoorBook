@@ -12,6 +12,8 @@ import pl.orange.NextDoorBook.book.dto.BookDTO;
 import pl.orange.NextDoorBook.book.dto.BookDTOMapper;
 import pl.orange.NextDoorBook.book.exceptions.BookNotFoundException;
 
+import java.util.Optional;
+
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -22,11 +24,13 @@ public class AuthorService {
     private final BookDTOMapper bookDTOMapper;
 
     public AuthorAddDTO addAuthor(Long bookId, AuthorAddDTO authorAddDTO) {
+        Author findAuthor = authorDTOMapper.authorAddDTOToAuthorMap(authorAddDTO);
         return authorDTOMapper.authorTOAuthorAddDTOMap(
                 bookRepository.getBookByID(bookId)
                         .map((book) -> {
-                            if (authorAddDTO.id() != null) {
-                                return authorRepository.getAuthorByID(authorAddDTO.id())
+                            Optional<Author> optionalAuthor = authorRepository.getAuthor(findAuthor);
+                            if (optionalAuthor.isPresent()) {
+                                return optionalAuthor
                                         .map(author -> {
                                             book.addAuthor(author);
                                             bookRepository.saveBook(book);

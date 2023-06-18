@@ -71,13 +71,7 @@ public class BookDTOMapper {
                 book.getLanguage(),
                 book.getPublisher(),
                 book.getPublishedYear(),
-                book.getBookGenre(),
-                bookRepository.getBookByID(book.getId())
-                        .orElseThrow(() -> new BookNotFoundException(""))
-                        .getAuthors()
-                        .stream()
-                        .map(authorDTOMapper::authorTOAuthorAddDTOMap)
-                        .collect(Collectors.toSet())
+                book.getBookGenre()
         );
     }
 
@@ -90,13 +84,37 @@ public class BookDTOMapper {
                 .publisher(book.publisher())
                 .publishedYear(book.publishedYear())
                 .bookGenre(book.bookGenre())
-                .authors(book.authors()
-                        .stream()
-                        .map(authorDTOMapper::authorAddDTOToAuthorMap)
-                        .collect(Collectors.toSet()))
                 //TODO implement also .owner() method which provides a user from logged account
                 .build();
     }
 
 
+    public Book updateBookMapper(BookDTO bookDTO, Book book) {
+
+        if (bookDTO.tittle() != null) {
+            book.setTitle(bookDTO.tittle());
+        }
+        if (bookDTO.isbn() != 0) {
+            book.setIsbn(bookDTO.isbn());
+        }
+        if (bookDTO.numPages() != 0) {
+            book.setNumPages(bookDTO.numPages());
+        }
+        if (bookDTO.bookGenre() != null) {
+            book.setBookGenre(bookDTO.bookGenre());
+        }
+        if (bookDTO.publishedYear() != null) {
+            book.setPublishedYear(bookDTO.publishedYear());
+        }
+        if (bookDTO.publisher() != null) {
+            book.setPublisher(bookDTO.publisher());
+        }
+        if (bookDTO.authors() != null) {
+            book.setAuthors(bookDTO.authors()
+                    .stream()
+                    .map(authorDTOMapper::authorDTOToAuthorMap)
+                    .collect(Collectors.toSet()));
+        }
+        return book;
+    }
 }
