@@ -10,6 +10,7 @@ import pl.orange.NextDoorBook.user.UserRepository;
 import pl.orange.NextDoorBook.user.dto.UserDTOMapper;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -17,7 +18,6 @@ public class CommentDTOMapper {
     private final UserDTOMapper userDTOMapper;
     private final BookDTOMapper bookDTOMapper;
     private final BookRepository bookRepository;
-    private final UserRepository userRepository;
 
     public CommentDTO commentToCommentDTOMap(Comment comment) {
         return new CommentDTO(
@@ -51,10 +51,10 @@ public class CommentDTOMapper {
                 comment.getMessage(),
                 comment.isSpoilerAlert(),
                 bookRepository.getBookByID(comment.getBook().getId()).get().getId(),
+                userDTOMapper.map(comment.getUser()),
                 comment.getRate()
         );
     }
-
 
 
     public Comment commentMapToAddEntity(CommentAddDTO commentAddDTO) {
@@ -68,6 +68,28 @@ public class CommentDTOMapper {
                 .rate(commentAddDTO.rate())
                 .build();
 
+    }
+
+    public Comment updateCommentMapper(CommentUpdateDTO commentUpdateDTO, Comment comment) {
+
+        if (commentUpdateDTO.message() != null) {
+            comment.setMessage(commentUpdateDTO.message());
+        }
+        if (commentUpdateDTO.spoilerAlert().isPresent()) {
+            comment.setSpoilerAlert(commentUpdateDTO.spoilerAlert().get());
+        }
+        if (commentUpdateDTO.rate() != 0) {
+            comment.setRate(commentUpdateDTO.rate());
+        }
+        return comment;
+    }
+
+    public CommentUpdateDTO commentToCommentUpdateDTOMap(Comment comment) {
+
+        return new CommentUpdateDTO(comment.getId(),
+                comment.getMessage(),
+                Optional.of(comment.isSpoilerAlert()),
+                comment.getRate());
     }
 
 }

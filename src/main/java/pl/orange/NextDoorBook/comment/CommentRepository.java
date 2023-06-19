@@ -1,6 +1,7 @@
 package pl.orange.NextDoorBook.comment;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import pl.orange.NextDoorBook.book.Book;
 import pl.orange.NextDoorBook.user.User;
@@ -10,6 +11,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Repository
+@Slf4j
 @RequiredArgsConstructor
 public class CommentRepository {
 
@@ -32,11 +34,13 @@ public class CommentRepository {
         return iCommentRepository.findCommentsByBookId(id);
     }
 
-    public void updateComment(Long id, String message, boolean spoilerAlert, Book book, User user, int rate) {
-        iCommentRepository.updateComment(id, message, spoilerAlert, LocalDateTime.now(), book, user, rate);
+    public Comment updateComment(Comment comment) {
+        log.info("[HIBERNATE] updating comment: " + comment);
+        return iCommentRepository.save(comment);
     }
     public Double averageBookRate(Book book){
         return iCommentRepository.averageBookRate(book);
     }
+
 
 }

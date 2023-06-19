@@ -34,6 +34,7 @@ public interface ICommentRepository extends JpaRepository<Comment, Long> {
 
     Set<Comment> findCommentsByBookId(Long id);
 
+
     @Transactional
     @Query("SELECT AVG(c.rate) FROM Comment c WHERE c.book = :book")
     Double averageBookRate(@Param("book") Book book);
