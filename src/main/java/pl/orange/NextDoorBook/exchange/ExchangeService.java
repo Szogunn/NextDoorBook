@@ -36,11 +36,11 @@ public class ExchangeService {
         return exchangeDTOMapper.mapToAddDTO(exchangeRepository.addExchange(exchangeToAdd));
     }
 
-    public ExchangeDTO addBookReservation(ExchangeReservationDTO exchangeReservationDTO) {
-        Book bookToExchange = bookRepository.getBookByID(exchangeReservationDTO.bookId())
+    public ExchangeDTO addBookReservation(Long bookId,Long userId) {
+        Book bookToExchange = bookRepository.getBookByID(bookId)
                 .orElseThrow(() ->
-                        new BookNotFoundException("Book with id " + exchangeReservationDTO.bookId() + " does not exist"));
-        User renter = getUser(exchangeReservationDTO.renterId());
+                        new BookNotFoundException("Book with id " + bookId + " does not exist"));
+        User renter = getUser(userId);
         Exchange reservationToSave = createReservation(bookToExchange, renter);
 
         return exchangeDTOMapper.mapToDTO(exchangeRepository.saveExchange(reservationToSave));
