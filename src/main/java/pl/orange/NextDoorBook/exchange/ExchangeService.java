@@ -9,7 +9,6 @@ import pl.orange.NextDoorBook.book.exceptions.BookNotFoundException;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeAddDTO;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTO;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTOMapper;
-import pl.orange.NextDoorBook.exchange.dto.ExchangeReservationDTO;
 import pl.orange.NextDoorBook.exchange.exception.ExchangeImpossibleException;
 import pl.orange.NextDoorBook.exchange.exception.ExchangeNotFoundException;
 import pl.orange.NextDoorBook.exchange.exception.ExchangeOwnerException;
@@ -36,7 +35,7 @@ public class ExchangeService {
         return exchangeDTOMapper.mapToAddDTO(exchangeRepository.addExchange(exchangeToAdd));
     }
 
-    public ExchangeDTO addBookReservation(Long bookId,Long userId) {
+    public ExchangeDTO addBookReservation(Long bookId, Long userId) {
         Book bookToExchange = bookRepository.getBookByID(bookId)
                 .orElseThrow(() ->
                         new BookNotFoundException("Book with id " + bookId + " does not exist"));
@@ -46,13 +45,13 @@ public class ExchangeService {
         return exchangeDTOMapper.mapToDTO(exchangeRepository.saveExchange(reservationToSave));
     }
 
-    public ExchangeDTO confirmBookExchange(Long exchangeId, Long ownerId){
+    public ExchangeDTO confirmBookExchange(Long exchangeId, Long ownerId) {
         return exchangeRepository.getExchangeById(exchangeId)
                 .map(exchange -> {
-                    if(exchange.getOwner().getId() != ownerId){
+                    if (exchange.getOwner().getId() != ownerId) {
                         throw new ExchangeOwnerException("User with id " + ownerId + " is not this book owner");
                     }
-                    if (!exchangeRepository.checkBookAvailability(exchange.getBook().getId())){
+                    if (!exchangeRepository.checkBookAvailability(exchange.getBook().getId())) {
                         throw new ExchangeImpossibleException("Exchange is impossible.Book is already borrowed.");
                     }
                     exchange.setConfirmExchange(true);
@@ -62,21 +61,21 @@ public class ExchangeService {
                         new ExchangeNotFoundException("Exchange with id " + exchangeId + " does not exist"));
     }
 
-    public ExchangeDTO rejectBookReservation(Long exchangeId, Long ownerId){
+    public ExchangeDTO rejectBookReservation(Long exchangeId, Long ownerId) {
         Exchange exchangeToReject = exchangeRepository.getExchangeById(exchangeId)
                 .orElseThrow(() ->
                         new ExchangeNotFoundException("Exchange with id " + exchangeId + " does not exist"));
-        if (exchangeToReject.getOwner().getId() != ownerId){
+        if (exchangeToReject.getOwner().getId() != ownerId) {
             throw new ExchangeOwnerException("User with id " + ownerId + " is not this book owner");
         }
         exchangeRepository.deleteExchangeById(exchangeToReject.getId());
         return exchangeDTOMapper.mapToDTO(exchangeToReject);
     }
 
-    public ExchangeDTO confirmBookReturn(Long exchangeId, Long ownerId){
+    public ExchangeDTO confirmBookReturn(Long exchangeId, Long ownerId) {
         return exchangeRepository.getExchangeById(exchangeId)
                 .map(exchange -> {
-                    if(exchange.getOwner().getId() != ownerId){
+                    if (exchange.getOwner().getId() != ownerId) {
                         throw new ExchangeOwnerException("User with id " + ownerId + " is not this book owner");
                     }
                     exchange.setConfirmReturn(true);
@@ -114,7 +113,7 @@ public class ExchangeService {
         return exchangeDTOMapper.mapToDTO(exchange);
     }
 
-    public Set<ExchangeDTO> getBookReservationByOwner(Long ownerId){
+    public Set<ExchangeDTO> getBookReservationByOwner(Long ownerId) {
         User owner = getUser(ownerId);
 
         return exchangeRepository.getBooksReservationListByOwner(owner)
@@ -123,7 +122,7 @@ public class ExchangeService {
                 .collect(Collectors.toSet());
     }
 
-    public Set<ExchangeDTO> getExchangesByOwner(Long ownerId){
+    public Set<ExchangeDTO> getExchangesByOwner(Long ownerId) {
         User owner = getUser(ownerId);
 
         return exchangeRepository.getExchangesByOwner(owner)
@@ -132,7 +131,7 @@ public class ExchangeService {
                 .collect(Collectors.toSet());
     }
 
-    public Set<ExchangeDTO> getExchangesByRenter(Long renterId){
+    public Set<ExchangeDTO> getExchangesByRenter(Long renterId) {
         User renter = getUser(renterId);
 
         return exchangeRepository.getExchangesByRenter(renter)
@@ -141,7 +140,7 @@ public class ExchangeService {
                 .collect(Collectors.toSet());
     }
 
-    public Set<ExchangeDTO> getExchangesByBook(Long bookId){
+    public Set<ExchangeDTO> getExchangesByBook(Long bookId) {
         Book book = bookRepository.getBookByID(bookId)
                 .orElseThrow(() ->
                         new BookNotFoundException("Book with id " + bookId + " does not exist"));
@@ -152,7 +151,7 @@ public class ExchangeService {
                 .collect(Collectors.toSet());
     }
 
-    public Set<ExchangeDTO> getExchangesByUser(Long userId){
+    public Set<ExchangeDTO> getExchangesByUser(Long userId) {
         User user = getUser(userId);
 
         return exchangeRepository.getExchangesByUser(user)
