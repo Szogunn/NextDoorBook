@@ -121,6 +121,14 @@ public class BookController {
                 .body(bookService.getAllBooks());
     }
 
+    @GetMapping(path = "/user")
+    public ResponseEntity<List<BookDTO>> findBooksByOwnerId(UsernamePasswordAuthenticationToken user){
+        User userFromObjectMapper = objectMapper.convertValue(user.getPrincipal(), User.class);
+        return ResponseEntity
+                .status(200)
+                .body(bookService.findBooksByOwnerId(userFromObjectMapper.getId()));
+    }
+
     @PatchMapping(path = "")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> updateBook(@RequestBody BookDTO requestBook

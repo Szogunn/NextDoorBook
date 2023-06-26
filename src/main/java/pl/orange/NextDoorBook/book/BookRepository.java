@@ -133,4 +133,8 @@ public class BookRepository {
                 .filter(book -> !book.getOwner().isDeleted())
                 .collect(Collectors.toSet());
     }
+
+    public List<Book> findBooksByOwnerId(Long ownerId){
+        return iBookRepository.findBooksByOwnerId(ownerId);
+    }
 }

@@ -28,4 +28,6 @@ public interface IBookRepository extends JpaRepository<Book, Long> {
 
     @Query("SELECT b FROM Book b JOIN b.comments c WHERE b.id = c.book.id GROUP BY b.id HAVING AVG(c.rate) = :rateDouble")
     Set<Book> findBooksByCommentRateAverage(Double rateDouble);
+
+    List<Book> findBooksByOwnerId(Long ownerId);
 }
