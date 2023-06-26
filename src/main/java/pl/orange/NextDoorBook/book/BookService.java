@@ -186,4 +186,11 @@ public class BookService {
                         .map(commentDTOMapper::commentToCommentDTOMap)
                         .collect(Collectors.toSet()));
     }
+
+    public List<BookDTO> findBooksByOwnerId(Long ownerId){
+        return bookRepository.findBooksByOwnerId(ownerId)
+                .stream()
+                .map(bookDTOMapper::BookToBookDTOMap)
+                .collect(Collectors.toList());
+    }
 }
