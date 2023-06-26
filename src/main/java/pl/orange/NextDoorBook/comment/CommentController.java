@@ -7,8 +7,11 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import pl.orange.NextDoorBook.book.BookService;
 import pl.orange.NextDoorBook.comment.dto.CommentAddDTO;
 import pl.orange.NextDoorBook.comment.dto.CommentDTO;
+import pl.orange.NextDoorBook.comment.dto.CommentUpdateDTO;
+import pl.orange.NextDoorBook.security.payloads.MessageResponse;
 import pl.orange.NextDoorBook.user.User;
 
 @Controller
@@ -20,8 +23,8 @@ public class CommentController {
 
     @PostMapping(path = "")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<CommentDTO> addComment(@RequestBody CommentAddDTO commentAddDTO
-    , UsernamePasswordAuthenticationToken user) {
+    public ResponseEntity<CommentAddDTO> addComment(@RequestBody CommentAddDTO commentAddDTO
+            , UsernamePasswordAuthenticationToken user) {
 
         User userFromObjectMapper = objectMapper.convertValue(user.getPrincipal(), User.class);
 
@@ -32,7 +35,14 @@ public class CommentController {
 
     @DeleteMapping("{id}")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> deleteCommentByID(@PathVariable Long id) {
+    public ResponseEntity<?> deleteCommentByID(@PathVariable Long id, UsernamePasswordAuthenticationToken user) {
+
+        User userFromObjectMapper = objectMapper.convertValue(user.getPrincipal(), User.class);
+
+        if (!commentService.isCommentBelongToUser(id, userFromObjectMapper)) {
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: Comment has another owner"));
+        }
+
         commentService.deleteCommentByID(id);
         return ResponseEntity
                 .status(200)
@@ -48,9 +58,19 @@ public class CommentController {
                 .body(commentService.getCommentByID(id));
     }
 
-    @PutMapping("{id}")
+    @PatchMapping("")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> updateComment(@PathVariable Long id, @RequestBody Comment comment) {
-        return commentService.updateComment(id, comment);
+    public ResponseEntity<?> updateComment(@RequestBody CommentUpdateDTO comment
+            , UsernamePasswordAuthenticationToken user) {
+
+        User userFromObjectMapper = objectMapper.convertValue(user.getPrincipal(), User.class);
+
+        if (!commentService.isCommentBelongToUser(comment.id(), userFromObjectMapper)) {
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: Comment has another owner"));
+        }
+
+        return ResponseEntity
+                .status(200)
+                .body(commentService.updateComment(comment));
     }
 }
