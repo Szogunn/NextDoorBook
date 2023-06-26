@@ -1,13 +1,15 @@
 package pl.orange.NextDoorBook.exchange;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeAddDTO;
 import pl.orange.NextDoorBook.exchange.dto.ExchangeDTO;
-import pl.orange.NextDoorBook.exchange.dto.ExchangeReservationDTO;
+import pl.orange.NextDoorBook.user.User;
 
 import java.util.Set;
 
@@ -18,44 +20,54 @@ import java.util.Set;
 
 public class ExchangeController {
     private final ExchangeService exchangeService;
-
+    private final ObjectMapper objectMapper;
 
     @PostMapping(path = "")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ExchangeAddDTO> addExchange(@RequestBody ExchangeAddDTO exchangeAddDTO) {
         return ResponseEntity
                 .status(200)
                 .body(exchangeService.addExchange(exchangeAddDTO));
     }
 
-    @PostMapping(path = "/reservation")
-    public ResponseEntity<ExchangeDTO> addBookReservation(@RequestBody ExchangeReservationDTO exchangeReservationDTO) {
+    @PostMapping(path = "/reservation/{bookId}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<ExchangeDTO> addBookReservation(@PathVariable Long bookId, UsernamePasswordAuthenticationToken user) {
+        User userFromObjectMapper = objectMapper.convertValue(user.getPrincipal(), User.class);
         return ResponseEntity
                 .status(200)
-                .body(exchangeService.addBookReservation(exchangeReservationDTO));
+                .body(exchangeService.addBookReservation(bookId, userFromObjectMapper.getId()));
     }
 
-    @PostMapping(path = "/confirm/exchange/{exchangeId}/{ownerId}")
-    public ResponseEntity<ExchangeDTO> confirmBookExchange(@PathVariable Long exchangeId, @PathVariable Long ownerId){
+    @PostMapping(path = "/confirm/exchange/{exchangeId}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<ExchangeDTO> confirmBookExchange(@PathVariable Long exchangeId, UsernamePasswordAuthenticationToken user) {
+        User userFromObjectMapper = objectMapper.convertValue(user.getPrincipal(), User.class);
         return ResponseEntity
                 .status(200)
-                .body(exchangeService.confirmBookExchange(exchangeId,ownerId));
+                .body(exchangeService.confirmBookExchange(exchangeId, userFromObjectMapper.getId()));
     }
 
-    @PostMapping(path = "/reject/exchange/{exchangeId}/{ownerId}")
-    public ResponseEntity<ExchangeDTO> rejectBookReservation(@PathVariable Long exchangeId, @PathVariable Long ownerId){
+    @PostMapping(path = "/reject/exchange/{exchangeId}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<ExchangeDTO> rejectBookReservation(@PathVariable Long exchangeId, UsernamePasswordAuthenticationToken user) {
+        User userFromObjectMapper = objectMapper.convertValue(user.getPrincipal(), User.class);
         return ResponseEntity
                 .status(200)
-                .body(exchangeService.rejectBookReservation(exchangeId,ownerId));
+                .body(exchangeService.rejectBookReservation(exchangeId, userFromObjectMapper.getId()));
     }
 
-    @PostMapping(path = "/confirm/return/{exchangeId}/{ownerId}")
-    public ResponseEntity<ExchangeDTO> confirmBookReturn(@PathVariable Long exchangeId,@PathVariable Long ownerId){
+    @PostMapping(path = "/confirm/return/{exchangeId}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<ExchangeDTO> confirmBookReturn(@PathVariable Long exchangeId, UsernamePasswordAuthenticationToken user) {
+        User userFromObjectMapper = objectMapper.convertValue(user.getPrincipal(), User.class);
         return ResponseEntity
                 .status(200)
-                .body(exchangeService.confirmBookReturn(exchangeId,ownerId));
+                .body(exchangeService.confirmBookReturn(exchangeId, userFromObjectMapper.getId()));
     }
 
     @DeleteMapping(path = "{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ExchangeDTO> deleteExchangeById(@PathVariable Long id) {
         return ResponseEntity
                 .status(200)
@@ -70,6 +82,7 @@ public class ExchangeController {
     }
 
     @PatchMapping(path = "")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ExchangeDTO> updateExchange(@RequestBody ExchangeDTO exchangeDTO) {
         return ResponseEntity
                 .status(200)
@@ -77,35 +90,35 @@ public class ExchangeController {
     }
 
     @GetMapping(path = "/reservation/{ownerId}")
-    public ResponseEntity<Set<ExchangeDTO>> getBookReservationByOwner(@PathVariable Long ownerId){
+    public ResponseEntity<Set<ExchangeDTO>> getBookReservationByOwner(@PathVariable Long ownerId) {
         return ResponseEntity
                 .status(200)
                 .body(exchangeService.getBookReservationByOwner(ownerId));
     }
 
     @GetMapping(path = "/owner/{ownerId}")
-    public ResponseEntity<Set<ExchangeDTO>> getExchangesByOwner(@PathVariable Long ownerId){
+    public ResponseEntity<Set<ExchangeDTO>> getExchangesByOwner(@PathVariable Long ownerId) {
         return ResponseEntity
                 .status(200)
                 .body(exchangeService.getExchangesByOwner(ownerId));
     }
 
     @GetMapping(path = "/renter/{renterId}")
-    public ResponseEntity<Set<ExchangeDTO>> getExchangesByRenter(@PathVariable Long renterId){
+    public ResponseEntity<Set<ExchangeDTO>> getExchangesByRenter(@PathVariable Long renterId) {
         return ResponseEntity
                 .status(200)
                 .body(exchangeService.getExchangesByRenter(renterId));
     }
 
     @GetMapping(path = "/book/{bookId}")
-    public ResponseEntity<Set<ExchangeDTO>> getExchangesByBook(@PathVariable Long bookId){
+    public ResponseEntity<Set<ExchangeDTO>> getExchangesByBook(@PathVariable Long bookId) {
         return ResponseEntity
                 .status(200)
                 .body(exchangeService.getExchangesByBook(bookId));
     }
 
     @GetMapping(path = "/user/{userId}")
-    public ResponseEntity<Set<ExchangeDTO>> getExchangesByUser(@PathVariable Long userId){
+    public ResponseEntity<Set<ExchangeDTO>> getExchangesByUser(@PathVariable Long userId) {
         return ResponseEntity
                 .status(200)
                 .body(exchangeService.getExchangesByUser(userId));
