@@ -22,7 +22,6 @@ public class BookDTOMapper {
 
 
     public BookDTO BookToBookDTOMap(Book book) {
-        log.info("Book provide to map into BookDTO: " + book);
         return new BookDTO(
                 book.getId(),
                 book.getTitle(),
@@ -65,6 +64,7 @@ public class BookDTOMapper {
 
     public BookAddDTO BookToBookAddDTOMap(Book book) {
         return new BookAddDTO(
+                book.getId(),
                 book.getTitle(),
                 book.getIsbn(),
                 book.getNumPages(),
@@ -84,7 +84,6 @@ public class BookDTOMapper {
                 .publisher(book.publisher())
                 .publishedYear(book.publishedYear())
                 .bookGenre(book.bookGenre())
-                //TODO implement also .owner() method which provides a user from logged account
                 .build();
     }
 
