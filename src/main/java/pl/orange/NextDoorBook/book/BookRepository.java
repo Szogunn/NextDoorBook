@@ -31,7 +31,6 @@ public class BookRepository {
 
         log.info("[HIBERNATE] Saving book to database from addBook method");
         Book result = iBookRepository.save(book);
-        log.info("Book authors to save: " + book.getAuthors());
         return result;
     }
 
